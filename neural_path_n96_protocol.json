@@ -1,0 +1,46 @@
+{
+  "seed": 20261018,
+  "banks": 32,
+  "sample_sizes": [
+    96
+  ],
+  "signals": [
+    "smooth",
+    "oscillatory",
+    "mixed"
+  ],
+  "sigmas": [
+    0.3,
+    0.8
+  ],
+  "horizons": [
+    200,
+    800
+  ],
+  "times": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20,
+    40,
+    80,
+    120,
+    200,
+    400,
+    800
+  ],
+  "width": 32,
+  "test_points": 1024,
+  "lr": 0.25,
+  "rho": 0.25,
+  "folds": 3,
+  "rule": "Let L0=mean(y^2), Lsure=threefold validation MSE of fold-trained SURE average, Vhat=max(L0-sigma^2,0). Use full-data SURE weights if L0-Lsure>0.25 Vhat; otherwise uniform weights. Known sigma. No signal-type-dependent decisions. Threshold and fallback selected from24rules on oldseed20261016, now frozen before new outcomes.",
+  "primary": "12 fixed cells at n96, equally weighted. Success requires at least8/12 cell mean gains over CV3>1e-10 AND one-sided95% paired-t lower bound of overall mean gain>0.001 MSE.32 independent banks; average12cells withinbank;df31. Empirical majority plus global mean improvement, not proof that a majority of true cell risks are lower.",
+  "cell_inference": "Additionally show12 simultaneous one-sided Bonferroni t lowerbounds, alpha0.05/12. More than6 positive lowerbounds needed for a stronger majority-cell claim under approximate t assumptions. Separate family from overall primary.",
+  "baselines": "Same threefold OOF convex stacking and selection transferred to same full-data path; also fixedridgeCVlambda1, unpenalizedSURE average and selection, uniform, last. Equal labels, not equal compute or information: SURE knows sigma. Other comparisons descriptive, no new unadjusted significance claims.",
+  "design": "Restricted n96 domain selected after examining seed20261017, where11/12 n96 cells had positive mean gains but full24cell study failed. All3 original functions, both sigmas and horizons retained. Centered tanh width32; W0=2N(0,.7), b0=N(0,.1), a0=Uniform[-.5,.5], lr.25, firstlayer multiplier4. X Uniform[-1,1]^2. Other settings unchanged. No claim for n>=96 generally. Previously failed n48 cells remain reported in first study.",
+  "solver": "Exact response Jacobian, QP FWgap<1e-7,max100000; no dropped failures",
+  "status": "Second-stage independent confirmation seed20261018 of an explicitly exploratory domain restriction. No changes to rho0.25 or method. Local freeze, not external preregistration. All new12cells retained regardless of outcome."
+}

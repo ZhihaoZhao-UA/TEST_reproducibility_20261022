@@ -1,0 +1,9 @@
+{
+ "status":"Exploratory pilot on previously examined seed20261018; not independent confirmation",
+ "banks":[0,1,2,3,4,5,6,7],
+ "coefficients":[0.0,0.3333333333333333,0.6666666666666666,1.0],
+ "scope":"All 12 original n96 conditions. First eight banks fixed for computational pilot, no outcome filtering.",
+ "rule":"For each outer fold, form a threefold inner OOF-minus-training-SURE correction using only outer training data. Fit outer training SURE weights with each coefficient. Choose coefficient minimizing pooled outer validation MSE, ties favor smaller coefficient. Refit weights on full cached candidates using full-data threefold correction. Known sigma. No test truth in selection.",
+ "comparisons":"Same-bank CV3, SURE, adaptive, last-or-uniform, fixed2/3 correction. Report all conditions and paired bank SE. No significance claim. No parameter changes based on pilot results.",
+ "budget":"432 additional inner neural paths, width32, up to800 steps, exact response Jacobian. Reuse full and outer-fold cached models."
+}

@@ -1,0 +1,3855 @@
+{
+  "status": "Post-outcome descriptive control, no independent confirmation or new p-values. Reuses identical training-only branch decisions, replaces SURE prediction by last-checkpoint prediction on the SURE branch.",
+  "means": {
+    "control": 0.3433534613217659,
+    "adaptive": 0.3447021594853974,
+    "cv3": 0.3488564888039767
+  },
+  "control_vs_adaptive": {
+    "wins": 4,
+    "ties": 8,
+    "losses": 0
+  },
+  "records": [
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.31324363600753913,
+      "adaptive": 0.31324363600753913,
+      "cv3": 0.31324363600753913
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2533447009539095,
+      "adaptive": 0.2533447009539095,
+      "cv3": 0.2533447009539095
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.32503141779868316,
+      "adaptive": 0.32503141779868316,
+      "cv3": 0.32503141779868316
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.27460792960239605,
+      "adaptive": 0.2754971010249919,
+      "cv3": 0.27460792960239605
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6490300623490781,
+      "adaptive": 0.6490300623490781,
+      "cv3": 0.6519330191226229
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6498464880934325,
+      "adaptive": 0.6498464880934325,
+      "cv3": 0.6738768197029958
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6547557897405833,
+      "adaptive": 0.6547557897405833,
+      "cv3": 0.6605541417712664
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6572544778526817,
+      "adaptive": 0.6572544778526817,
+      "cv3": 0.6577220501806957
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10203953400057766,
+      "adaptive": 0.10203953400057766,
+      "cv3": 0.10203953400057766
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05254299132830612,
+      "adaptive": 0.05254299132830612,
+      "cv3": 0.05254299132830612
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1024749681156214,
+      "adaptive": 0.1024749681156214,
+      "cv3": 0.1024749681156214
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06301389344761334,
+      "adaptive": 0.06545693203754471,
+      "cv3": 0.06301389344761334
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2883531505344899,
+      "adaptive": 0.2883531505344899,
+      "cv3": 0.28939747963049656
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22355233330254168,
+      "adaptive": 0.22355233330254168,
+      "cv3": 0.22443037812744054
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3019497170615477,
+      "adaptive": 0.3080671668537376,
+      "cv3": 0.31292764305925025
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24473508336970096,
+      "adaptive": 0.2667008141229219,
+      "cv3": 0.2672109495048751
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6471403885538861,
+      "adaptive": 0.6471403885538861,
+      "cv3": 0.6405518736832403
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6425640803826731,
+      "adaptive": 0.6425640803826731,
+      "cv3": 0.6403382508055258
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.644539145924786,
+      "adaptive": 0.644539145924786,
+      "cv3": 0.6361886491041375
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6394688959729966,
+      "adaptive": 0.6394688959729966,
+      "cv3": 0.6427564995100749
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11924342296006463,
+      "adaptive": 0.11924342296006463,
+      "cv3": 0.11994327693983524
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.052424118661456263,
+      "adaptive": 0.052424118661456263,
+      "cv3": 0.05265290124215255
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1372117018668504,
+      "adaptive": 0.14285018814925288,
+      "cv3": 0.14304662431997917
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.08007490935295092,
+      "adaptive": 0.11035687444986099,
+      "cv3": 0.08860730373274792
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2620038234398078,
+      "adaptive": 0.2620038234398078,
+      "cv3": 0.2620038234398078
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21964846988601183,
+      "adaptive": 0.21964846988601183,
+      "cv3": 0.21964846988601183
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.28400526145559635,
+      "adaptive": 0.2845706627273471,
+      "cv3": 0.2841140059006729
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24358707653642941,
+      "adaptive": 0.25010451094528074,
+      "cv3": 0.25665004080388876
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6633651027335598,
+      "adaptive": 0.6633651027335598,
+      "cv3": 0.6714131906571095
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6595238592176325,
+      "adaptive": 0.6595238592176325,
+      "cv3": 0.656250237287143
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6653837594395867,
+      "adaptive": 0.6653837594395867,
+      "cv3": 0.663621473094849
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.66069478954901,
+      "adaptive": 0.66069478954901,
+      "cv3": 0.6541041363253617
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10182523596420132,
+      "adaptive": 0.10182523596420132,
+      "cv3": 0.10182523596420132
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05304478241024986,
+      "adaptive": 0.05304478241024986,
+      "cv3": 0.05310802273476489
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11772137255808378,
+      "adaptive": 0.11893985441924684,
+      "cv3": 0.11957695799937705
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.073078451743919,
+      "adaptive": 0.08902113183971722,
+      "cv3": 0.09609669561122423
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.31528109992515707,
+      "adaptive": 0.31528109992515707,
+      "cv3": 0.3156117023314628
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.25000008635631665,
+      "adaptive": 0.25000008635631665,
+      "cv3": 0.25037695190555886
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.34153726376334936,
+      "adaptive": 0.3393976856435266,
+      "cv3": 0.33726814615879597
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.27351200369227724,
+      "adaptive": 0.27362907148913973,
+      "cv3": 0.2789323632745946
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6321259558847773,
+      "adaptive": 0.6321259558847773,
+      "cv3": 0.6290212661518537
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6331552755711232,
+      "adaptive": 0.6331552755711232,
+      "cv3": 0.6311690216999408
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6553514097338708,
+      "adaptive": 0.6553514097338708,
+      "cv3": 0.6481023934333636
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6634271679785909,
+      "adaptive": 0.6634271679785909,
+      "cv3": 0.6596459912476282
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12338482980566504,
+      "adaptive": 0.12338482980566504,
+      "cv3": 0.12177146602228164
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05753871317212578,
+      "adaptive": 0.05753871317212578,
+      "cv3": 0.05748748359382791
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.16059726217138043,
+      "adaptive": 0.1558929252144805,
+      "cv3": 0.16856668177012712
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.09553487702833566,
+      "adaptive": 0.09985367176253393,
+      "cv3": 0.12494981790279114
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.26273894969535383,
+      "adaptive": 0.26273894969535383,
+      "cv3": 0.26273894969535383
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21094308410483037,
+      "adaptive": 0.21094308410483037,
+      "cv3": 0.21148987228996693
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.26656607512853453,
+      "adaptive": 0.26656607512853453,
+      "cv3": 0.26656607512853453
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22916805830020048,
+      "adaptive": 0.22792312924975625,
+      "cv3": 0.2285161001407936
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6497769362746848,
+      "adaptive": 0.6497769362746848,
+      "cv3": 0.6480506808559724
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6468314966052646,
+      "adaptive": 0.6468314966052646,
+      "cv3": 0.648050674001264
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.648910317748802,
+      "adaptive": 0.648910317748802,
+      "cv3": 0.6488802872412944
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6450184035567721,
+      "adaptive": 0.6450184035567721,
+      "cv3": 0.6488804727764903
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10046900846970297,
+      "adaptive": 0.10046900846970297,
+      "cv3": 0.10046900846970297
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.04913516244087541,
+      "adaptive": 0.04913516244087541,
+      "cv3": 0.04913516244087541
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10328713738056741,
+      "adaptive": 0.10376024424265758,
+      "cv3": 0.10328713738056741
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06384379116740083,
+      "adaptive": 0.06232929377030189,
+      "cv3": 0.06362421670108
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2712875976861681,
+      "adaptive": 0.2712875976861681,
+      "cv3": 0.27240653661815334
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2348126422016692,
+      "adaptive": 0.2348126422016692,
+      "cv3": 0.23285282284484854
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3217322696151409,
+      "adaptive": 0.32132384916709256,
+      "cv3": 0.34548269065402826
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.3150086979810596,
+      "adaptive": 0.3052166347747871,
+      "cv3": 0.31021186611177815
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6952745538646725,
+      "adaptive": 0.6952745538646725,
+      "cv3": 0.7047089521739383
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6966865118217822,
+      "adaptive": 0.6966865118217822,
+      "cv3": 0.7023385422209014
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.7234570576556042,
+      "adaptive": 0.7234570576556042,
+      "cv3": 0.7561692874935113
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.7341108636968761,
+      "adaptive": 0.7341108636968761,
+      "cv3": 0.7561691323125794
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11691552246280952,
+      "adaptive": 0.11691552246280952,
+      "cv3": 0.11691552246280952
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06570874308741634,
+      "adaptive": 0.06570874308741634,
+      "cv3": 0.06570937103533236
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1727574331865134,
+      "adaptive": 0.17167840250663485,
+      "cv3": 0.17423138762762322
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.14270752038985976,
+      "adaptive": 0.1407443712156738,
+      "cv3": 0.14584263741570888
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2919669097176425,
+      "adaptive": 0.2919669097176425,
+      "cv3": 0.29156951010237375
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22069189667710365,
+      "adaptive": 0.22069189667710365,
+      "cv3": 0.22069189667710365
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3220239222684068,
+      "adaptive": 0.32153328906933876,
+      "cv3": 0.3111107303453068
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2555406916400438,
+      "adaptive": 0.24685348030437,
+      "cv3": 0.24774232950222205
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.683390325743726,
+      "adaptive": 0.683390325743726,
+      "cv3": 0.6993110574908576
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6848044305393122,
+      "adaptive": 0.6848044305393122,
+      "cv3": 0.6988320280452527
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6920936568685058,
+      "adaptive": 0.6920936568685058,
+      "cv3": 0.734554052015891
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6988718613868892,
+      "adaptive": 0.6988718613868892,
+      "cv3": 0.734554052015891
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10678650719583078,
+      "adaptive": 0.10678650719583078,
+      "cv3": 0.10678650719583078
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.045989269727199786,
+      "adaptive": 0.045989269727199786,
+      "cv3": 0.045989269727199786
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13077636641945414,
+      "adaptive": 0.1288912568901424,
+      "cv3": 0.13077636641945414
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.07669729220878191,
+      "adaptive": 0.06623558275266875,
+      "cv3": 0.07669729220878191
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2730606194648081,
+      "adaptive": 0.2730606194648081,
+      "cv3": 0.2730606194648081
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21893857856955273,
+      "adaptive": 0.21893857856955273,
+      "cv3": 0.21893857856955273
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2998964401705022,
+      "adaptive": 0.2998964401705022,
+      "cv3": 0.2998986032593265
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2596509301768877,
+      "adaptive": 0.25893719615993055,
+      "cv3": 0.25761897395516276
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.7229129402650654,
+      "adaptive": 0.7229129402650654,
+      "cv3": 0.7111271509666088
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.7233953292394322,
+      "adaptive": 0.7233953292394322,
+      "cv3": 0.7195149246421849
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.7401576492496773,
+      "adaptive": 0.7401576492496773,
+      "cv3": 0.7261921650973913
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.7458231633064124,
+      "adaptive": 0.7458231633064124,
+      "cv3": 0.7240698483148815
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10678066218283111,
+      "adaptive": 0.10678066218283111,
+      "cv3": 0.10678066218283111
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05417366608988372,
+      "adaptive": 0.05417366608988372,
+      "cv3": 0.05417366608988372
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.14142498655802058,
+      "adaptive": 0.1428185751801943,
+      "cv3": 0.14598927701050368
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.10808846167539046,
+      "adaptive": 0.11185471676195563,
+      "cv3": 0.11640095092227792
+    },
+    {
+      "bank": 8,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3047325938122979,
+      "adaptive": 0.3047325938122979,
+      "cv3": 0.3151761399274485
+    },
+    {
+      "bank": 8,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.26313367750430516,
+      "adaptive": 0.26313367750430516,
+      "cv3": 0.29029194495708965
+    },
+    {
+      "bank": 8,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.33100719783504984,
+      "adaptive": 0.34609325584217654,
+      "cv3": 0.34609325584217654
+    },
+    {
+      "bank": 8,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.33564963710753026,
+      "adaptive": 0.34609325584217654,
+      "cv3": 0.34609325584217654
+    },
+    {
+      "bank": 8,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6536531732500988,
+      "adaptive": 0.6536531732500988,
+      "cv3": 0.674542209980473
+    },
+    {
+      "bank": 8,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6436505913335396,
+      "adaptive": 0.6436505913335396,
+      "cv3": 0.625994300207621
+    },
+    {
+      "bank": 8,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6566630116315053,
+      "adaptive": 0.6566630116315053,
+      "cv3": 0.674542209980473
+    },
+    {
+      "bank": 8,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6461609589432045,
+      "adaptive": 0.6461609589432045,
+      "cv3": 0.6350949924678644
+    },
+    {
+      "bank": 8,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11506107612709339,
+      "adaptive": 0.11506107612709339,
+      "cv3": 0.1156257023886008
+    },
+    {
+      "bank": 8,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0694017739649776,
+      "adaptive": 0.0694017739649776,
+      "cv3": 0.0694017739649776
+    },
+    {
+      "bank": 8,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13904015944111994,
+      "adaptive": 0.1591762357652671,
+      "cv3": 0.15945780289694428
+    },
+    {
+      "bank": 8,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.13940440548570696,
+      "adaptive": 0.1536743773415406,
+      "cv3": 0.1500027042891029
+    },
+    {
+      "bank": 9,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2684492508999202,
+      "adaptive": 0.2684492508999202,
+      "cv3": 0.2684492508999202
+    },
+    {
+      "bank": 9,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2146717858890075,
+      "adaptive": 0.2146717858890075,
+      "cv3": 0.21435865519267633
+    },
+    {
+      "bank": 9,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.26870411600322386,
+      "adaptive": 0.26870411600322386,
+      "cv3": 0.2683239548110765
+    },
+    {
+      "bank": 9,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2696559180017577,
+      "adaptive": 0.25619248971605035,
+      "cv3": 0.24887407861193706
+    },
+    {
+      "bank": 9,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.645073440015455,
+      "adaptive": 0.645073440015455,
+      "cv3": 0.6627338179850433
+    },
+    {
+      "bank": 9,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6451697167831014,
+      "adaptive": 0.6451697167831014,
+      "cv3": 0.6586842569728631
+    },
+    {
+      "bank": 9,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6526631405522666,
+      "adaptive": 0.6526631405522666,
+      "cv3": 0.6919738027011256
+    },
+    {
+      "bank": 9,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6612583574732325,
+      "adaptive": 0.6612583574732325,
+      "cv3": 0.695896411269098
+    },
+    {
+      "bank": 9,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10292278048254325,
+      "adaptive": 0.10292278048254325,
+      "cv3": 0.10292278048254325
+    },
+    {
+      "bank": 9,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.04883764943686105,
+      "adaptive": 0.04883764943686105,
+      "cv3": 0.04883764943686105
+    },
+    {
+      "bank": 9,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.0999966589146557,
+      "adaptive": 0.0999966589146557,
+      "cv3": 0.0999966589146557
+    },
+    {
+      "bank": 9,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.12192009217885277,
+      "adaptive": 0.10673134152088709,
+      "cv3": 0.10579731186439928
+    },
+    {
+      "bank": 10,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.26572556685679083,
+      "adaptive": 0.26572556685679083,
+      "cv3": 0.26572556685679083
+    },
+    {
+      "bank": 10,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21137678190568138,
+      "adaptive": 0.21137678190568138,
+      "cv3": 0.2238698450761481
+    },
+    {
+      "bank": 10,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2827681045981576,
+      "adaptive": 0.2841309328673873,
+      "cv3": 0.2836210181298005
+    },
+    {
+      "bank": 10,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24120808204579866,
+      "adaptive": 0.2522512527483397,
+      "cv3": 0.28362111959450687
+    },
+    {
+      "bank": 10,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6427284257741759,
+      "adaptive": 0.6427284257741759,
+      "cv3": 0.6486797121694746
+    },
+    {
+      "bank": 10,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6398358738491537,
+      "adaptive": 0.6398358738491537,
+      "cv3": 0.6486797333218426
+    },
+    {
+      "bank": 10,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6496776699105233,
+      "adaptive": 0.6496776699105233,
+      "cv3": 0.6555437723035332
+    },
+    {
+      "bank": 10,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6479675590362027,
+      "adaptive": 0.6479675590362027,
+      "cv3": 0.6555436538560153
+    },
+    {
+      "bank": 10,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.09829674576942002,
+      "adaptive": 0.09829674576942002,
+      "cv3": 0.09810942748762776
+    },
+    {
+      "bank": 10,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.047419933896399764,
+      "adaptive": 0.047419933896399764,
+      "cv3": 0.04746405241855531
+    },
+    {
+      "bank": 10,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10974817696247272,
+      "adaptive": 0.10831053646900202,
+      "cv3": 0.1080000566811743
+    },
+    {
+      "bank": 10,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.066273596547118,
+      "adaptive": 0.08025717833224541,
+      "cv3": 0.09549177747885451
+    },
+    {
+      "bank": 11,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2906014932417654,
+      "adaptive": 0.2906014932417654,
+      "cv3": 0.2910340447004377
+    },
+    {
+      "bank": 11,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.25311548029965425,
+      "adaptive": 0.25311548029965425,
+      "cv3": 0.2535698717528261
+    },
+    {
+      "bank": 11,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.30556739431957997,
+      "adaptive": 0.30560062484332573,
+      "cv3": 0.30551889679792327
+    },
+    {
+      "bank": 11,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.32636739353898037,
+      "adaptive": 0.32145319967908537,
+      "cv3": 0.2978581761315402
+    },
+    {
+      "bank": 11,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6366937336070921,
+      "adaptive": 0.6366937336070921,
+      "cv3": 0.640219579904308
+    },
+    {
+      "bank": 11,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6309433549743249,
+      "adaptive": 0.6309433549743249,
+      "cv3": 0.640219768998403
+    },
+    {
+      "bank": 11,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6393193616208162,
+      "adaptive": 0.6393193616208162,
+      "cv3": 0.6422506948191774
+    },
+    {
+      "bank": 11,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6339068974010409,
+      "adaptive": 0.6339068974010409,
+      "cv3": 0.6249299123574217
+    },
+    {
+      "bank": 11,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1105174106305509,
+      "adaptive": 0.1105174106305509,
+      "cv3": 0.1106007674704009
+    },
+    {
+      "bank": 11,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06313090763269519,
+      "adaptive": 0.06313090763269519,
+      "cv3": 0.06313090763269519
+    },
+    {
+      "bank": 11,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13103676746958717,
+      "adaptive": 0.13107555511831553,
+      "cv3": 0.1309705628980396
+    },
+    {
+      "bank": 11,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.11617254372862283,
+      "adaptive": 0.1094815302344048,
+      "cv3": 0.11105372641047567
+    },
+    {
+      "bank": 12,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.274868831485639,
+      "adaptive": 0.274868831485639,
+      "cv3": 0.27492347710480736
+    },
+    {
+      "bank": 12,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.23811363753152187,
+      "adaptive": 0.23811363753152187,
+      "cv3": 0.23811363753152187
+    },
+    {
+      "bank": 12,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.28717691405608264,
+      "adaptive": 0.2931317827914556,
+      "cv3": 0.2994974580155273
+    },
+    {
+      "bank": 12,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2766614305356802,
+      "adaptive": 0.2788966129428048,
+      "cv3": 0.2823448243624956
+    },
+    {
+      "bank": 12,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6611443780378969,
+      "adaptive": 0.6611443780378969,
+      "cv3": 0.6739793957152589
+    },
+    {
+      "bank": 12,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6565786810679953,
+      "adaptive": 0.6565786810679953,
+      "cv3": 0.6739793957152589
+    },
+    {
+      "bank": 12,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6691413894241313,
+      "adaptive": 0.6691413894241313,
+      "cv3": 0.6739793957152589
+    },
+    {
+      "bank": 12,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6633336733530106,
+      "adaptive": 0.6633336733530106,
+      "cv3": 0.6739793957152589
+    },
+    {
+      "bank": 12,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12753699146937614,
+      "adaptive": 0.12753699146937614,
+      "cv3": 0.1275016376758884
+    },
+    {
+      "bank": 12,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06616961681214667,
+      "adaptive": 0.06616961681214667,
+      "cv3": 0.06616961681214667
+    },
+    {
+      "bank": 12,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.14276050912548394,
+      "adaptive": 0.15039140967527787,
+      "cv3": 0.14891361713278095
+    },
+    {
+      "bank": 12,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.10078727475988283,
+      "adaptive": 0.11482826206907214,
+      "cv3": 0.10600448888614566
+    },
+    {
+      "bank": 13,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2692848311136677,
+      "adaptive": 0.2692848311136677,
+      "cv3": 0.2692570741446798
+    },
+    {
+      "bank": 13,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2096503373017019,
+      "adaptive": 0.2096503373017019,
+      "cv3": 0.20968524825936588
+    },
+    {
+      "bank": 13,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.28049208195311837,
+      "adaptive": 0.2798677397319079,
+      "cv3": 0.29498153319513815
+    },
+    {
+      "bank": 13,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.23441961499319738,
+      "adaptive": 0.2425094165526158,
+      "cv3": 0.27766522520759784
+    },
+    {
+      "bank": 13,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6885561943022662,
+      "adaptive": 0.6885561943022662,
+      "cv3": 0.6906577355770822
+    },
+    {
+      "bank": 13,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6877220965138571,
+      "adaptive": 0.6877220965138571,
+      "cv3": 0.6906577394891877
+    },
+    {
+      "bank": 13,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6869052086585432,
+      "adaptive": 0.6869052086585432,
+      "cv3": 0.6936060443768335
+    },
+    {
+      "bank": 13,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6864018668950311,
+      "adaptive": 0.6864018668950311,
+      "cv3": 0.6936060308993817
+    },
+    {
+      "bank": 13,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1129212140770338,
+      "adaptive": 0.1129212140770338,
+      "cv3": 0.11312224162912675
+    },
+    {
+      "bank": 13,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05414012624391061,
+      "adaptive": 0.05414012624391061,
+      "cv3": 0.05414012624391061
+    },
+    {
+      "bank": 13,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12841632842515566,
+      "adaptive": 0.1285708853834704,
+      "cv3": 0.1511779831309042
+    },
+    {
+      "bank": 13,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.08722715671253756,
+      "adaptive": 0.09692397064003397,
+      "cv3": 0.14936980118218235
+    },
+    {
+      "bank": 14,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.28439612155058874,
+      "adaptive": 0.28439612155058874,
+      "cv3": 0.280686885188079
+    },
+    {
+      "bank": 14,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2596650107452229,
+      "adaptive": 0.2596650107452229,
+      "cv3": 0.25520840880885853
+    },
+    {
+      "bank": 14,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2918531964504434,
+      "adaptive": 0.2886099944598085,
+      "cv3": 0.30182495106046914
+    },
+    {
+      "bank": 14,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2895927616206637,
+      "adaptive": 0.28021215243573216,
+      "cv3": 0.3004441189206627
+    },
+    {
+      "bank": 14,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6214431576709238,
+      "adaptive": 0.6214431576709238,
+      "cv3": 0.639963457142506
+    },
+    {
+      "bank": 14,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6173190209542541,
+      "adaptive": 0.6173190209542541,
+      "cv3": 0.639963457142506
+    },
+    {
+      "bank": 14,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6214789949370427,
+      "adaptive": 0.6214789949370427,
+      "cv3": 0.639963457142506
+    },
+    {
+      "bank": 14,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6168839025975522,
+      "adaptive": 0.6168839025975522,
+      "cv3": 0.639963457142506
+    },
+    {
+      "bank": 14,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11537877367555119,
+      "adaptive": 0.11537877367555119,
+      "cv3": 0.1152169005400358
+    },
+    {
+      "bank": 14,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06971999336971307,
+      "adaptive": 0.06971999336971307,
+      "cv3": 0.06965513125292669
+    },
+    {
+      "bank": 14,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1253094870342714,
+      "adaptive": 0.12086771561282994,
+      "cv3": 0.1358312082905845
+    },
+    {
+      "bank": 14,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.09570355414999099,
+      "adaptive": 0.11096681351715494,
+      "cv3": 0.1358312082905845
+    },
+    {
+      "bank": 15,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.29263169535640887,
+      "adaptive": 0.29263169535640887,
+      "cv3": 0.2927634356367696
+    },
+    {
+      "bank": 15,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22911788207390033,
+      "adaptive": 0.22911788207390033,
+      "cv3": 0.22916202187315887
+    },
+    {
+      "bank": 15,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3277914710104005,
+      "adaptive": 0.32748876198299626,
+      "cv3": 0.32898225612339027
+    },
+    {
+      "bank": 15,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2623425637390563,
+      "adaptive": 0.2621973617007992,
+      "cv3": 0.263716550711378
+    },
+    {
+      "bank": 15,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6645023629264208,
+      "adaptive": 0.6645023629264208,
+      "cv3": 0.6713117402661926
+    },
+    {
+      "bank": 15,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6605270849780056,
+      "adaptive": 0.6605270849780056,
+      "cv3": 0.6713117402661926
+    },
+    {
+      "bank": 15,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6788584048431434,
+      "adaptive": 0.6788584048431434,
+      "cv3": 0.6713117402661926
+    },
+    {
+      "bank": 15,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6793726692920897,
+      "adaptive": 0.6793726692920897,
+      "cv3": 0.6713117402661926
+    },
+    {
+      "bank": 15,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1241353891946066,
+      "adaptive": 0.1241353891946066,
+      "cv3": 0.12437981309331024
+    },
+    {
+      "bank": 15,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.057629897513023734,
+      "adaptive": 0.057629897513023734,
+      "cv3": 0.057629897513023734
+    },
+    {
+      "bank": 15,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.1696159453329197,
+      "adaptive": 0.16877241853645802,
+      "cv3": 0.16727164585254417
+    },
+    {
+      "bank": 15,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.10307276478354599,
+      "adaptive": 0.10232385769191356,
+      "cv3": 0.10209089414783173
+    },
+    {
+      "bank": 16,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2533331457970033,
+      "adaptive": 0.2533331457970033,
+      "cv3": 0.2533331457970033
+    },
+    {
+      "bank": 16,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22187350631665015,
+      "adaptive": 0.22187350631665015,
+      "cv3": 0.2207495350689504
+    },
+    {
+      "bank": 16,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3121824853240718,
+      "adaptive": 0.3121824853240718,
+      "cv3": 0.3066463486107037
+    },
+    {
+      "bank": 16,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.3231518813043734,
+      "adaptive": 0.3075679362245172,
+      "cv3": 0.2920731236807817
+    },
+    {
+      "bank": 16,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6839543603950948,
+      "adaptive": 0.6839543603950948,
+      "cv3": 0.68526825134134
+    },
+    {
+      "bank": 16,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6811679131886184,
+      "adaptive": 0.6811679131886184,
+      "cv3": 0.6786155046277826
+    },
+    {
+      "bank": 16,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6954143053676005,
+      "adaptive": 0.6954143053676005,
+      "cv3": 0.6974233228487061
+    },
+    {
+      "bank": 16,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6994458728799875,
+      "adaptive": 0.6994458728799875,
+      "cv3": 0.6953137047823316
+    },
+    {
+      "bank": 16,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.08322642943991876,
+      "adaptive": 0.08322642943991876,
+      "cv3": 0.08322642943991876
+    },
+    {
+      "bank": 16,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.04955695587764378,
+      "adaptive": 0.04955695587764378,
+      "cv3": 0.04955695587764378
+    },
+    {
+      "bank": 16,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13233438514768367,
+      "adaptive": 0.13233438514768367,
+      "cv3": 0.13233438514768367
+    },
+    {
+      "bank": 16,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.1405276097574852,
+      "adaptive": 0.125057628655539,
+      "cv3": 0.11779264864634792
+    },
+    {
+      "bank": 17,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.31067027645059986,
+      "adaptive": 0.31067027645059986,
+      "cv3": 0.31067027645059986
+    },
+    {
+      "bank": 17,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24075707007964928,
+      "adaptive": 0.24075707007964928,
+      "cv3": 0.24075707007964928
+    },
+    {
+      "bank": 17,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.32491188310028973,
+      "adaptive": 0.32491188310028973,
+      "cv3": 0.32491188310028973
+    },
+    {
+      "bank": 17,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2554215461382867,
+      "adaptive": 0.2674428095996086,
+      "cv3": 0.2708796593715309
+    },
+    {
+      "bank": 17,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6132552280885408,
+      "adaptive": 0.6132552280885408,
+      "cv3": 0.6147358688685466
+    },
+    {
+      "bank": 17,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6123106570941153,
+      "adaptive": 0.6123106570941153,
+      "cv3": 0.6214914954952091
+    },
+    {
+      "bank": 17,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6176318081851078,
+      "adaptive": 0.6176318081851078,
+      "cv3": 0.6337532509044645
+    },
+    {
+      "bank": 17,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6174240762980132,
+      "adaptive": 0.6174240762980132,
+      "cv3": 0.6345146707438221
+    },
+    {
+      "bank": 17,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11448353910001452,
+      "adaptive": 0.11448353910001452,
+      "cv3": 0.11448353910001452
+    },
+    {
+      "bank": 17,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05208880124725151,
+      "adaptive": 0.05208880124725151,
+      "cv3": 0.05208880124725151
+    },
+    {
+      "bank": 17,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12250587628290935,
+      "adaptive": 0.12502998168152718,
+      "cv3": 0.12419661654861659
+    },
+    {
+      "bank": 17,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0592815668001206,
+      "adaptive": 0.0702505446568879,
+      "cv3": 0.08333125544943583
+    },
+    {
+      "bank": 18,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.27314112752768077,
+      "adaptive": 0.27314112752768077,
+      "cv3": 0.27476533027923156
+    },
+    {
+      "bank": 18,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2147479148138482,
+      "adaptive": 0.2147479148138482,
+      "cv3": 0.21736243910102737
+    },
+    {
+      "bank": 18,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.27973650165842306,
+      "adaptive": 0.2901258642727498,
+      "cv3": 0.3170491987146117
+    },
+    {
+      "bank": 18,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.23356004562024854,
+      "adaptive": 0.24511184674166914,
+      "cv3": 0.31704923471966884
+    },
+    {
+      "bank": 18,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6800138914814902,
+      "adaptive": 0.6800138914814902,
+      "cv3": 0.6887120158107504
+    },
+    {
+      "bank": 18,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6781924541356056,
+      "adaptive": 0.6781924541356056,
+      "cv3": 0.6723593947196681
+    },
+    {
+      "bank": 18,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6811657916065043,
+      "adaptive": 0.6811657916065043,
+      "cv3": 0.6839980848325729
+    },
+    {
+      "bank": 18,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6770537269624095,
+      "adaptive": 0.6770537269624095,
+      "cv3": 0.6612090707392981
+    },
+    {
+      "bank": 18,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10894678688285395,
+      "adaptive": 0.10894678688285395,
+      "cv3": 0.10894678688285395
+    },
+    {
+      "bank": 18,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05375232817181651,
+      "adaptive": 0.05375232817181651,
+      "cv3": 0.05375232817181651
+    },
+    {
+      "bank": 18,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11276335673250053,
+      "adaptive": 0.1177459990353459,
+      "cv3": 0.1471646191738009
+    },
+    {
+      "bank": 18,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.07104347107811097,
+      "adaptive": 0.084771075692057,
+      "cv3": 0.12451768786340138
+    },
+    {
+      "bank": 19,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.24805353365699184,
+      "adaptive": 0.24805353365699184,
+      "cv3": 0.24851754611931692
+    },
+    {
+      "bank": 19,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.20839342999361815,
+      "adaptive": 0.20839342999361815,
+      "cv3": 0.20939989470208054
+    },
+    {
+      "bank": 19,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2654835856276814,
+      "adaptive": 0.2657673540750996,
+      "cv3": 0.2682438199974513
+    },
+    {
+      "bank": 19,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24832785255490647,
+      "adaptive": 0.2464761616555906,
+      "cv3": 0.24850586562988675
+    },
+    {
+      "bank": 19,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6708869624194822,
+      "adaptive": 0.6708869624194822,
+      "cv3": 0.6811269548410467
+    },
+    {
+      "bank": 19,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6656809104709184,
+      "adaptive": 0.6656809104709184,
+      "cv3": 0.6610276475906883
+    },
+    {
+      "bank": 19,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6748243346613156,
+      "adaptive": 0.6748243346613156,
+      "cv3": 0.6786458782481142
+    },
+    {
+      "bank": 19,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6710468992630997,
+      "adaptive": 0.6710468992630997,
+      "cv3": 0.6673576528439937
+    },
+    {
+      "bank": 19,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.09808116468643689,
+      "adaptive": 0.09808116468643689,
+      "cv3": 0.0983650217419672
+    },
+    {
+      "bank": 19,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0464472078968131,
+      "adaptive": 0.0464472078968131,
+      "cv3": 0.04679181376813367
+    },
+    {
+      "bank": 19,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12397552225449428,
+      "adaptive": 0.12521428758960712,
+      "cv3": 0.12719435012660618
+    },
+    {
+      "bank": 19,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0844483135584116,
+      "adaptive": 0.0901604186915992,
+      "cv3": 0.09495083743182063
+    },
+    {
+      "bank": 20,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.298085206419071,
+      "adaptive": 0.298085206419071,
+      "cv3": 0.3095648892908196
+    },
+    {
+      "bank": 20,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2571615144715775,
+      "adaptive": 0.2571615144715775,
+      "cv3": 0.2767637307771973
+    },
+    {
+      "bank": 20,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.33806319398047835,
+      "adaptive": 0.3274651856153952,
+      "cv3": 0.31524408526108055
+    },
+    {
+      "bank": 20,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.31609990614412015,
+      "adaptive": 0.31857915315128205,
+      "cv3": 0.31524410864286145
+    },
+    {
+      "bank": 20,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6465401985785761,
+      "adaptive": 0.6465401985785761,
+      "cv3": 0.6541930595864393
+    },
+    {
+      "bank": 20,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6445436465750645,
+      "adaptive": 0.6445436465750645,
+      "cv3": 0.6541930595864393
+    },
+    {
+      "bank": 20,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6351991993069124,
+      "adaptive": 0.6351991993069124,
+      "cv3": 0.6541930595864393
+    },
+    {
+      "bank": 20,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.632346070805873,
+      "adaptive": 0.632346070805873,
+      "cv3": 0.6541930595864393
+    },
+    {
+      "bank": 20,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12023806714096058,
+      "adaptive": 0.12023806714096058,
+      "cv3": 0.11811314214341893
+    },
+    {
+      "bank": 20,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0758753788393727,
+      "adaptive": 0.0758753788393727,
+      "cv3": 0.07424326207183551
+    },
+    {
+      "bank": 20,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.17474787301118216,
+      "adaptive": 0.16267488955743387,
+      "cv3": 0.14491707438525886
+    },
+    {
+      "bank": 20,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.1451806446090662,
+      "adaptive": 0.1510548541883952,
+      "cv3": 0.1449173383130295
+    },
+    {
+      "bank": 21,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.30382216806037415,
+      "adaptive": 0.30382216806037415,
+      "cv3": 0.30382216806037415
+    },
+    {
+      "bank": 21,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24090801891780947,
+      "adaptive": 0.24090801891780947,
+      "cv3": 0.24090801891780947
+    },
+    {
+      "bank": 21,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.34143024725434523,
+      "adaptive": 0.3581204021131229,
+      "cv3": 0.34143024725434523
+    },
+    {
+      "bank": 21,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.28819506074483814,
+      "adaptive": 0.3353149327364632,
+      "cv3": 0.31753422283991417
+    },
+    {
+      "bank": 21,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6779533198605256,
+      "adaptive": 0.6779533198605256,
+      "cv3": 0.6783758147507214
+    },
+    {
+      "bank": 21,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6748130179895035,
+      "adaptive": 0.6748130179895035,
+      "cv3": 0.6706861039317156
+    },
+    {
+      "bank": 21,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6778462664881699,
+      "adaptive": 0.6778462664881699,
+      "cv3": 0.6886661260007362
+    },
+    {
+      "bank": 21,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6739070956761914,
+      "adaptive": 0.6739070956761914,
+      "cv3": 0.6747224117418716
+    },
+    {
+      "bank": 21,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10684136796553458,
+      "adaptive": 0.10684136796553458,
+      "cv3": 0.10684136796553458
+    },
+    {
+      "bank": 21,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05613311419919315,
+      "adaptive": 0.05613311419919315,
+      "cv3": 0.05613311419919315
+    },
+    {
+      "bank": 21,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.14292625299030237,
+      "adaptive": 0.17495448983046996,
+      "cv3": 0.14300467495298022
+    },
+    {
+      "bank": 21,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.1053666872115968,
+      "adaptive": 0.15086667371538057,
+      "cv3": 0.1176664381695336
+    },
+    {
+      "bank": 22,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2788777185805037,
+      "adaptive": 0.2788777185805037,
+      "cv3": 0.27827430730907027
+    },
+    {
+      "bank": 22,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2406955484000509,
+      "adaptive": 0.2406955484000509,
+      "cv3": 0.24614193955392993
+    },
+    {
+      "bank": 22,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3142122952025078,
+      "adaptive": 0.30856997926669383,
+      "cv3": 0.3128517553134321
+    },
+    {
+      "bank": 22,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.30487477653119177,
+      "adaptive": 0.30856997926669383,
+      "cv3": 0.312851800722439
+    },
+    {
+      "bank": 22,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6518262263182868,
+      "adaptive": 0.6518262263182868,
+      "cv3": 0.6501878970418951
+    },
+    {
+      "bank": 22,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6489957865351537,
+      "adaptive": 0.6489957865351537,
+      "cv3": 0.6484253835320903
+    },
+    {
+      "bank": 22,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6517566111276811,
+      "adaptive": 0.6517566111276811,
+      "cv3": 0.6550636519452893
+    },
+    {
+      "bank": 22,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6462017993003657,
+      "adaptive": 0.6462017993003657,
+      "cv3": 0.6524346154076343
+    },
+    {
+      "bank": 22,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.09261665057827345,
+      "adaptive": 0.09261665057827345,
+      "cv3": 0.09261665057827345
+    },
+    {
+      "bank": 22,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.04997582124815215,
+      "adaptive": 0.04997582124815215,
+      "cv3": 0.04997582124815215
+    },
+    {
+      "bank": 22,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12774813054867226,
+      "adaptive": 0.14082020817178081,
+      "cv3": 0.14033223766308933
+    },
+    {
+      "bank": 22,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.10904425629625733,
+      "adaptive": 0.14082020817178081,
+      "cv3": 0.13887968474689188
+    },
+    {
+      "bank": 23,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2928424981903557,
+      "adaptive": 0.2928424981903557,
+      "cv3": 0.29732606903220465
+    },
+    {
+      "bank": 23,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22171937001208547,
+      "adaptive": 0.22171937001208547,
+      "cv3": 0.22392943250862468
+    },
+    {
+      "bank": 23,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.29977011445311347,
+      "adaptive": 0.3083556014934714,
+      "cv3": 0.31993993108555424
+    },
+    {
+      "bank": 23,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2401887828942313,
+      "adaptive": 0.2570928945417054,
+      "cv3": 0.2735600196792167
+    },
+    {
+      "bank": 23,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6622899278878775,
+      "adaptive": 0.6622899278878775,
+      "cv3": 0.6616360764147774
+    },
+    {
+      "bank": 23,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6595843014663817,
+      "adaptive": 0.6595843014663817,
+      "cv3": 0.661636075164614
+    },
+    {
+      "bank": 23,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.669053296934832,
+      "adaptive": 0.669053296934832,
+      "cv3": 0.6720125440618783
+    },
+    {
+      "bank": 23,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6685607832640487,
+      "adaptive": 0.6685607832640487,
+      "cv3": 0.6681566758074531
+    },
+    {
+      "bank": 23,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10802621785234008,
+      "adaptive": 0.10802621785234008,
+      "cv3": 0.10846035932619863
+    },
+    {
+      "bank": 23,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.04839609321252719,
+      "adaptive": 0.04839609321252719,
+      "cv3": 0.04839609321252719
+    },
+    {
+      "bank": 23,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12058489028136499,
+      "adaptive": 0.1251924514204049,
+      "cv3": 0.12763277685734079
+    },
+    {
+      "bank": 23,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.07348434077402051,
+      "adaptive": 0.0906709814556837,
+      "cv3": 0.08709092425199522
+    },
+    {
+      "bank": 24,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2478033976291558,
+      "adaptive": 0.2478033976291558,
+      "cv3": 0.2569219601096795
+    },
+    {
+      "bank": 24,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21584779404014043,
+      "adaptive": 0.21584779404014043,
+      "cv3": 0.2351166716657542
+    },
+    {
+      "bank": 24,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.24460694655643078,
+      "adaptive": 0.24460694655643078,
+      "cv3": 0.2783738370997023
+    },
+    {
+      "bank": 24,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.30067317657632414,
+      "adaptive": 0.30067317657632414,
+      "cv3": 0.2659748008054772
+    },
+    {
+      "bank": 24,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6680443511317844,
+      "adaptive": 0.6680443511317844,
+      "cv3": 0.6682642749191354
+    },
+    {
+      "bank": 24,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.660743342186761,
+      "adaptive": 0.660743342186761,
+      "cv3": 0.6431642697112143
+    },
+    {
+      "bank": 24,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6701753848878953,
+      "adaptive": 0.6701753848878953,
+      "cv3": 0.6711905759714158
+    },
+    {
+      "bank": 24,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6624207568469209,
+      "adaptive": 0.6624207568469209,
+      "cv3": 0.6415485549332236
+    },
+    {
+      "bank": 24,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.09716222573750882,
+      "adaptive": 0.09716222573750882,
+      "cv3": 0.09740725896056497
+    },
+    {
+      "bank": 24,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.04623347904845257,
+      "adaptive": 0.04623347904845257,
+      "cv3": 0.046329014898808404
+    },
+    {
+      "bank": 24,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10761290470727256,
+      "adaptive": 0.1054549894932088,
+      "cv3": 0.10436009424052814
+    },
+    {
+      "bank": 24,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.07484087715909638,
+      "adaptive": 0.06992411996834652,
+      "cv3": 0.06615596318378407
+    },
+    {
+      "bank": 25,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.26874263946139454,
+      "adaptive": 0.26874263946139454,
+      "cv3": 0.27301264610887893
+    },
+    {
+      "bank": 25,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22089182603805013,
+      "adaptive": 0.22089182603805013,
+      "cv3": 0.2305285615157433
+    },
+    {
+      "bank": 25,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.31646248787703674,
+      "adaptive": 0.3252629747104896,
+      "cv3": 0.3426116020145033
+    },
+    {
+      "bank": 25,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2717553036400039,
+      "adaptive": 0.28621600855312934,
+      "cv3": 0.32682324581184147
+    },
+    {
+      "bank": 25,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6650891306483631,
+      "adaptive": 0.6650891306483631,
+      "cv3": 0.6661350537795442
+    },
+    {
+      "bank": 25,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6631114512635566,
+      "adaptive": 0.6631114512635566,
+      "cv3": 0.6661350774657014
+    },
+    {
+      "bank": 25,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6716809363531682,
+      "adaptive": 0.6716809363531682,
+      "cv3": 0.6905909385919538
+    },
+    {
+      "bank": 25,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6701086987680837,
+      "adaptive": 0.6701086987680837,
+      "cv3": 0.6905909385919538
+    },
+    {
+      "bank": 25,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.111735600870207,
+      "adaptive": 0.111735600870207,
+      "cv3": 0.11175569556479231
+    },
+    {
+      "bank": 25,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05823453808291198,
+      "adaptive": 0.05823453808291198,
+      "cv3": 0.05994415737951364
+    },
+    {
+      "bank": 25,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.14934743371951964,
+      "adaptive": 0.16167024157444043,
+      "cv3": 0.17716576226581482
+    },
+    {
+      "bank": 25,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.1051440936551156,
+      "adaptive": 0.12543890910575917,
+      "cv3": 0.1694600117654707
+    },
+    {
+      "bank": 26,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.28482013129974926,
+      "adaptive": 0.28482013129974926,
+      "cv3": 0.2854898504167154
+    },
+    {
+      "bank": 26,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.22312860945201768,
+      "adaptive": 0.22312860945201768,
+      "cv3": 0.22448338837126264
+    },
+    {
+      "bank": 26,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.30113813971570463,
+      "adaptive": 0.30274625911536657,
+      "cv3": 0.33606722695628144
+    },
+    {
+      "bank": 26,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.23071124498009726,
+      "adaptive": 0.2336792623848563,
+      "cv3": 0.2677992726023752
+    },
+    {
+      "bank": 26,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.657606847468757,
+      "adaptive": 0.657606847468757,
+      "cv3": 0.6646682369272655
+    },
+    {
+      "bank": 26,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6568284536420773,
+      "adaptive": 0.6568284536420773,
+      "cv3": 0.6646698279408612
+    },
+    {
+      "bank": 26,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.674333082235985,
+      "adaptive": 0.674333082235985,
+      "cv3": 0.6760999222488691
+    },
+    {
+      "bank": 26,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.673063717097075,
+      "adaptive": 0.673063717097075,
+      "cv3": 0.6760999222488691
+    },
+    {
+      "bank": 26,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12060430711543363,
+      "adaptive": 0.12060430711543363,
+      "cv3": 0.12131854672499795
+    },
+    {
+      "bank": 26,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.05984596928897376,
+      "adaptive": 0.05984596928897376,
+      "cv3": 0.05984596928897376
+    },
+    {
+      "bank": 26,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.15192389287124025,
+      "adaptive": 0.15393404107605418,
+      "cv3": 0.16214871260342772
+    },
+    {
+      "bank": 26,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.08632256590164598,
+      "adaptive": 0.08858575875033962,
+      "cv3": 0.09426214132761435
+    },
+    {
+      "bank": 27,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.30334122966716004,
+      "adaptive": 0.30334122966716004,
+      "cv3": 0.2979155561661583
+    },
+    {
+      "bank": 27,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24480855613345495,
+      "adaptive": 0.24480855613345495,
+      "cv3": 0.24061379305061942
+    },
+    {
+      "bank": 27,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.327316315949191,
+      "adaptive": 0.3231797659152105,
+      "cv3": 0.3134622897262519
+    },
+    {
+      "bank": 27,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2741446553842065,
+      "adaptive": 0.2686309624538762,
+      "cv3": 0.2583349952963556
+    },
+    {
+      "bank": 27,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6241945411344129,
+      "adaptive": 0.6241945411344129,
+      "cv3": 0.635880494983508
+    },
+    {
+      "bank": 27,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6192109631224753,
+      "adaptive": 0.6192109631224753,
+      "cv3": 0.6358805307748463
+    },
+    {
+      "bank": 27,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.621464422635244,
+      "adaptive": 0.621464422635244,
+      "cv3": 0.6281308016093715
+    },
+    {
+      "bank": 27,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6144321494301604,
+      "adaptive": 0.6144321494301604,
+      "cv3": 0.6281309200202398
+    },
+    {
+      "bank": 27,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11430600772746521,
+      "adaptive": 0.11430600772746521,
+      "cv3": 0.11430600772746521
+    },
+    {
+      "bank": 27,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0603948738210778,
+      "adaptive": 0.0603948738210778,
+      "cv3": 0.06041138600284261
+    },
+    {
+      "bank": 27,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13065888254681912,
+      "adaptive": 0.12874140248268645,
+      "cv3": 0.12814006203745973
+    },
+    {
+      "bank": 27,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.08269586653725891,
+      "adaptive": 0.08188899508887934,
+      "cv3": 0.08076933367546771
+    },
+    {
+      "bank": 28,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.25659212673667386,
+      "adaptive": 0.25659212673667386,
+      "cv3": 0.2574460064639011
+    },
+    {
+      "bank": 28,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.20462191356702844,
+      "adaptive": 0.20462191356702844,
+      "cv3": 0.20462191356702844
+    },
+    {
+      "bank": 28,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2682650872662586,
+      "adaptive": 0.27189319761043274,
+      "cv3": 0.2976656066936653
+    },
+    {
+      "bank": 28,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2273661535141502,
+      "adaptive": 0.22911873617914508,
+      "cv3": 0.2571376964959049
+    },
+    {
+      "bank": 28,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6859114507753189,
+      "adaptive": 0.6859114507753189,
+      "cv3": 0.687696976645159
+    },
+    {
+      "bank": 28,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6832019297797838,
+      "adaptive": 0.6832019297797838,
+      "cv3": 0.6860062676812806
+    },
+    {
+      "bank": 28,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.696423849886268,
+      "adaptive": 0.696423849886268,
+      "cv3": 0.6921541428772882
+    },
+    {
+      "bank": 28,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6956250840476081,
+      "adaptive": 0.6956250840476081,
+      "cv3": 0.6921541428772882
+    },
+    {
+      "bank": 28,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10423343411498401,
+      "adaptive": 0.10423343411498401,
+      "cv3": 0.10423343411498401
+    },
+    {
+      "bank": 28,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.0426898308808131,
+      "adaptive": 0.0426898308808131,
+      "cv3": 0.0426898308808131
+    },
+    {
+      "bank": 28,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.11631977321107217,
+      "adaptive": 0.11981777262555984,
+      "cv3": 0.14376361974497937
+    },
+    {
+      "bank": 28,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.062303129811722646,
+      "adaptive": 0.06751225881502343,
+      "cv3": 0.10035333172408899
+    },
+    {
+      "bank": 29,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2879748888917465,
+      "adaptive": 0.2879748888917465,
+      "cv3": 0.2879748888917465
+    },
+    {
+      "bank": 29,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24272605696987143,
+      "adaptive": 0.24272605696987143,
+      "cv3": 0.24272605696987143
+    },
+    {
+      "bank": 29,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3035376504970158,
+      "adaptive": 0.3089784198724711,
+      "cv3": 0.30519206331159543
+    },
+    {
+      "bank": 29,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.2699249214976364,
+      "adaptive": 0.280668740545806,
+      "cv3": 0.27223261360150897
+    },
+    {
+      "bank": 29,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6711845924995574,
+      "adaptive": 0.6711845924995574,
+      "cv3": 0.6821275679451326
+    },
+    {
+      "bank": 29,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6639507599190636,
+      "adaptive": 0.6639507599190636,
+      "cv3": 0.6695194581107409
+    },
+    {
+      "bank": 29,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.682985762913966,
+      "adaptive": 0.682985762913966,
+      "cv3": 0.6915243517134722
+    },
+    {
+      "bank": 29,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6739867696432499,
+      "adaptive": 0.6739867696432499,
+      "cv3": 0.6515683427166885
+    },
+    {
+      "bank": 29,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.106147216619776,
+      "adaptive": 0.106147216619776,
+      "cv3": 0.106147216619776
+    },
+    {
+      "bank": 29,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06078906514747083,
+      "adaptive": 0.06078906514747083,
+      "cv3": 0.06078906514747083
+    },
+    {
+      "bank": 29,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.12549256399354863,
+      "adaptive": 0.12854525360053393,
+      "cv3": 0.12582265080838853
+    },
+    {
+      "bank": 29,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.09885248819310125,
+      "adaptive": 0.10341339576790545,
+      "cv3": 0.09957397608084033
+    },
+    {
+      "bank": 30,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.3035220211111523,
+      "adaptive": 0.3035220211111523,
+      "cv3": 0.30550768146675455
+    },
+    {
+      "bank": 30,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21996326819279774,
+      "adaptive": 0.21996326819279774,
+      "cv3": 0.22233368938697645
+    },
+    {
+      "bank": 30,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.31491138980505545,
+      "adaptive": 0.3207956352057629,
+      "cv3": 0.3417605196420582
+    },
+    {
+      "bank": 30,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.24272780156251877,
+      "adaptive": 0.2544960168350159,
+      "cv3": 0.3167213543088243
+    },
+    {
+      "bank": 30,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6696297801592414,
+      "adaptive": 0.6696297801592414,
+      "cv3": 0.6855420843347435
+    },
+    {
+      "bank": 30,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6681832719404366,
+      "adaptive": 0.6681832719404366,
+      "cv3": 0.6753332998148518
+    },
+    {
+      "bank": 30,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6759858545152061,
+      "adaptive": 0.6759858545152061,
+      "cv3": 0.6877456134963021
+    },
+    {
+      "bank": 30,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6760038231194769,
+      "adaptive": 0.6760038231194769,
+      "cv3": 0.6877456134963021
+    },
+    {
+      "bank": 30,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13351400166901028,
+      "adaptive": 0.13351400166901028,
+      "cv3": 0.13342033413587523
+    },
+    {
+      "bank": 30,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.06358030010321743,
+      "adaptive": 0.06358030010321743,
+      "cv3": 0.06383740354399882
+    },
+    {
+      "bank": 30,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.13622385240372653,
+      "adaptive": 0.14002395528221642,
+      "cv3": 0.15092864046234156
+    },
+    {
+      "bank": 30,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.07906870098404523,
+      "adaptive": 0.0893939441601444,
+      "cv3": 0.12669530970091933
+    },
+    {
+      "bank": 31,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.2871670129183607,
+      "adaptive": 0.2871670129183607,
+      "cv3": 0.28834406805199086
+    },
+    {
+      "bank": 31,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.20318616564202635,
+      "adaptive": 0.20318616564202635,
+      "cv3": 0.2043707182482601
+    },
+    {
+      "bank": 31,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.28320109643916785,
+      "adaptive": 0.283321285626994,
+      "cv3": 0.2834056658896023
+    },
+    {
+      "bank": 31,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.21164427710440628,
+      "adaptive": 0.21164427710440628,
+      "cv3": 0.21109742494037093
+    },
+    {
+      "bank": 31,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.6643846636030335,
+      "adaptive": 0.6643846636030335,
+      "cv3": 0.6780285264093997
+    },
+    {
+      "bank": 31,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6598726566087735,
+      "adaptive": 0.6598726566087735,
+      "cv3": 0.6780219972979552
+    },
+    {
+      "bank": 31,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": false,
+      "control": 0.662131778358267,
+      "adaptive": 0.662131778358267,
+      "cv3": 0.669249777935518
+    },
+    {
+      "bank": 31,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": false,
+      "control": 0.6582851022448224,
+      "adaptive": 0.6582851022448224,
+      "cv3": 0.6692493599463528
+    },
+    {
+      "bank": 31,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.10504945680997908,
+      "adaptive": 0.10504945680997908,
+      "cv3": 0.10504945680997908
+    },
+    {
+      "bank": 31,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.03217961926361856,
+      "adaptive": 0.03217961926361856,
+      "cv3": 0.03217961926361856
+    },
+    {
+      "bank": 31,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "use_sure": true,
+      "control": 0.09874555332053526,
+      "adaptive": 0.0994945651620498,
+      "cv3": 0.09874555332053526
+    },
+    {
+      "bank": 31,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "use_sure": true,
+      "control": 0.038580880303230536,
+      "adaptive": 0.03836607513838607,
+      "cv3": 0.038580880303230536
+    }
+  ]
+}

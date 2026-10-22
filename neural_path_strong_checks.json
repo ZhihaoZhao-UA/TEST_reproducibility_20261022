@@ -1,0 +1,7 @@
+{
+  "records": 4608,
+  "table_mean_and_se_cells": 144,
+  "summary_recalculation": "passed",
+  "hessian_coordinate_check": "passed",
+  "claim": "Mechanism-specific mean comparisons with MC standard errors, not universal superiority or a new aggregation principle"
+}

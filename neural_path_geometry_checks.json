@@ -1,0 +1,11 @@
+{
+  "random_geometry_cases": 100,
+  "max_identity_error": 8.881784197001252e-16,
+  "max_bound_violation": 4.355078340400985e-10,
+  "scale_reparametrization_errors": {
+    "0.5": 0.0,
+    "1.0": 0.0,
+    "2.0": 0.0
+  },
+  "note": "These are numerical checks, not replacements for the written proof or statistical validation."
+}

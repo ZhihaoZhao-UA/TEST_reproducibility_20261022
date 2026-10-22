@@ -1,0 +1,36 @@
+{
+  "seed": 14102028,
+  "replications": 128,
+  "training_sites": 129,
+  "domain": [
+    -4.0,
+    4.0
+  ],
+  "teacher": [
+    4.0,
+    1.0
+  ],
+  "initial": [
+    4.02,
+    1.01
+  ],
+  "learning_rates": [
+    1.5,
+    0.5
+  ],
+  "training_noise_sds": [
+    0.0,
+    0.02
+  ],
+  "aggregation_noise_sd": 0.02,
+  "aggregation_sizes": [
+    512,
+    2048,
+    8192
+  ],
+  "checkpoint_rule": "ceil(5 log(n)), and the next iterate",
+  "training_replicates_per_site": "ceil(n/129)",
+  "diagnostic_endpoint": 400,
+  "gradient_control": "Added after initial mechanism results; minimize the norm of the convex combination of the two training gradients",
+  "status": "Exploratory mechanism experiment after analytic derivation; no claim of independent confirmation or CV superiority."
+}

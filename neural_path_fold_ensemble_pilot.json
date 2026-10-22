@@ -1,0 +1,1551 @@
+{
+  "status": "Exploratory pilot reusing first8 historical banks; not confirmation",
+  "records": [
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.10203953400057766,
+        "oof_weight_foldmean": 0.10232089340124399,
+        "independent_foldmean": 0.10902524381797538,
+        "foldmean_last": 0.10232089340124399,
+        "foldmean_late": 0.11296419826399431,
+        "foldmean_cvselect": 0.10232089340124399,
+        "full_last": 0.10203953400057766,
+        "full_late": 0.11280134103651662
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.05254299132830612,
+        "oof_weight_foldmean": 0.053806849077139875,
+        "independent_foldmean": 0.055560907587935804,
+        "foldmean_last": 0.053806849077139875,
+        "foldmean_late": 0.06087973453076505,
+        "foldmean_cvselect": 0.053806849077139875,
+        "full_last": 0.05254299132830612,
+        "full_late": 0.05978616485932008
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.1024749681156214,
+        "oof_weight_foldmean": 0.10262745422951036,
+        "independent_foldmean": 0.10781718082413566,
+        "foldmean_last": 0.10262745422951036,
+        "foldmean_late": 0.11422980540154398,
+        "foldmean_cvselect": 0.10262745422951036,
+        "full_last": 0.1024749681156214,
+        "full_late": 0.11421892417389862
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.06301389344761334,
+        "oof_weight_foldmean": 0.06524856884340346,
+        "independent_foldmean": 0.06450245894626855,
+        "foldmean_last": 0.06524856884340346,
+        "foldmean_late": 0.06668368296260417,
+        "foldmean_cvselect": 0.06524856884340346,
+        "full_last": 0.06301389344761334,
+        "full_late": 0.06471640741101134
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6519330224890318,
+        "oof_weight_foldmean": 0.6521058554788868,
+        "independent_foldmean": 0.6594852033688661,
+        "foldmean_last": 0.675405063225947,
+        "foldmean_late": 0.6674283671932626,
+        "foldmean_cvselect": 0.6618989652545223,
+        "full_last": 0.6743379183676035,
+        "full_late": 0.666550162701993
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.673876798558884,
+        "oof_weight_foldmean": 0.6743126801353244,
+        "independent_foldmean": 0.6774099190704544,
+        "foldmean_last": 0.7211889696239192,
+        "foldmean_late": 0.7082725382981175,
+        "foldmean_cvselect": 0.7211889696239192,
+        "full_last": 0.7211135912370337,
+        "full_late": 0.7071891674205142
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.66055438654673,
+        "oof_weight_foldmean": 0.6605650407014689,
+        "independent_foldmean": 0.6681521438336071,
+        "foldmean_last": 0.6879737528119425,
+        "foldmean_late": 0.6786875288465241,
+        "foldmean_cvselect": 0.6618989652545223,
+        "full_last": 0.6860483457034559,
+        "full_late": 0.6771405934377148
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6577220214321589,
+        "oof_weight_foldmean": 0.6590995155882409,
+        "independent_foldmean": 0.6794602338874923,
+        "foldmean_last": 0.7411019039773797,
+        "foldmean_late": 0.7256291488101052,
+        "foldmean_cvselect": 0.6618989652545223,
+        "full_last": 0.7352267161182544,
+        "full_late": 0.7210801542106687
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.31324363600753913,
+        "oof_weight_foldmean": 0.3144914441023579,
+        "independent_foldmean": 0.3313028105160344,
+        "foldmean_last": 0.3144914441023579,
+        "foldmean_late": 0.32353587685737517,
+        "foldmean_cvselect": 0.3144914441023579,
+        "full_last": 0.31324363600753913,
+        "full_late": 0.32256814278637436
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.2533447009539095,
+        "oof_weight_foldmean": 0.25340268966220547,
+        "independent_foldmean": 0.25933292969265903,
+        "foldmean_last": 0.25340268966220547,
+        "foldmean_late": 0.26405591588844896,
+        "foldmean_cvselect": 0.25340268966220547,
+        "full_last": 0.2533447009539095,
+        "full_late": 0.2632924830387475
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.32503141779868316,
+        "oof_weight_foldmean": 0.32672483443125855,
+        "independent_foldmean": 0.35308851078166026,
+        "foldmean_last": 0.32672483443125855,
+        "foldmean_late": 0.3361956130288915,
+        "foldmean_cvselect": 0.32672483443125855,
+        "full_last": 0.32503141779868316,
+        "full_late": 0.33488698969600145
+      }
+    },
+    {
+      "bank": 0,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.27460792960239605,
+        "oof_weight_foldmean": 0.27314637570121025,
+        "independent_foldmean": 0.27806299687097985,
+        "foldmean_last": 0.27314637570121025,
+        "foldmean_late": 0.27864441692064523,
+        "foldmean_cvselect": 0.27314637570121025,
+        "full_last": 0.27460792960239605,
+        "full_late": 0.27818156274840256
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.11994312445656932,
+        "oof_weight_foldmean": 0.12077042715319555,
+        "independent_foldmean": 0.12681814658662433,
+        "foldmean_last": 0.12014150093619097,
+        "foldmean_late": 0.12868075248572677,
+        "foldmean_cvselect": 0.12014150093619097,
+        "full_last": 0.11924342296006463,
+        "full_late": 0.12797176854785797
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.05265273350881339,
+        "oof_weight_foldmean": 0.0541970835623614,
+        "independent_foldmean": 0.05825722745772826,
+        "foldmean_last": 0.05401611866701472,
+        "foldmean_late": 0.06801426863362803,
+        "foldmean_cvselect": 0.05401611866701472,
+        "full_last": 0.052424118661456263,
+        "full_late": 0.06626108238785515
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.14304662431997917,
+        "oof_weight_foldmean": 0.14275602383168767,
+        "independent_foldmean": 0.15802358612192308,
+        "foldmean_last": 0.1375950650390267,
+        "foldmean_late": 0.14402517584141472,
+        "foldmean_cvselect": 0.1375950650390267,
+        "full_last": 0.1372117018668504,
+        "full_late": 0.14378351873215922
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.08860728540771723,
+        "oof_weight_foldmean": 0.08709540350317316,
+        "independent_foldmean": 0.09950967549043457,
+        "foldmean_last": 0.0799745262582412,
+        "foldmean_late": 0.09368261702526505,
+        "foldmean_cvselect": 0.0799745262582412,
+        "full_last": 0.08007490935295092,
+        "full_late": 0.09366240753603167
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6405518736832403,
+        "oof_weight_foldmean": 0.6414128022489934,
+        "independent_foldmean": 0.6418302311902939,
+        "foldmean_last": 0.639653136783912,
+        "foldmean_late": 0.6394569551283209,
+        "foldmean_cvselect": 0.6415644397491171,
+        "full_last": 0.6377974416685603,
+        "full_late": 0.6378349030791304
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6403383507559983,
+        "oof_weight_foldmean": 0.6412740693882354,
+        "independent_foldmean": 0.6399990260455724,
+        "foldmean_last": 0.6516078017018181,
+        "foldmean_late": 0.6453251638006876,
+        "foldmean_cvselect": 0.6415644397491171,
+        "full_last": 0.6485962566015456,
+        "full_late": 0.6428368877495603
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6361885170655852,
+        "oof_weight_foldmean": 0.636522746111761,
+        "independent_foldmean": 0.6347792698988142,
+        "foldmean_last": 0.6279483432907087,
+        "foldmean_late": 0.6273633649912406,
+        "foldmean_cvselect": 0.6279483432907087,
+        "full_last": 0.6275070550120178,
+        "full_late": 0.6269696896741581
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6427565879322514,
+        "oof_weight_foldmean": 0.6417226273394969,
+        "independent_foldmean": 0.6378576665838407,
+        "foldmean_last": 0.6551864854916256,
+        "foldmean_late": 0.6426521416263835,
+        "foldmean_cvselect": 0.6375652232713399,
+        "full_last": 0.6591874302367129,
+        "full_late": 0.6447481305585957
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.28939736324903853,
+        "oof_weight_foldmean": 0.2899276776732623,
+        "independent_foldmean": 0.2958962740333726,
+        "foldmean_last": 0.2889616243225065,
+        "foldmean_late": 0.29687323517410547,
+        "foldmean_cvselect": 0.2889616243225065,
+        "full_last": 0.2883531505344899,
+        "full_late": 0.2963340861390983
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.22442985377482158,
+        "oof_weight_foldmean": 0.22447085683305118,
+        "independent_foldmean": 0.2312742673008179,
+        "foldmean_last": 0.2236396578336938,
+        "foldmean_late": 0.23846827243701962,
+        "foldmean_cvselect": 0.2236396578336938,
+        "full_last": 0.22355233330254168,
+        "full_late": 0.23800226967935556
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.312927575875326,
+        "oof_weight_foldmean": 0.31247459753831186,
+        "independent_foldmean": 0.32432391709895364,
+        "foldmean_last": 0.3019709589167654,
+        "foldmean_late": 0.30824429153806665,
+        "foldmean_cvselect": 0.3019709589167654,
+        "full_last": 0.3019497170615477,
+        "full_late": 0.3082344137839679
+      }
+    },
+    {
+      "bank": 1,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.2672110299060171,
+        "oof_weight_foldmean": 0.2660372463166253,
+        "independent_foldmean": 0.2787850502562653,
+        "foldmean_last": 0.2436731725605611,
+        "foldmean_late": 0.2581872623480388,
+        "foldmean_cvselect": 0.2758063170738718,
+        "full_last": 0.24473508336970096,
+        "full_late": 0.25864103198625077
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.10182523596420132,
+        "oof_weight_foldmean": 0.10265615780068381,
+        "independent_foldmean": 0.10282548862543957,
+        "foldmean_last": 0.10265615780068381,
+        "foldmean_late": 0.11048515540672256,
+        "foldmean_cvselect": 0.10265615780068381,
+        "full_last": 0.10182523596420132,
+        "full_late": 0.10975558542036759
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.05310797865791672,
+        "oof_weight_foldmean": 0.05340272873772618,
+        "independent_foldmean": 0.05457725665720259,
+        "foldmean_last": 0.05335836006003282,
+        "foldmean_late": 0.06291745489132103,
+        "foldmean_cvselect": 0.05335836006003282,
+        "full_last": 0.05304478241024986,
+        "full_late": 0.06235360701765381
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.11957695799937705,
+        "oof_weight_foldmean": 0.11987223166809169,
+        "independent_foldmean": 0.12262967546431497,
+        "foldmean_last": 0.11813504754147369,
+        "foldmean_late": 0.12465900034154546,
+        "foldmean_cvselect": 0.11813504754147369,
+        "full_last": 0.11772137255808378,
+        "full_late": 0.12424295147331448
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.09609605713402321,
+        "oof_weight_foldmean": 0.09567203163758634,
+        "independent_foldmean": 0.09168361350091592,
+        "foldmean_last": 0.07167658547898947,
+        "foldmean_late": 0.08071244921759962,
+        "foldmean_cvselect": 0.09303077286754924,
+        "full_last": 0.073078451743919,
+        "full_late": 0.08156002299075857
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.67141359530284,
+        "oof_weight_foldmean": 0.6712561786683107,
+        "independent_foldmean": 0.6678264442400945,
+        "foldmean_last": 0.6747719095261359,
+        "foldmean_late": 0.6745304605828975,
+        "foldmean_cvselect": 0.6737970869342318,
+        "full_last": 0.6748010427458788,
+        "full_late": 0.6746022987249573
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6562503767514879,
+        "oof_weight_foldmean": 0.65390484054451,
+        "independent_foldmean": 0.661234585242781,
+        "foldmean_last": 0.6597806883122651,
+        "foldmean_late": 0.6649843341446563,
+        "foldmean_cvselect": 0.6597806883122651,
+        "full_last": 0.6628238772026298,
+        "full_late": 0.666849493046909
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6636210615803588,
+        "oof_weight_foldmean": 0.6631387493966368,
+        "independent_foldmean": 0.6640082540677908,
+        "foldmean_last": 0.6687247909577204,
+        "foldmean_late": 0.6670695086910807,
+        "foldmean_cvselect": 0.663763032137491,
+        "full_last": 0.6690556531896837,
+        "full_late": 0.6674982542077394
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6541041363253617,
+        "oof_weight_foldmean": 0.6506883763962925,
+        "independent_foldmean": 0.6584369503782809,
+        "foldmean_last": 0.6677550353408443,
+        "foldmean_late": 0.667197094947313,
+        "foldmean_cvselect": 0.663763032137491,
+        "full_last": 0.6740286928755038,
+        "full_late": 0.6709740958465664
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.2620038234398078,
+        "oof_weight_foldmean": 0.26275051675008804,
+        "independent_foldmean": 0.2630254959041971,
+        "foldmean_last": 0.26275051675008804,
+        "foldmean_late": 0.271079324618159,
+        "foldmean_cvselect": 0.26275051675008804,
+        "full_last": 0.2620038234398078,
+        "full_late": 0.27037383807903087
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.21964846988601183,
+        "oof_weight_foldmean": 0.2196264583290472,
+        "independent_foldmean": 0.22036470351283968,
+        "foldmean_last": 0.2196264583290472,
+        "foldmean_late": 0.22523666301509357,
+        "foldmean_cvselect": 0.2196264583290472,
+        "full_last": 0.21964846988601183,
+        "full_late": 0.22508186062387753
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.28411157143933297,
+        "oof_weight_foldmean": 0.28448501322967473,
+        "independent_foldmean": 0.28749243671861713,
+        "foldmean_last": 0.2843819923569935,
+        "foldmean_late": 0.29136100428858924,
+        "foldmean_cvselect": 0.2843819923569935,
+        "full_last": 0.28400526145559635,
+        "full_late": 0.29091499378759095
+      }
+    },
+    {
+      "bank": 2,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.2566501941726047,
+        "oof_weight_foldmean": 0.255231776401069,
+        "independent_foldmean": 0.25494378125501616,
+        "foldmean_last": 0.24156257953371718,
+        "foldmean_late": 0.24659884896114698,
+        "foldmean_cvselect": 0.2573752711783743,
+        "full_last": 0.24358707653642941,
+        "full_late": 0.24827883797119685
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.1217714727861856,
+        "oof_weight_foldmean": 0.12309305963547772,
+        "independent_foldmean": 0.1284775981338641,
+        "foldmean_last": 0.12529815328412502,
+        "foldmean_late": 0.1329867982808692,
+        "foldmean_cvselect": 0.12529815328412502,
+        "full_last": 0.12338482980566504,
+        "full_late": 0.13145782778656048
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.057487462986452034,
+        "oof_weight_foldmean": 0.060741341482276584,
+        "independent_foldmean": 0.06456385581095382,
+        "foldmean_last": 0.06169164756026693,
+        "foldmean_late": 0.07628188142009613,
+        "foldmean_cvselect": 0.06169164756026693,
+        "full_last": 0.05753871317212578,
+        "full_late": 0.07243468867330843
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.16856663338236444,
+        "oof_weight_foldmean": 0.16844979601088217,
+        "independent_foldmean": 0.16371776503517416,
+        "foldmean_last": 0.16303671415306578,
+        "foldmean_late": 0.1701192256864666,
+        "foldmean_cvselect": 0.17729506637856757,
+        "full_last": 0.16059726217138043,
+        "full_late": 0.1683407708499469
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.12494993757228229,
+        "oof_weight_foldmean": 0.12685592547209323,
+        "independent_foldmean": 0.12817649364724154,
+        "foldmean_last": 0.10059100217629963,
+        "foldmean_late": 0.11503530775332443,
+        "foldmean_cvselect": 0.17729506637856757,
+        "full_last": 0.09553487702833566,
+        "full_late": 0.11045128126417443
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.629021288387775,
+        "oof_weight_foldmean": 0.6286545259614852,
+        "independent_foldmean": 0.6367298281477349,
+        "foldmean_last": 0.6530877723638311,
+        "foldmean_late": 0.6532593734120353,
+        "foldmean_cvselect": 0.6299826377895605,
+        "full_last": 0.6572820240618614,
+        "full_late": 0.6572537819089918
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6311690114072357,
+        "oof_weight_foldmean": 0.6298746731431113,
+        "independent_foldmean": 0.6327807259963276,
+        "foldmean_last": 0.660085985039767,
+        "foldmean_late": 0.6559070755503207,
+        "foldmean_cvselect": 0.660085985039767,
+        "full_last": 0.6680581104808547,
+        "full_late": 0.6620288695780234
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6481024537053792,
+        "oof_weight_foldmean": 0.6473708908485049,
+        "independent_foldmean": 0.6438453708704923,
+        "foldmean_last": 0.7273416901751295,
+        "foldmean_late": 0.7261361398331885,
+        "foldmean_cvselect": 0.6436181418552799,
+        "full_last": 0.7336178033069016,
+        "full_late": 0.7326533109133675
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6596460718550107,
+        "oof_weight_foldmean": 0.6579338139702933,
+        "independent_foldmean": 0.6540613796524036,
+        "foldmean_last": 0.7510613020795173,
+        "foldmean_late": 0.7405252630850654,
+        "foldmean_cvselect": 0.6436181418552799,
+        "full_last": 0.7638023736023021,
+        "full_late": 0.7488556477509946
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.31561168286636687,
+        "oof_weight_foldmean": 0.3141599700179679,
+        "independent_foldmean": 0.3153788832418581,
+        "foldmean_last": 0.31433420564210457,
+        "foldmean_late": 0.3208273683558981,
+        "foldmean_cvselect": 0.31433420564210457,
+        "full_last": 0.31528109992515707,
+        "full_late": 0.3216162214395577
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.2503769436778761,
+        "oof_weight_foldmean": 0.24997843450360707,
+        "independent_foldmean": 0.2506983214019447,
+        "foldmean_last": 0.249754516939686,
+        "foldmean_late": 0.2639224429128514,
+        "foldmean_cvselect": 0.249754516939686,
+        "full_last": 0.25000008635631665,
+        "full_late": 0.26417196715359426
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.3372681552492536,
+        "oof_weight_foldmean": 0.33549053802122925,
+        "independent_foldmean": 0.33610287007387335,
+        "foldmean_last": 0.34051808143049916,
+        "foldmean_late": 0.3468003434237169,
+        "foldmean_cvselect": 0.34051808143049916,
+        "full_last": 0.34153726376334936,
+        "full_late": 0.34784349107354773
+      }
+    },
+    {
+      "bank": 3,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.27893237460964704,
+        "oof_weight_foldmean": 0.2809120039966339,
+        "independent_foldmean": 0.2804436298131768,
+        "foldmean_last": 0.27577263500675553,
+        "foldmean_late": 0.2903531766080371,
+        "foldmean_cvselect": 0.27577263500675553,
+        "full_last": 0.27351200369227724,
+        "full_late": 0.28883561025528026
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.10046900846970297,
+        "oof_weight_foldmean": 0.1014354785827501,
+        "independent_foldmean": 0.10149757769398399,
+        "foldmean_last": 0.1014354785827501,
+        "foldmean_late": 0.11039352602349699,
+        "foldmean_cvselect": 0.1014354785827501,
+        "full_last": 0.10046900846970297,
+        "full_late": 0.10948431336627787
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.04913516244087541,
+        "oof_weight_foldmean": 0.04919779816332316,
+        "independent_foldmean": 0.049738187938052125,
+        "foldmean_last": 0.04919779816332316,
+        "foldmean_late": 0.05792784282111761,
+        "foldmean_cvselect": 0.04919779816332316,
+        "full_last": 0.04913516244087541,
+        "full_late": 0.05745921665825751
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.10328713738056741,
+        "oof_weight_foldmean": 0.10394443165534241,
+        "independent_foldmean": 0.11537927913506543,
+        "foldmean_last": 0.10394443165534241,
+        "foldmean_late": 0.11192861598517292,
+        "foldmean_cvselect": 0.10394443165534241,
+        "full_last": 0.10328713738056741,
+        "full_late": 0.11121597001624386
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.06362417447590347,
+        "oof_weight_foldmean": 0.06329350486942913,
+        "independent_foldmean": 0.0682049584597118,
+        "foldmean_last": 0.06308039755621793,
+        "foldmean_late": 0.06539991514020634,
+        "foldmean_cvselect": 0.06308039755621793,
+        "full_last": 0.06384379116740083,
+        "full_late": 0.06554679349141178
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6480506507219482,
+        "oof_weight_foldmean": 0.6480574247112648,
+        "independent_foldmean": 0.6488556367120382,
+        "foldmean_last": 0.6438571308407703,
+        "foldmean_late": 0.6444650371191798,
+        "foldmean_cvselect": 0.6472350956318622,
+        "full_last": 0.6441705673839151,
+        "full_late": 0.6446855428227307
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6480506347622511,
+        "oof_weight_foldmean": 0.6480574086850461,
+        "independent_foldmean": 0.6488556296642388,
+        "foldmean_last": 0.6290376566062423,
+        "foldmean_late": 0.6338637262940794,
+        "foldmean_cvselect": 0.6472350956318622,
+        "full_last": 0.6349644325050866,
+        "full_late": 0.6377548928035113
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6488804971276108,
+        "oof_weight_foldmean": 0.6489376456807298,
+        "independent_foldmean": 0.6509609613654741,
+        "foldmean_last": 0.6437037249945374,
+        "foldmean_late": 0.6443137442440279,
+        "foldmean_cvselect": 0.6509538871905894,
+        "full_last": 0.6446897996318218,
+        "full_late": 0.6450501398681798
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6488805158791375,
+        "oof_weight_foldmean": 0.6489376645166682,
+        "independent_foldmean": 0.6509609613654741,
+        "foldmean_last": 0.6375147856301688,
+        "foldmean_late": 0.6357573421513352,
+        "foldmean_cvselect": 0.6509538871905894,
+        "full_last": 0.6462091824467338,
+        "full_late": 0.6404144259184746
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.26273894969535383,
+        "oof_weight_foldmean": 0.26300747539386854,
+        "independent_foldmean": 0.27333316292185755,
+        "foldmean_last": 0.26300747539386854,
+        "foldmean_late": 0.27197186511945626,
+        "foldmean_cvselect": 0.26300747539386854,
+        "full_last": 0.26273894969535383,
+        "full_late": 0.27169582109378637
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.2114897772370049,
+        "oof_weight_foldmean": 0.21078543397802119,
+        "independent_foldmean": 0.22114261616901784,
+        "foldmean_last": 0.21012047592745614,
+        "foldmean_late": 0.21904205245453237,
+        "foldmean_cvselect": 0.21012047592745614,
+        "full_last": 0.21094308410483037,
+        "full_late": 0.21891423926338777
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.26656607512853453,
+        "oof_weight_foldmean": 0.26615029227480946,
+        "independent_foldmean": 0.27956247963995573,
+        "foldmean_last": 0.26615029227480946,
+        "foldmean_late": 0.2739776474984309,
+        "foldmean_cvselect": 0.26615029227480946,
+        "full_last": 0.26656607512853453,
+        "full_late": 0.2741858173947629
+      }
+    },
+    {
+      "bank": 4,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.22851607043659886,
+        "oof_weight_foldmean": 0.22559104833473925,
+        "independent_foldmean": 0.23682254678084846,
+        "foldmean_last": 0.22336592005559455,
+        "foldmean_late": 0.22634469502681784,
+        "foldmean_cvselect": 0.22336592005559455,
+        "full_last": 0.22916805830020048,
+        "full_late": 0.2289406461043414
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.11691552246280952,
+        "oof_weight_foldmean": 0.11763132551344327,
+        "independent_foldmean": 0.12349337005390301,
+        "foldmean_last": 0.11763132551344327,
+        "foldmean_late": 0.12551082220874582,
+        "foldmean_cvselect": 0.11763132551344327,
+        "full_last": 0.11691552246280952,
+        "full_late": 0.1250055631797194
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.06570937103533236,
+        "oof_weight_foldmean": 0.06666284139773879,
+        "independent_foldmean": 0.06835616783458111,
+        "foldmean_last": 0.06667547420634895,
+        "foldmean_late": 0.0765285193161528,
+        "foldmean_cvselect": 0.06667547420634895,
+        "full_last": 0.06570874308741634,
+        "full_late": 0.07558428126264924
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.17423132144559406,
+        "oof_weight_foldmean": 0.17439526797768662,
+        "independent_foldmean": 0.18331786245492615,
+        "foldmean_last": 0.17336830979387682,
+        "foldmean_late": 0.17910055640091005,
+        "foldmean_cvselect": 0.17336830979387682,
+        "full_last": 0.1727574331865134,
+        "full_late": 0.17904997540487372
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.14584262057210173,
+        "oof_weight_foldmean": 0.14567231962919977,
+        "independent_foldmean": 0.14729629041682651,
+        "foldmean_last": 0.14370071876616128,
+        "foldmean_late": 0.14718424745938535,
+        "foldmean_cvselect": 0.15589366422527107,
+        "full_last": 0.14270752038985976,
+        "full_late": 0.1457776947666683
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.7047090470002539,
+        "oof_weight_foldmean": 0.7043008151059234,
+        "independent_foldmean": 0.6976016038781936,
+        "foldmean_last": 0.7243239638068576,
+        "foldmean_late": 0.7232050695933616,
+        "foldmean_cvselect": 0.7030874819425555,
+        "full_last": 0.7267377758614926,
+        "full_late": 0.7253125158626217
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.7023385422209014,
+        "oof_weight_foldmean": 0.6986572431726488,
+        "independent_foldmean": 0.6923361451348761,
+        "foldmean_last": 0.7174252032522583,
+        "foldmean_late": 0.7205979821077629,
+        "foldmean_cvselect": 0.7030874819425555,
+        "full_last": 0.7337562517676068,
+        "full_late": 0.7308637591951084
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.75616884971956,
+        "oof_weight_foldmean": 0.7554020835813211,
+        "independent_foldmean": 0.7471237596632656,
+        "foldmean_last": 0.8140381426783588,
+        "foldmean_late": 0.8097699679147037,
+        "foldmean_cvselect": 0.7394080120170151,
+        "full_last": 0.8164881230455139,
+        "full_late": 0.8123618189897583
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.7561688431496507,
+        "oof_weight_foldmean": 0.7554021517290928,
+        "independent_foldmean": 0.7436860356943891,
+        "foldmean_last": 0.8137630166276855,
+        "foldmean_late": 0.8176562930810234,
+        "foldmean_cvselect": 0.7394080120170151,
+        "full_last": 0.8544758002540985,
+        "full_late": 0.8402993959009295
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.2724064432305682,
+        "oof_weight_foldmean": 0.2731343177124419,
+        "independent_foldmean": 0.27878748796136044,
+        "foldmean_last": 0.27217698171567306,
+        "foldmean_late": 0.27880712334732327,
+        "foldmean_cvselect": 0.27217698171567306,
+        "full_last": 0.2712875976861681,
+        "full_late": 0.27808790744161715
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.23285330281349778,
+        "oof_weight_foldmean": 0.23067491001251839,
+        "independent_foldmean": 0.23829801316061447,
+        "foldmean_last": 0.23247769606180302,
+        "foldmean_late": 0.23863928040086063,
+        "foldmean_cvselect": 0.23247769606180302,
+        "full_last": 0.2348126422016692,
+        "full_late": 0.23913219197567748
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.34548267672295074,
+        "oof_weight_foldmean": 0.3452918543526001,
+        "independent_foldmean": 0.3519838242205322,
+        "foldmean_last": 0.322846325174621,
+        "foldmean_late": 0.3271766021809379,
+        "foldmean_cvselect": 0.35690658247874585,
+        "full_last": 0.3217322696151409,
+        "full_late": 0.32647866736237213
+      }
+    },
+    {
+      "bank": 5,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.3102118189164812,
+        "oof_weight_foldmean": 0.30763240718696117,
+        "independent_foldmean": 0.3135840100871352,
+        "foldmean_last": 0.30899360148828703,
+        "foldmean_late": 0.3062553233179034,
+        "foldmean_cvselect": 0.30899360148828703,
+        "full_last": 0.3150086979810596,
+        "full_late": 0.308285735488732
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.10678650719583078,
+        "oof_weight_foldmean": 0.10718780719666315,
+        "independent_foldmean": 0.10616105043980129,
+        "foldmean_last": 0.10718780719666315,
+        "foldmean_late": 0.11675503019922408,
+        "foldmean_cvselect": 0.10718780719666315,
+        "full_last": 0.10678650719583078,
+        "full_late": 0.11667784500922791
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.045989269727199786,
+        "oof_weight_foldmean": 0.046124854785964675,
+        "independent_foldmean": 0.04599584514985497,
+        "foldmean_last": 0.046124854785964675,
+        "foldmean_late": 0.056377214504680154,
+        "foldmean_cvselect": 0.046124854785964675,
+        "full_last": 0.045989269727199786,
+        "full_late": 0.055833266463380646
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.13077636641945414,
+        "oof_weight_foldmean": 0.1279805982925379,
+        "independent_foldmean": 0.11369278189230378,
+        "foldmean_last": 0.1279805982925379,
+        "foldmean_late": 0.13844313959099233,
+        "foldmean_cvselect": 0.1279805982925379,
+        "full_last": 0.13077636641945414,
+        "full_late": 0.1417759671279672
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.07669729220878191,
+        "oof_weight_foldmean": 0.07033105244009442,
+        "independent_foldmean": 0.05897171835372443,
+        "foldmean_last": 0.07033105244009442,
+        "foldmean_late": 0.07743338952274112,
+        "foldmean_cvselect": 0.07033105244009442,
+        "full_last": 0.07669729220878191,
+        "full_late": 0.08214857050645828
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.6993110574908576,
+        "oof_weight_foldmean": 0.6995499058930643,
+        "independent_foldmean": 0.6937167274170088,
+        "foldmean_last": 0.7217369598389235,
+        "foldmean_late": 0.719953061907834,
+        "foldmean_cvselect": 0.6995499058930643,
+        "full_last": 0.7196827444763974,
+        "full_late": 0.718202740676706
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.6988320406435676,
+        "oof_weight_foldmean": 0.6990716026647263,
+        "independent_foldmean": 0.6931188179255175,
+        "foldmean_last": 0.7232368302565059,
+        "foldmean_late": 0.7218494624990195,
+        "foldmean_cvselect": 0.6995499058930643,
+        "full_last": 0.7238784545819008,
+        "full_late": 0.7201199050861617
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.734554052015891,
+        "oof_weight_foldmean": 0.7329996744455922,
+        "independent_foldmean": 0.728818329667726,
+        "foldmean_last": 0.7682783302048583,
+        "foldmean_late": 0.7661393134998868,
+        "foldmean_cvselect": 0.7329996744455922,
+        "full_last": 0.7678787893758814,
+        "full_late": 0.7662334983339143
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.734554052015891,
+        "oof_weight_foldmean": 0.7329996744455922,
+        "independent_foldmean": 0.7288183147435221,
+        "foldmean_last": 0.789103763079085,
+        "foldmean_late": 0.7806194660305985,
+        "foldmean_cvselect": 0.7329996744455922,
+        "full_last": 0.7900208213592217,
+        "full_late": 0.7787458442057205
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.29157015067657926,
+        "oof_weight_foldmean": 0.29219719328996174,
+        "independent_foldmean": 0.2906749904352602,
+        "foldmean_last": 0.2925330845206243,
+        "foldmean_late": 0.30408008227821437,
+        "foldmean_cvselect": 0.2925330845206243,
+        "full_last": 0.2919669097176425,
+        "full_late": 0.30413217028617456
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.22069189667710365,
+        "oof_weight_foldmean": 0.2223036021554613,
+        "independent_foldmean": 0.21993145876247328,
+        "foldmean_last": 0.2223036021554613,
+        "foldmean_late": 0.23444904510203513,
+        "foldmean_cvselect": 0.2223036021554613,
+        "full_last": 0.22069189667710365,
+        "full_late": 0.23269894746199488
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.31111110404081554,
+        "oof_weight_foldmean": 0.3099208247679136,
+        "independent_foldmean": 0.3034406704767403,
+        "foldmean_last": 0.3196669732097873,
+        "foldmean_late": 0.3325598855937405,
+        "foldmean_cvselect": 0.3196669732097873,
+        "full_last": 0.3220239222684068,
+        "full_late": 0.33588904203525916
+      }
+    },
+    {
+      "bank": 6,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.2477427380698572,
+        "oof_weight_foldmean": 0.24495327766544728,
+        "independent_foldmean": 0.24004930036031685,
+        "foldmean_last": 0.2518178592037918,
+        "foldmean_late": 0.26119084566903794,
+        "foldmean_cvselect": 0.2518178592037918,
+        "full_last": 0.2555406916400438,
+        "full_late": 0.26364364516590644
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.10678066218283111,
+        "oof_weight_foldmean": 0.10883263845393078,
+        "independent_foldmean": 0.11240798234551647,
+        "foldmean_last": 0.10883263845393078,
+        "foldmean_late": 0.1151838618868497,
+        "foldmean_cvselect": 0.10883263845393078,
+        "full_last": 0.10678066218283111,
+        "full_late": 0.11353482422342323
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.05417366608988372,
+        "oof_weight_foldmean": 0.057053052709476866,
+        "independent_foldmean": 0.06052590099139036,
+        "foldmean_last": 0.057053052709476866,
+        "foldmean_late": 0.0679536248118563,
+        "foldmean_cvselect": 0.057053052709476866,
+        "full_last": 0.05417366608988372,
+        "full_late": 0.06491101085423279
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.14598923631833663,
+        "oof_weight_foldmean": 0.15314403407206728,
+        "independent_foldmean": 0.1538594846675907,
+        "foldmean_last": 0.1490121747441515,
+        "foldmean_late": 0.1494177269977671,
+        "foldmean_cvselect": 0.1490121747441515,
+        "full_last": 0.14142498655802058,
+        "full_late": 0.14330687531275238
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "smooth",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.11640116746986584,
+        "oof_weight_foldmean": 0.12455212775786859,
+        "independent_foldmean": 0.1383089569783427,
+        "foldmean_last": 0.1181654572580915,
+        "foldmean_late": 0.12456639180930343,
+        "foldmean_cvselect": 0.1181654572580915,
+        "full_last": 0.10808846167539046,
+        "full_late": 0.114977317436546
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.7111271509666088,
+        "oof_weight_foldmean": 0.7111271509666088,
+        "independent_foldmean": 0.7134560831172714,
+        "foldmean_last": 0.7426390905766461,
+        "foldmean_late": 0.740888020793796,
+        "foldmean_cvselect": 0.7111271509666088,
+        "full_last": 0.7407633838375165,
+        "full_late": 0.7393382825927908
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.7195149725186041,
+        "oof_weight_foldmean": 0.7174751094437702,
+        "independent_foldmean": 0.7181975757015306,
+        "foldmean_last": 0.747335055057054,
+        "foldmean_late": 0.7434386304437408,
+        "foldmean_cvselect": 0.747335055057054,
+        "full_last": 0.7512725689775558,
+        "full_late": 0.7449378435326313
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.726192109171006,
+        "oof_weight_foldmean": 0.7274646132791496,
+        "independent_foldmean": 0.7283634211505943,
+        "foldmean_last": 0.8115386513949959,
+        "foldmean_late": 0.8027377879156933,
+        "foldmean_cvselect": 0.7111271509666088,
+        "full_last": 0.8017424107084091,
+        "full_late": 0.7945673682798524
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "oscillatory",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.7240698483148815,
+        "oof_weight_foldmean": 0.7223805744976346,
+        "independent_foldmean": 0.736644171852832,
+        "foldmean_last": 0.8209217081418283,
+        "foldmean_late": 0.816222828720361,
+        "foldmean_cvselect": 0.7111271509666088,
+        "full_last": 0.8189045817161202,
+        "full_late": 0.8123334838293845
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.2730606194648081,
+        "oof_weight_foldmean": 0.27612508394343127,
+        "independent_foldmean": 0.27479311093348413,
+        "foldmean_last": 0.27612508394343127,
+        "foldmean_late": 0.28353700374764834,
+        "foldmean_cvselect": 0.27612508394343127,
+        "full_last": 0.2730606194648081,
+        "full_late": 0.2811451574889252
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.3,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.21893857856955273,
+        "oof_weight_foldmean": 0.22159478829955798,
+        "independent_foldmean": 0.2215153499695099,
+        "foldmean_last": 0.22159478829955798,
+        "foldmean_late": 0.23048967743760407,
+        "foldmean_cvselect": 0.22159478829955798,
+        "full_last": 0.21893857856955273,
+        "full_late": 0.22717964656501483
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 200,
+      "risks": {
+        "full_cv": 0.29989859072811625,
+        "oof_weight_foldmean": 0.3087102532871021,
+        "independent_foldmean": 0.29409822479792486,
+        "foldmean_last": 0.30922073448866344,
+        "foldmean_late": 0.31054198882260187,
+        "foldmean_cvselect": 0.30922073448866344,
+        "full_last": 0.2998964401705022,
+        "full_late": 0.30298547999152925
+      }
+    },
+    {
+      "bank": 7,
+      "signal": "mixed",
+      "sigma": 0.8,
+      "horizon": 800,
+      "risks": {
+        "full_cv": 0.25761937972492444,
+        "oof_weight_foldmean": 0.266182417618555,
+        "independent_foldmean": 0.2752285141083961,
+        "foldmean_last": 0.27046804064596086,
+        "foldmean_late": 0.2770223810224405,
+        "foldmean_cvselect": 0.27046804064596086,
+        "full_last": 0.2596509301768877,
+        "full_late": 0.26727987589304186
+      }
+    }
+  ],
+  "means": {
+    "full_cv": 0.34963394467815,
+    "oof_weight_foldmean": 0.34984613387568153,
+    "independent_foldmean": 0.3524640378677104,
+    "foldmean_last": 0.3583813076707621,
+    "foldmean_late": 0.3627586841820288,
+    "foldmean_cvselect": 0.3512616064078003,
+    "full_last": 0.3589024274234758,
+    "full_late": 0.3627115367208707
+  }
+}

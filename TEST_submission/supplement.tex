@@ -1,0 +1,790 @@
+\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{pathlemma}{Lemma}\renewcommand{\thepathlemma}{S\arabic{pathlemma}}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Pn}{P_n}
+\newcommand{\simplex}{\Delta_M}
+\newcommand{\deff}{d_{\mathrm{eff}}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\conv}{\operatorname{conv}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\title{Supplementary Material for Risk Bounds for Neural Network Path Averaging}
+\author*[1]{\fnm{Zhihao} \sur{Zhao}}
+\affil*[1]{\orgdiv{School of Statistics and Data Science}, \orgname{Capital University of Economics and Business}, \orgaddress{\city{Beijing}, \country{China}}}
+\maketitle
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\section{Response-dependent alternatives and risk correction}\label{app:correction}
+\subsection{Full-sample SURE and cross-validation}
+The main estimator minimizes unpenalized squared loss on an independent aggregation sample. The procedures in this subsection are experimental alternatives: SURE reuses training responses, while cross-validation combines fold-trained predictions and transfers the weights to a refitted full-data path. These distinctions concern both the weight criterion and the deployed candidate dictionary.
+A recent preprint by Jingfu Peng, \emph{Optimal rates for aggregation of affine estimators} (2026, \url{https://arxiv.org/abs/2609.07166}), establishes minimax convex-aggregation rates for fixed-design affine candidates $A_jY+b_j$ using Mallows' criterion. Setting $A_j=0$ includes fixed prediction dictionaries as a special case. Our population analysis controls prediction at new inputs through leverage and residual-score variance; its directional certificate accounts for shared curvature in finite-width path approximations. The nonlinear response-dependent candidates below generally fall outside the affine setting, and their empirical SURE comparisons are separate from our independent-sample guarantees.
+
+In the full-sample experiment, the prediction matrix $F(Y)$ is itself trained using the responses employed for weighting. With known Gaussian variance and candidate divergence $d_j=\operatorname{div}_Y f_j(Y)$, the fixed-weight criterion is
+\begin{equation}
+ C(w)=\frac{\|Y-F(Y)w\|^2}{N}
+       +\frac{2\sigma^2}{N}d^\top w-\sigma^2.\label{eq:sure}
+\end{equation}
+The computation differentiates every update of the finite training recursion with respect to all response coordinates, holding inputs and response-independent initialization fixed. With $J_t=\partial\theta_t/\partial Y$, a fixed step matrix $D_t$ gives
+\[
+ J_{t+1}=J_t-D_t\{\nabla_\theta^2\mathcal L_t J_t+
+ \nabla_\theta\nabla_Y\mathcal L_t\},\qquad J_0=0.
+\]
+The prediction Jacobian at a fixed checkpoint is the product of the prediction derivative and $J_t$; its trace is $d_j$. The implementation propagates all coordinate directions, not a partial derivative with trained parameters fixed. This computes the candidate divergence in (S1); differentiating the selected weights produces the additional term in (S2). We call the simplex minimizer of (S1) the SURE average. For deterministic weights and suitable regularity, Stein's identity concerns training-input risk. Minimizing \eqref{eq:sure} does not make it an unbiased estimate of the resulting adaptive procedure's risk. At differentiable points, the complete fitted map has divergence
+\begin{equation}
+ \operatorname{div}_Y(F\hat w)=d^\top\hat w+
+ \tr\{F D_Y\hat w\}.\label{eq:extra}
+\end{equation}
+Active-set changes and discontinuous gates require additional care, and transferring the corrected criterion to random-input risk requires a separate argument.
+
+For threefold CV, let $O$ contain out-of-fold predictions at the same checkpoints. CV averaging minimizes $N^{-1}\|Y-Ow\|^2$ over the simplex, and the resulting weights are applied to the full-data path. Thus CV includes a fold-to-full transfer step absent from the frozen-dictionary estimator in (3) of the main paper.
+
+\subsection{Risk correction and nested selection}
+An exploratory correction estimates the difference between out-of-fold risk and fold training SURE. Let $D$ be the corresponding risk-matrix difference. The full correction $w^\top Dw$ may be indefinite and hence need not preserve convexity. A convex prototype instead minimizes
+\begin{equation}
+ C(w)+c\,\operatorname{diag}(D)^\top w.\label{eq:correction}
+\end{equation}
+It agrees with the matrix correction at vertices but omits mixture interaction terms. On the 32-bank $N=96$ dataset, $c=1$ gives risk 0.349161 and the fixed inverse-size heuristic $c=2/3$ gives 0.347497. Neither improves on the adaptive or last-or-equal control.
+
+A nested pilot uses the fixed first eight banks and all 12 conditions. Each outer training fold is further split three ways to estimate its correction. The coefficient $c\in\{0,1/3,2/3,1\}$ minimizes pooled outer validation loss; weights are then recomputed on the full path. This requires 432 additional inner paths. Table~\ref{tab:nested} uses only these same eight banks, avoiding comparisons between unmatched subsets.
+
+\begin{table}[t]\centering\small
+\caption{Nested pilot: matched eight banks, all 12 conditions. These data were already examined. Bold values indicate the lowest displayed mean error in each error column, including ties.}\label{tab:nested}
+\begin{tabular}{lr}\toprule Method & Mean risk\\\midrule
+SURE average & 0.356480\\
+Nested coefficient selection & 0.353575\\
+Fixed $c=2/3$ & 0.349627\\
+CV average & 0.349634\\
+Adaptive SURE/equal & 0.347411\\
+Last-or-equal & \textbf{0.346821}\\\bottomrule
+\end{tabular}\end{table}
+
+To separate selection and refitting, let $q(c)$ be the average test risk of the three separately fitted outer models, and $f(c)$ the risk after full-sample weighting. With validation choice $\hat c$, fold-risk minimizer $c_q$, and full-risk minimizer $c_f$,
+\begin{align}
+ f(\hat c)-f(c_f)={}&q(\hat c)-q(c_q)\notag\\
+ &+[f(\hat c)-q(\hat c)-f(c_q)+q(c_q)]\notag\\
+ &+f(c_q)-f(c_f).\label{eq:decomp}
+\end{align}
+The three means are 0.004470, 0.001264, and 0.000803, respectively. The middle term is signed, so these are not independent causal percentages. Both oracle coefficients use test truth and are optimistic finite-grid diagnostics. Even the full four-coefficient oracle has risk 0.347039, slightly above the last-or-equal control on these banks. This comparison does not cover every possible convex combination or prove population inferiority.
+
+
+\subsection{Progressive-mixture benchmark}
+We evaluate convex stacking as the independent reference procedure and a classical progressive mixture with independent 64-sample training and 32-sample aggregation. Candidates comprise clipped checkpoints and their equal average. For all signals, the known mean envelope is $A=1.6$, and $B=A+\sigma\sqrt{2\log32}$. Aggregation labels and candidate predictions are clipped to $[-B,B]$. Uniform-prior exponential weights use $\eta=1/(8B^2)$, and the final predictor averages the successive pre-update mixtures. No temperature is selected from test outcomes.
+
+Convex stacking uses the same clipped frozen candidates and clipped aggregation labels in this comparison. Because label clipping can alter conditional mean-zero noise, Table~\ref{tab:split} is a budget comparison rather than a literal numerical validation of Theorem~5 of the main paper. The separate un-clipped geometry audit uses the original Gaussian labels.
+
+Table~\ref{tab:split} reports the average risk of the three split procedures, not the risk of averaging their predictions. The progressive mixture slightly improves on equal weighting, but is substantially worse than convex stacking on the same frozen candidates. Thus splitting alone does not explain its loss. The theoretical bounded-loss penalty plus a Gaussian clipping-tail allowance ranges from 3.50 to 9.10, too large to explain small empirical risk differences. The exact bounded-loss expectation guarantee does not certify practical superiority in this regime.
+
+\begin{table}[t]\centering\small
+\caption{Independent-sample comparison, 32 banks. Split procedures each use 64 training and 32 aggregation labels. Full-data controls use the same total 96 labels. Bold values indicate the lowest displayed mean error in each error column, including ties.}\label{tab:split}
+\begin{tabular}{lr}\toprule Method & Mean risk\\\midrule
+Progressive mixture & 0.414146\\
+Split convex stacking & 0.358400\\
+Split single selection & 0.361435\\
+Split last checkpoint & 0.368735\\
+Split equal average & 0.416939\\
+Full-data CV & 0.348856\\
+Full-data last-or-equal & \textbf{0.343353}\\\bottomrule
+\end{tabular}\end{table}
+
+
+\section{Implementation and additional diagnostics}
+The primary un-clipped analysis is implemented in \path{neural_path_TEST_independent.py}; its output stores all 384 bank--condition records and their fold-level weights. Its maximum objective gap is below $10^{-8}$. The finite-width Taylor inequality was separately checked on 100 random width-eight parameter pairs and 100 inputs per pair; these are implementation sanity checks, not evidence that the experimental training paths satisfy a localization rate.
+
+The simulator uses NumPy and a centered tanh training recursion. Exact forward response sensitivities propagate derivatives of every parameter update. Convex objectives use accelerated projected gradient iterations with simplex projection and an independently evaluated Frank--Wolfe certificate. Geometry-audit gaps were below $10^{-8}$, and the largest checked projection-inequality violation was $1.7\times10^{-16}$.
+
+The main seed is 20261018. Each bank's input and noise generator is initialized from the seed tuple $(20261018,b,0)$; its initialization generator uses $(20261018,b,1)$. Threefold membership follows row index modulo three. Replaying outer training paths without Jacobians reproduced cached training predictions exactly. The nested pilot uses banks 0--7; its zero-correction solution was recomputed at tighter precision than the original SURE fit, changing the overall risk by less than $10^{-7}$. This is a solver-precision difference, not an algorithmic gain.
+
+The primary artifact families are \texttt{neural\_path\_n96}, \texttt{neural\_path\_nested}, \texttt{neural\_path\_progressive}, \texttt{neural\_path\_local\_geometry}, and \texttt{neural\_path\_distance\_transfer}. The accompanying reproducibility archive contains a table-to-record map, scripts, fixed protocols, stored results and simulation caches. It is supplied as supplementary material; no public repository identifier is currently assigned.
+
+\subsection{Why direct risk correction can remain biased}
+For fixed weights, let $T_m(w)$ and $N_m(w)$ denote expected training-input and new-input mean risks of a candidate combination trained on $m$ samples. Set $\Delta_m=N_m-T_m$. A correction consisting of full-sample SURE plus out-of-fold risk minus fold-training SURE has expected bias, relative to $N_N(w)$,
+\[
+ \Delta_{2N/3}(w)-\Delta_N(w).
+\]
+Thus even an exactly computed correction requires a sample-size transfer assumption. This identity concerns fixed weights; it does not prove unbiasedness after minimizing the corrected criterion.
+
+\subsection{Historical full-domain result}
+The earlier seed-20261017 experiment used 32 banks and 24 conditions across $N=48,96$. Its adaptive mean improvement over CV was 0.001353, with standard error 0.001085; the reported one-sided lower bound was negative. Seventeen of 24 condition means favored the method. This unsuccessful full-domain result is retained to make the subsequent restriction and exploratory reuse explicit.
+
+\section{Simulation development and condition-level results}
+Development used seed 20261016. A subsequent 32-bank study at seed 20261017 included $N=48$ and 96 and did not meet its full-domain success criterion. Restriction to $N=96$ followed examination of that dataset. A second study at seed 20261018 evaluated the restricted domain using a previously fixed adaptive rule and a two-attempt multiplicity adjustment. All later corrections, geometry audits, and oracle analyses reuse examined data and are exploratory. They do not constitute repeated independent confirmation.
+
+Table~\ref{tab:cells} reports all condition-specific risks.
+
+\begin{table}[t]\centering\small
+\setlength{\tabcolsep}{4.3pt}
+\caption{All 12 main conditions, each averaged over the same 32 banks. The last-or-equal rule is the post hoc control. No condition is excluded. Bold values indicate the lowest displayed risk in each row, including ties.}\label{tab:cells}
+\begin{tabular}{lrrrrrrr}\toprule Signal & $\sigma$ & Horizon & SURE & CV & Last & Adaptive & Last/equal\\\midrule
+Mixed & 0.3 & 200 & \textbf{0.282107} & 0.283342 & \textbf{0.282107} & \textbf{0.282107} & \textbf{0.282107}\\
+Mixed & 0.3 & 800 & \textbf{0.229131} & 0.232089 & \textbf{0.229131} & \textbf{0.229131} & \textbf{0.229131}\\
+Mixed & 0.8 & 200 & 0.304259 & 0.309878 & \textbf{0.302292} & 0.304259 & \textbf{0.302292}\\
+Mixed & 0.8 & 800 & 0.269441 & 0.279560 & \textbf{0.265595} & 0.271748 & 0.267827\\
+Oscillatory & 0.3 & 200 & 0.668002 & 0.666899 & 0.668003 & \textbf{0.660924} & \textbf{0.660924}\\
+Oscillatory & 0.3 & 800 & 0.663595 & 0.662720 & 0.663595 & \textbf{0.658092} & \textbf{0.658092}\\
+Oscillatory & 0.8 & 200 & 0.679150 & 0.674621 & 0.688317 & \textbf{0.666795} & \textbf{0.666795}\\
+Oscillatory & 0.8 & 800 & 0.683307 & 0.669163 & 0.698173 & \textbf{0.665308} & \textbf{0.665308}\\
+Smooth & 0.3 & 200 & 0.109670 & \textbf{0.109647} & 0.109670 & 0.109670 & 0.109670\\
+Smooth & 0.3 & 800 & \textbf{0.055099} & 0.055131 & \textbf{0.055099} & \textbf{0.055099} & \textbf{0.055099}\\
+Smooth & 0.8 & 200 & 0.133629 & 0.136482 & \textbf{0.130815} & 0.133629 & \textbf{0.130815}\\
+Smooth & 0.8 & 800 & 0.099663 & 0.106746 & \textbf{0.092181} & 0.099663 & \textbf{0.092181}\\
+\bottomrule\end{tabular}\end{table}
+
+\section{Proofs of the theoretical results}
+Unless prefixed by S, equation and theorem numbers in this section refer to the main paper. All expectations condition on $D_0$.
+\subsection{Proof of Proposition~1}
+Let $d=\hat f-f_X^*$. The projection variational inequality gives $\langle\hat f-Y,d\rangle\leq0$. Therefore
+\begin{equation}
+ R_X(\hat f)-R_X(f_X^*)\leq
+ \{2\langle\epsilon,d\rangle-\|d\|^2\}/n.
+\end{equation}
+For $Q_k=I-P_k$, completing the square yields
+\begin{align*}
+ 2\langle\epsilon,d\rangle-\|d\|^2
+ &\leq\|P_k\epsilon\|^2+2\langle Q_k\epsilon,d\rangle\\
+ &\leq\|P_k\epsilon\|^2+
+ 2\max_j\langle\epsilon,Q_k(f_j-f_X^*)\rangle.
+\end{align*}
+Conditional on the dictionary, $f_X^*$ is deterministic. Subtracting $c$ changes the maximum by a centered Gaussian term of mean zero. The expected maximum of $M$ centered Gaussian variables with standard deviations at most $\sigma\rho_k$ is at most $\sigma\rho_k\sqrt{2\log M}$. Also $\E\|P_k\epsilon\|^2=\sigma^2k$. This proves each bound and hence their minimum. With certificate (4), the variational inequality contributes at most $\gamma$ after normalization.\hfill$\square$
+
+\subsection{Proof of Proposition~2}
+For the stated parameterization, the squared gradient norm at $\theta_c$ is bounded by
+\[
+ h^{-1}\sum_\ell\{\tanh^2(u_\ell^\top v)
+ +a_{c\ell}^2\operatorname{sech}^4(u_\ell^\top v)\|v\|^2\}
+ \leq G_c^2.
+\]
+The mixed output/hidden-parameter Hessian block has operator norm at most $S/\sqrt h$. The hidden-parameter block is block diagonal and has norm at most $2A_\infty S^2/\sqrt h$; the output/output block is zero. Decomposing the full symmetric Hessian into its mixed and hidden blocks therefore bounds its norm by $H_c$.
+
+Taylor's theorem along the segment to $\theta_j$ gives
+\[
+ g_{\theta_j}(x)-g_{\theta_c}(x)
+ =\nabla g_{\theta_c}(x)^\top UU^\top(\theta_j-\theta_c)+e_j(x),
+\]
+where $|e_j(x)|\leq G_c\eta_j+H_cq_j^2/2$. The leading term belongs to the span of the $k$ functions $x\mapsto\nabla g_{\theta_c}(x)^\top U_{\cdot l}$. On the aggregation inputs its span has dimension at most $k$, and the Euclidean norm of each error vector is at most $\sqrt n b_k$. Orthogonal projection onto that span cannot increase this residual. This proves (7); Proposition~1 gives (8).\hfill$\square$
+
+\subsection{Proof of Lemma~3}
+Put $u=(\Sigma+\lambda I)^{-1/2}z$ and $A=\E uu^\top$. Then $0\preceq A\preceq I$ and $\|u\|^2\leq K_\lambda$. For $Z_i=u_iu_i^\top-A$, both positive-semidefinite terms have norm at most $K_\lambda$, giving $\|Z_i\|_{\op}\leq K_\lambda$. Moreover,
+\[
+ \E Z_i^2=\E(uu^\top)^2-A^2\preceq K_\lambda A.
+\]
+The variance parameter of the sum is at most $nK_\lambda$. The self-adjoint matrix Bernstein inequality \citep{tropp} gives (14). It implies, for every $a\in\R^p$,
+\[
+ |a^\top(\hat\Sigma-\Sigma)a|
+ \leq e_\lambda(a^\top\Sigma a+\lambda\|a\|^2).
+\]
+For two simplex weights, their first $p$ coordinate differences satisfy $\|a\|^2\leq2$. Rearranging the lower bound proves (15). The degenerate case $K_\lambda=0$ is immediate.\hfill$\square$
+
+\subsection{Proof of Lemma~4}
+Let $d=\hat f-f^*=a^\top z$, so $\|a\|^2\leq2$. The approximate empirical variational inequality is
+\[
+ P_n d^2\leq P_n\{(r+\epsilon)d\}+\gamma/2.
+\]
+Since the population excess equals $Pd^2-2Prd$, we obtain
+\begin{align*}
+ R_P(\hat f)-R_P(f^*)
+ &\leq Pd^2-2P_nd^2\\
+ &\quad+2\{(P_n-P)rd+P_n\epsilon d\}+\gamma.
+\end{align*}
+The Gram event bounds the first line by
+$-(1-2e)Pd^2+2e\lambda\|a\|^2$.
+Write $v^2=a^\top(\Sigma+\lambda I)a$ and $c=1-2e>0$. The definition of $s$ bounds the stochastic linear term by $2v\|s\|$. Consequently the excess is at most
+\[
+ -cv^2+\lambda\|a\|^2+2v\|s\|+\gamma
+ \leq\frac{\|s\|^2}{c}+2\lambda+\gamma.
+\]
+This establishes the claimed bridge without setting the residual cross term to zero.\hfill$\square$
+
+\subsection{Proof of Theorem~5}
+Conditional mean-zero noise makes the cross covariance between $ur$ and $u\epsilon$ vanish. Hence
+\[
+ \E\|s\|^2=\frac{\tr\operatorname{Cov}(ur)+\E\{v(X)\|u\|^2\}}{n}=\frac{V_\lambda}{n}.
+\]
+Moreover, $\tr\operatorname{Cov}(ur)\leq\E(r^2\|u\|^2)\leq K_\lambda R_P(f^*)$ and the noise term is at most $\sigma^2d_{\rm eff}(\lambda)$. This proves finiteness using A1--A2 alone. Under optional A3, the alternative bound $(R_0^2+\sigma^2)d_{\rm eff}(\lambda)$ follows instead. Markov's inequality gives $\|s\|^2\leq V_\lambda/(n\delta_s)$ except on an event of probability at most $\delta_s$. Intersecting with Lemma~3 costs at most $\delta_x+\delta_s$; the events need not be independent. Apply Lemma~4.
+
+For the observed-Gram statement, apply Markov at level $\delta$ to the same score. On this event, Lemma~4 applies whenever $\widehat e_\lambda<1/2$, and the infinite bound is automatic otherwise. No concentration event or conditioning on the observed Gram is required. This argument requires $\lambda$ to be fixed given $D_0$; choosing it using the aggregation sample would require additional simultaneous control.\hfill$\square$
+
+\subsection{Proof of Proposition~7}
+Let $\Pi$ project onto the column space of $B$ and let $\nu_1\geq\cdots\geq\nu_p\geq0$ be the eigenvalues of $\Sigma$. The variational characterization of the spectral tail gives
+\[
+ \sum_{j>k}\nu_j\leq\tr\{(I-\Pi)\Sigma\}
+ =\E\|(I-\Pi)z\|^2\leq\E\|e\|^2\leq\Delta^2.
+\]
+When $k\geq p$ the tail is empty. Splitting the effective-dimension sum at $k$ proves the first inequality in (19).
+
+For any $a\in\R^p$, put $A=a^\top\Sigma a$ and $D=\|a\|$. The directional leverage condition and the $L_2(P)$ triangle inequality imply
+\begin{align*}
+ |a^\top z(x)|
+ &\leq\sqrt{L_\phi}\,\|a^\top B\phi\|_P+\Delta D\\
+ &\leq\sqrt{L_\phi A}+(\sqrt{L_\phi}+1)\Delta D.
+\end{align*}
+Cauchy--Schwarz bounds the square of the last expression by
+\[
+ \{L_\phi+(\sqrt{L_\phi}+1)^2\Delta^2/\lambda\}
+ (A+\lambda D^2).
+\]
+Taking the supremum over $a\ne0$ and then the essential supremum over inputs proves the leverage bound. This proof allows cancellation between the low-dimensional component and its remainder; it does not compare their covariance matrices by an unjustified positive-semidefinite ordering.\hfill$\square$
+
+\subsection{Proof of Corollary~8}
+The Taylor expansion in Proposition~2 gives $|e_j(x)|\leq b_j$. Subtracting checkpoint $M$ bounds the squared norm of the vector remainder by $\sum_{j<M}(b_j+b_M)^2$. Here $\Delta^2/\lambda\leq1$, with equality when $\Delta^2\geq n^{-1}$. The additive one allows this boundary case. Proposition~7 gives $d_{\rm eff}(\lambda)\leq k+1$ and $K_\lambda\leq\overline K$. Theorem~5 therefore has numerator at most $\sigma^2(k+1)+\overline K R_P(f^*)$. The sample-size condition gives $e_\lambda\leq13/48$, so $(1-2e_\lambda)^{-1}\leq24/11$. Substitution gives (20). If the centered initial predictor belongs to the dictionary, comparison with that zero predictor gives $R_P(f^*)\leq\E\mu^2$, without a uniform bound on network output amplitudes.\hfill$\square$
+
+\section{Historical prediction comparisons}
+\subsection{Independent aggregation and equal-budget controls}\label{sec:primaryexperiment}
+The primary experimental estimator coincides with (3): each of the three outer splits trains its checkpoint dictionary on 64 observations and estimates convex weights on the remaining 32. Neither labels nor predictions are clipped, and the dictionary is not refitted after weighting. The three split risks are averaged only for evaluation; their predictions are not averaged into an additional ensemble. Thus each evaluated procedure has a total budget of 96 labels.
+
+Table~\ref{tab:primary} reports the un-clipped estimator together with matched comparators. All gains are formed within a bank before computing their standard error. Relative to the same frozen dictionary, convex averaging improves on selection, the last checkpoint, and equal weighting. Against CV using all 96 observations for its final path, the ordering reverses. This distinguishes a useful weight-learning effect within a dictionary from a net advantage after allocating labels to candidate training and aggregation.
+
+The calculation uses all 32 previously examined banks and all 12 conditions, with no new hyperparameter search. It is a theorem-aligned supplementary analysis, not a new independent confirmation. The earlier clipped progressive-mixture benchmark is retained in Supplementary Material, Section S1; clipping its labels is not used as evidence that the assumptions of Theorem~5 hold for that procedure.
+
+\begin{table}[htbp]\centering\small
+\caption{Primary independent estimator and matched controls. Positive gain means the comparator has higher risk than independent convex averaging. The standard error is based on 32 independent banks. Full-data controls share the total label budget but train a different final dictionary. Bold values indicate the lowest displayed mean error in each error column, including ties.}\label{tab:primary}
+\begin{tabular}{lrrr}\toprule Procedure & Mean risk & Paired gain & Bank SE\\\midrule
+Independent convex average & 0.358400 & --- & ---\\
+Split single selection & 0.361787 & 0.003387 & 0.000723\\
+Split last checkpoint & 0.368735 & 0.010335 & 0.002071\\
+Split equal average & 0.416939 & 0.058539 & 0.002403\\
+Full-data CV & 0.348856 & -0.009544 & 0.000857\\
+Full-data last-or-equal & \textbf{0.343353} & -0.015047 & 0.001235\\
+\bottomrule\end{tabular}\end{table}
+
+
+\subsection{Full-sample procedures and sensitivity analyses}
+The adaptive rule uses threefold validation loss $L_{\rm S}$ of fold-trained SURE averages, $L_0=N^{-1}\sum_iY_i^2$, and $\hat V=\max(L_0-\sigma^2,0)$. It uses full-data SURE weights when $L_0-L_{\rm S}>0.25\hat V$, and equal weights otherwise. The last-or-equal control replaces SURE by the last checkpoint under the same gate; it was introduced after outcomes were examined.
+
+
+Table~\ref{tab:main} reports the main 32-bank data. The adaptive method improves on CV averaging by 0.004154 in mean risk, with bank-level standard error 0.001010. Its historical adjusted lower bound was 0.002094; this pertains to that fixed comparison and does not validate later modifications. Eleven of 12 condition means favored the adaptive method, but only two condition-specific simultaneous intervals supported a positive gain. The post hoc last-or-equal control has lower overall risk, so the result does not establish an additional benefit from complex SURE weights.
+
+\begin{table}[t]\centering\small
+\caption{Full-data path comparisons: $N=96$, 32 banks, 12 equally weighted conditions. All risks exclude noise. The last-or-equal control is post hoc. Bold values indicate the lowest displayed mean error in each error column, including ties.}\label{tab:main}
+\begin{tabular}{lr}\toprule Method & Mean risk\\\midrule
+SURE average & 0.348088\\
+CV convex average & 0.348856\\
+Last checkpoint & 0.348748\\
+Equal checkpoint average & 0.413158\\
+Adaptive SURE/equal & 0.344702\\
+Last-or-equal control & \textbf{0.343353}\\\bottomrule
+\end{tabular}\end{table}
+
+The correction and nested-selection experiments evaluate whether risk-target correction improves prediction relative to CV. On the matched eight-bank pilot, nested coefficient selection has risk 0.353575 versus 0.349634 for CV. Its mean excess over the finite four-coefficient test oracle decomposes into 0.004470 from fold-level selection, a signed transfer contribution of 0.001264, and 0.000803 from oracle mismatch. Full details and the exact identity appear in Supplementary Material, Section S1. These diagnostics concern response-dependent correction procedures, distinct from the independent-sample estimator.
+
+Complete condition-specific risks are reported in Section S3.
+
+\section{Piecewise path approximation and a prespecified stopping audit}\label{sec:piecewiseaudit}
+The single-reference bound can charge for a long chord even when shorter sections of the path have modest curvature. This section derives a piecewise alternative and tests whether improving this component suffices to make the population bound informative. It is an analysis of the original aggregate: every checkpoint remains in the fitted dictionary and in its convex oracle.
+
+\subsection{A local interpolation bound}
+Choose anchor indices $1=i_0<\cdots<i_K=M$ using $D_0$ only. For $i_s\leq j\leq i_{s+1}$, choose $\tau_j\in[0,1]$ using $D_0$, and put $\bar\theta_j=(1-\tau_j)\theta_{i_s}+\tau_j\theta_{i_{s+1}}$. The approximation is the prediction chord
+\[
+ \widetilde f_j=(1-\tau_j)f_{i_s}+\tau_j f_{i_{s+1}},
+\]
+not the prediction at $\bar\theta_j$. At anchors, take the exact endpoint coefficient. For each neuron, write $t_a=u_a^\top v$, $t_b=u_b^\top v$, $t_j=u_j^\top v$, $\bar t_j=(1-\tau_j)t_a+\tau_jt_b$, and $\bar a_j=(1-\tau_j)a_a+\tau_j a_b$. Define
+\[
+ T_r(l,u)=\sup_{t\in[\min(l,u),\max(l,u)]}|\tanh^{(r)}(t)|,\qquad r=1,2.
+\]
+Let $d_\ell=t_{b\ell}-t_{a\ell}$ and $\alpha_\ell=a_{b\ell}-a_{a\ell}$. Set
+\begin{align}
+ D_j(x)&=\frac1{\sqrt h}\sum_\ell\bigl\{
+ |a_{j\ell}-\bar a_{j\ell}|\,|\tanh(t_{j\ell})|
+ +|\bar a_{j\ell}|T_1(t_{j\ell},\bar t_{j\ell})|t_{j\ell}-\bar t_{j\ell}|\bigr\},\\
+ C_s(x)&=\frac1{\sqrt h}\sum_\ell\bigl\{
+ 2|\alpha_\ell d_\ell|T_1(t_{a\ell},t_{b\ell})
+ +\max(|a_{a\ell}|,|a_{b\ell}|)d_\ell^2T_2(t_{a\ell},t_{b\ell})\bigr\},\\
+ b_j(x)&=D_j(x)+\tfrac12\tau_j(1-\tau_j)C_s(x).
+ \label{eq:piecebound}
+\end{align}
+The derivative suprema are explicit: $T_1$ is attained nearest zero, and $T_2$ is attained at an endpoint or at $\pm\operatorname{arctanh}(1/\sqrt3)$ when that point lies in the interval. At either interior maximizer, $|\tanh''|=4/(3\sqrt3)$.
+
+\begin{pathlemma}[Piecewise prediction approximation]
+For the finite-width tanh network of the main paper, $|f_j(x)-\widetilde f_j(x)|\leq b_j(x)$. With
+\[
+ \phi=(f_{i_0}-f_M,\ldots,f_{i_{K-1}}-f_M)^\top,
+ \qquad \Delta_{\rm pw}^2=\mathop{\mathrm{ess\,sup}}_x\sum_{j<M}b_j(x)^2,
+\]
+there is a matrix $B$ such that $z=B\phi+e$ and $\|e(x)\|\leq\Delta_{\rm pw}$ almost surely. Consequently Proposition~7 of the main paper applies with dimension $K$ and the directional leverage of these anchor-difference features.
+\end{pathlemma}
+\begin{proof}
+Decompose $f_j-\widetilde f_j$ into $g_{\theta_j}-g_{\bar\theta_j}$ and the interpolation error along the anchor parameter chord. For each neuron,
+\[
+ a_j\tanh(t_j)-\bar a_j\tanh(\bar t_j)
+ =(a_j-\bar a_j)\tanh(t_j)+\bar a_j\{\tanh(t_j)-\tanh(\bar t_j)\}.
+\]
+The mean-value theorem bounds the sum of their absolute values by $D_j$. Along the chord, the neuron's second derivative with respect to its interpolation coordinate is
+\[
+ 2\alpha_\ell d_\ell\tanh'(t_\ell)
+ +a_\ell d_\ell^2\tanh''(t_\ell).
+\]
+Its summed absolute bound is $C_s$. The linear interpolation remainder is at most $\tau_j(1-\tau_j)C_s/2$. The fixed centering function cancels in both differences. This proves \eqref{eq:piecebound}. Finally, the chord coefficients sum to one, so each $\widetilde f_j-f_M$ is a linear combination of the $K$ anchor-difference features. The last checkpoint is an anchor with zero approximation error. Stacking the other remainders proves the claim. No candidate is removed from the estimator.
+\end{proof}
+This lemma combines the scalar interpolation remainder with the existing approximation-to-leverage result. It does not supply a new aggregation procedure, an optimality theorem, or a guarantee that increasing the number of segments improves the final risk bound: more anchors can increase dimension and leverage.
+
+\subsection{Protocol and verification criteria}
+The locally frozen protocol used seed 27182819, eight independent training banks, all three signals and both noise levels, giving 48 dictionaries. Training uses 64 iid observations from the same $32\times32$ finite input population, the unchanged width-32 all-layer optimizer, and all 12 checkpoints through time 800. The anchor counts $K=2,4,8$ were fixed in advance. Anchor indices are rounded equally spaced checkpoint indices. Interior $\tau_j$ is the clipped Euclidean projection of $\theta_j$ onto its adjacent anchor parameter chord. No aggregation responses determine anchors or interpolation coefficients.
+
+The primary choice was $K=4$ and $n=4096$. Values $n=512$ and $32768$ were also fixed, with the latter designated a stress calculation rather than evidence at a practically matched label budget. The historical derivative-based residual envelope was $\overline R=B_\mu+B_0+h^{-1/2}\max_j\|a_j\|_1$, with $|\mu|\leq B_\mu$ and $|g_0|\leq B_0$. As a separate, sharper finite-population diagnostic, we use
+\[
+ R_{\rm grid}=\max_{x,j}|\mu(x)-f_j(x)|,
+\]
+which bounds the residual of every convex combination. Both use information about the simulated regression mean and are analysis diagnostics, not estimated uncertainty bounds available from arbitrary observed data.
+
+For each dictionary, the optional envelope version of bound (18) uses
+\[
+ d_{\rm eff}(\lambda)\leq\min\{M-1,K+\Delta_{\rm pw}^2/\lambda\},\quad
+ K_\lambda\leq L_\phi+(\sqrt{L_\phi}+1)^2\Delta_{\rm pw}^2/\lambda.
+\]
+We set $\delta_x=\delta_s=0.05$ and evaluate the 71 prespecified values $\lambda=10^t$, with $t$ equally spaced on $[-6,1]$. Only values with $e_\lambda<1/2$ are valid. Minimizing this deterministic bound uses the known finite population and the frozen training path, not aggregation responses; $\lambda$ does not change fitted weights. This choice is therefore conditional on $D_0$, but is not a data-only certificate for an unknown input distribution.
+
+Three criteria were fixed: (i) the piecewise squared remainder is at most one tenth of the global rank-four Taylor remainder on at least 80\% of dictionaries; (ii) the primary derivative-envelope bound is smaller than the trivial excess bound $\max_jR_P(f_j)-R_P(f^*)$ on at least 80\%; and (iii) the full convex oracle improves over the initial checkpoint by at least 10\% on at least 80\%. The last criterion guards against an apparently easy aggregation problem generated by ineffective candidate training. These percentages are descriptive protocol thresholds, not hypothesis tests. The protocol was saved before outcomes locally, not registered externally.
+
+\subsection{Results against the prespecified criteria}
+The global rank-four Taylor squared remainder has median 6854.68. Table~\ref{tab:piecewise} shows that local interpolation substantially tightens this component. Nevertheless, the primary residual-envelope risk bound is nonvacuous for zero of 48 dictionaries at $n=4096$. The corresponding median remainder is 2.473, whereas the median trivial excess allowance is 0.418; the nonvacuity counts use paired dictionary comparisons, not a comparison of medians. Even the sharper population envelope gives only 8/48 nonvacuous bounds for the primary $K=4$ choice. Only 32/48 dictionaries meet the candidate-training improvement threshold. Thus criterion (i) passes, whereas (ii) and (iii) fail.
+
+\begin{table}[htbp]\centering\small
+\caption{Piecewise audit, all 48 dictionaries. Remainders and leverage are medians. Counts show nonvacuous risk bounds using parameter/grid residual envelopes, respectively. No valid primary $K=4$ or $K=8$ bound exists at $n=512$ within the prespecified grid; $K=2$ has 22 valid bounds, none nonvacuous.}\label{tab:piecewise}
+\begin{tabular}{rrrrrr}\toprule
+$K$ & $\Delta_{\rm pw}^2$ & Actual error$^2$ & $L_\phi$ & $n=4096$ & $n=32768$\\\midrule
+2 & 0.722260 & 0.061340 & 7.05 & 0/2 & 11/33\\
+4 & 0.202446 & 0.008182 & 10.68 & 0/8 & 22/34\\
+8 & 0.009391 & 0.000967 & 31.32 & 0/9 & 28/39\\\bottomrule
+\end{tabular}\end{table}
+
+For each dictionary and sample size we additionally generated 16 independent aggregation samples, giving 2,304 fits. Uniform multinomial input counts and conditionally Gaussian response sums are sufficient statistics for the quadratic objective; repeated grid rows can therefore be compressed exactly. A literal-sample check reproduced the Gram matrix, score, and fitted predictions to within $7\times10^{-16}$. All optimization certificates were below $10^{-8}$. One hundred additional random path checks verified the local interpolation inequality numerically; the proof above, not these checks, supplies the mathematical guarantee.
+
+\begin{table}[htbp]\centering\small
+\caption{Prediction risk in the final finite-population audit. Training sample size remains 64 as aggregation size increases. These are same-dictionary comparisons, not full-budget comparisons; each entry averages 48 dictionaries and 16 aggregation repetitions. Bold marks the smallest mean in each column.}\label{tab:finalpred}
+\begin{tabular}{lrrr}\toprule
+Procedure & $n=512$ & $n=4096$ & $n=32768$\\\midrule
+Convex average & \textbf{0.331423} & \textbf{0.330168} & \textbf{0.329980}\\
+Checkpoint selection & 0.336547 & 0.335624 & 0.335552\\
+Last checkpoint & 0.360078 & 0.360078 & 0.360078\\
+Equal average & 0.401214 & 0.401214 & 0.401214\\
+Late equal average & 0.360731 & 0.360731 & 0.360731\\\bottomrule
+\end{tabular}\end{table}
+
+Table~\ref{tab:finalpred} reports the matched prediction risks. These results isolate an improvement in bounding the approximation error, but not a useful primary-sample guarantee or a gain over full-budget CV. The latter remains assessed by the fresh equal-budget experiment in the main paper. No new training mechanism, signal, or primary segmentation was selected after examining these results. The local approximation is therefore retained as a diagnostic refinement; the reported criteria do not support a useful parameter-envelope certificate at the primary sample size.
+
+\section{Score-variance refinement and validation}\label{sec:scoreaudit}
+\subsection{Numerical population oracles and the variance bound}
+Let $\widetilde f$ be a numerical convex oracle with a certified population objective gap at most $\eta$. Projection onto the candidate hull gives $\|\widetilde f-f^*\|_P^2\leq\eta$. For $u=(\Sigma+\lambda I)^{-1/2}z$, define
+\[
+ \widetilde V_r=\E\|u(\mu-\widetilde f)\|^2
+ -\|\E\{u(\mu-\widetilde f)\}\|^2.
+\]
+\begin{pathlemma}[Variance allowance for a numerical oracle]
+Under A1--A2 of the main paper,
+\[
+ V_\lambda\leq
+ \left(\sqrt{\widetilde V_r}+\sqrt{K_\lambda\eta}\right)^2
+ +\sigma^2d_{\rm eff}(\lambda).
+\]
+Also $V_\lambda\leq\sigma^2d_{\rm eff}(\lambda)+K_\lambda R_P(\widetilde f)$.
+\end{pathlemma}
+\begin{proof}
+In the Hilbert space of square-integrable centered random vectors, the triangle inequality gives
+\[
+ \sqrt{\tr\operatorname{Cov}(ur)}
+ \leq\sqrt{\widetilde V_r}
+ +\sqrt{\tr\operatorname{Cov}\{u(\widetilde f-f^*)\}}.
+\]
+The second variance is at most $\E\{\|u\|^2(\widetilde f-f^*)^2\}\leq K_\lambda\eta$. Add the noise allowance. The final inequality follows from $R_P(f^*)\leq R_P(\widetilde f)$. Thus numerical-oracle approximation is charged explicitly rather than assumed to vanish.
+\end{proof}
+This bound requires the population regression function for evaluation. In the simulation it is available on the complete finite input population. It is not an estimated risk bound for an unknown real-data regression problem.
+
+\subsection{Evaluation protocol and full results}
+The seed-17320508 protocol was specified before evaluating its outcomes. Each of eight banks generates independent dictionaries for all three signals and both training-noise levels, for a total of 48. The network, optimizer and 12 checkpoints are unchanged. Training size is 64. Conditional on a dictionary, aggregation replications use fresh iid uniform grid inputs and either Gaussian noise or $\sigma T/\sqrt3$ with $T\sim t_3$. The aggregation sample sizes are 128, 512 and 4096, each with 16 replications per noise law. The 4,608 fits contain no excluded cases. The value $\lambda=1/n$ is fixed before observing aggregation inputs or responses.
+
+The population oracle uses the true mean only for evaluation. Its Frank--Wolfe gap is below $10^{-10}$. All aggregation gaps are below $10^{-8}$. The literal finite-population covariance supplies $d_{\rm eff}$ and $K_\lambda$; no approximate tangent representation is substituted in this audit. Comparisons at the same $n$ use the same dictionary, population oracle, geometry and confidence level.
+
+\begin{table}[htbp]\centering\small
+\caption{Concentration-based variance audit. ``Finite'' counts dictionaries with $e_\lambda<1/2$; it is common to all four score allowances. Each cell reports nonvacuous count/48, followed by the median remainder among finite cases. A dash means no finite bound.}\label{tab:scorefull}
+\begin{tabular}{lrrr}\toprule
+Allowance & $n=128$ & $n=512$ & $n=4096$\\\midrule
+Finite dictionaries & 0/48 & 27/48 & 48/48\\
+Parameter envelope & 0/48 (---) & 0/48 (71.327) & 0/48 (0.98808)\\
+Oracle-risk score & 0/48 (---) & 2/48 (1.4142) & 41/48 (0.03274)\\
+Zero-reference score & 0/48 (---) & 0/48 (3.5903) & 41/48 (0.05522)\\
+Numerical-oracle variance & 0/48 (---) & 5/48 (0.81420) & 48/48 (0.01953)\\\bottomrule
+\end{tabular}\end{table}
+
+Table~\ref{tab:scorefull} compares the four concentration-based bounds. The zero-reference allowance uses $\E\mu^2$ in place of the convex oracle risk and therefore needs no oracle optimization, although it still uses a population moment. The two allowances requiring numerical oracle calculations use its computed risk or the gap-corrected variance in Lemma~S2. The parameter envelope uses $B_\mu+B_0+h^{-1/2}\max_j\|a_j\|_1$. Its conservatism reflects both geometric and residual-envelope allowances. The quantities in this table do not change with the aggregation noise law when the conditional variance is the same.
+
+\begin{table}[htbp]\centering\small
+\caption{Observed-Gram bound, confidence level 0.9, all 768 repetitions per row. Infinite bounds remain in the denominator. ``Median'' is over finite bounds. These repetitions reuse dictionaries and are not independent training-bank replications.}\label{tab:observedscore}
+\begin{tabular}{rlrrrr}\toprule
+$n$ & Noise & Finite & Nonvacuous & Median & Mean excess\\\midrule
+128 & Gaussian & 767 & 485 & 0.18622 & 0.005084\\
+128 & Student $t_3$ & 768 & 493 & 0.19212 & 0.004667\\
+512 & Gaussian & 768 & 629 & 0.05044 & 0.001546\\
+512 & Student $t_3$ & 768 & 633 & 0.04950 & 0.001464\\
+4096 & Gaussian & 768 & 768 & 0.007216 & 0.000199\\
+4096 & Student $t_3$ & 768 & 768 & 0.007213 & 0.000197\\\bottomrule
+\end{tabular}\end{table}
+
+Table~\ref{tab:observedscore} reports the observed-Gram results. No violation was observed in these simulations. This is a diagnostic consistency check, not a frequentist coverage estimate with independent dictionaries for every row. In particular, zero violations of a conservative bound do not imply exact 90\% calibration. The mean excesses are computed relative to the numerical oracle; the population-optimum difference is at most its reported optimization gap.
+
+\subsection{Scope of the refinement}
+The main theorem requires A1--A2; optional A3 recovers the envelope comparison. Both versions use the same estimator and full convex oracle. The population mean may be unbounded: on $(0,1)$ with uniform inputs, $\mu(x)=x^{-1/4}$ has second moment two. Every fixed finite tanh convex hull is bounded, so its oracle residual is unbounded, but a dictionary containing zero has oracle risk at most two. Its bounded difference features have bounded unregularized leverage on their covariance range for a fixed dictionary. The variance-sensitive fixed-confidence regime can therefore apply where the envelope assumption cannot.
+
+The variance formulation strictly relaxes the envelope assumption in this example. Finite-second-moment learning and approximation-error-sensitive bounds have established precedents, as discussed in the main paper. The remaining issue for general neural training regimes is simultaneous control of path geometry and leverage with useful constants. The known-population audit does not provide that parameter-only result, and it does not change the previous full-budget CV comparison.
+
+\subsection{Exploratory fold-ensemble check}
+We also checked whether averaging the three fold predictions, rather than averaging their separate risks, closes the practical training-budget gap. This exploratory check reuses the first eight historical seed-20261018 banks and all 12 conditions. It is not independent confirmation and did not define the new score protocol. Independent foldwise convex weights followed by prediction averaging have mean risk 0.352464; using common out-of-fold weights on the average fold predictions gives 0.349846, compared with 0.349634 for refitted full-data CV. Matched fold-ensemble last, late-equal, and CV-selected checkpoint risks are 0.358381, 0.362759, and 0.351262. Thus this deployment change does not establish a new advantage over refitted CV. No additional variant was selected from this pilot for the main estimator.
+
+\subsection{Earlier fixed-dictionary sample-size experiment}
+To isolate weight estimation from candidate training, we generated 48 new dictionaries (eight training banks, three signals and two noise levels), each from 64 training observations. The input distribution is uniform on a fixed $32\times32$ grid on $[-1,1]^2$. This is a specified discrete population, not a test approximation to a continuous distribution. The same 12 fully trained checkpoints are frozen as the aggregation sample size varies over $n\in\{32,64,128,256,512\}$. For each dictionary, 64 independent aggregation replications use iid grid inputs and fresh Gaussian noise; sample sizes share nested prefixes within a replication. This gives 15,360 fits. The seed, all sample sizes and the estimator were fixed before evaluating outcomes.
+
+Population risks are computed over the entire grid. A separate convex optimization using the noise-free grid means defines a numerical population oracle with objective gap below $10^{-10}$; it is used only for evaluation. Table~\ref{tab:fixedrate} reports excess risk over this same dictionary oracle. Conditional Monte Carlo standard errors average the independent aggregation-replication variances across the fixed dictionaries; they do not describe variation over future training dictionaries. Aggregation gaps are below $10^{-8}$, and an independent replay of the first training path exactly matched the existing trainer.
+
+\begin{table}[htbp]\centering\small
+\caption{Fixed-dictionary excess population risk. The input population is the full discrete grid. The final column diagnoses scaling, not a separate prediction criterion.}\label{tab:fixedrate}
+\begin{tabular}{rrrr}\toprule
+$n$ & Mean excess & Conditional MC SE & $n\times$ mean excess\\\midrule
+32 & 0.015048 & 0.000371 & 0.482\\
+64 & 0.009042 & 0.000225 & 0.579\\
+128 & 0.005124 & 0.000128 & 0.656\\
+256 & 0.002672 & 0.000069 & 0.684\\
+512 & 0.001439 & 0.000037 & 0.737\\
+\bottomrule\end{tabular}\end{table}
+
+The mean excess decreases from 0.015048 to 0.001439. The product of sample size and mean excess increases from 0.482 to 0.737, so these values should not be described as an exactly constant inverse-sample-size law. They show decreasing weight-estimation error for a fixed comparator, while leaving finite-sample departures from the asymptotic regime visible.
+
+Actual parameter paths expose a limitation of the sufficient conditions. At $\lambda=1/512$, their mean dictionary effective dimension and leverage are 2.673 and 7.616, but the rank-four single-reference Taylor squared remainder has median 5790.8. A separate prespecified audit on 48 new dictionaries replaces this global approximation by piecewise prediction chords, retaining every original candidate. With four segments, the median certified squared remainder decreases from 6854.68 to 0.20245. Yet the resulting parameter-envelope population bound is nonvacuous for 0/48 dictionaries at the primary aggregation size $n=4096$. Thus tighter curvature control alone does not resolve the combined leverage and residual-envelope costs. The derivation, all segment counts, and the failed stopping criteria are reported in Supplementary Material, Section S6. These experiments do not establish a generally useful neural training-path fast-rate certificate.
+
+
+
+\section{An explicit output-layer training regime}\label{sec:outputregime}
+\subsection{Exact path dimension under gradient descent}
+Freezing the hidden features makes the training recursion linear in the output coefficients. Spectral analyses of gradient-descent paths and early stopping are well established; see, for example, \citet{raskutti}. This representation verifies the geometric hypotheses of the main result for a specified neural training mechanism.
+
+Let $\psi(x)=h^{-1/2}(\tanh(u_1^\top v),\ldots,\tanh(u_h^\top v))^\top$, with hidden parameters frozen using $D_0$ only. For a centered output $f_b(x)=\psi(x)^\top b$, initialize $b_0=0$. On $m$ training observations define $\Psi_{i\cdot}=\psi(X_i)^\top$, $H=\Psi^\top\Psi/m$ and $c=\Psi^\top Y/m$. Full-batch gradient descent for half squared loss satisfies
+\[
+ b_{t+1}=(I-\alpha H)b_t+\alpha c.
+\]
+All training quantities are fixed when conditioning on $D_0$, which includes any initialization randomness. Choose a finite checkpoint schedule using $D_0$ only and include time zero.
+
+\begin{pathlemma}[Output-layer gradient paths]\label{lem:outputpath}
+Let $\mathcal K=\operatorname{span}\{c,Hc,\ldots,H^{h-1}c\}$ have dimension $r>0$, let $U$ be an orthonormal basis for it, and set $\phi(x)=U^\top\psi(x)$. Suppose the directional leverage of $\phi$ is bounded by $L_\phi$, as in Proposition~7 of the main paper. Then every checkpoint dictionary satisfies $z=B\phi$ exactly, and
+\[
+ d_{\rm eff}(\lambda)\leq r,\qquad K_\lambda\leq L_\phi
+ \quad\text{for every }\lambda>0.
+\]
+Under A1, choose $\delta_x,\delta_s>0$ with $\delta_x+\delta_s<1$. For $\lambda=1/n$, $M\geq2$ and
+$n\geq32L_\phi\log\{2(M-1)/\delta_x\}$, the aggregate with gap at most $\gamma$ obeys, with conditional probability at least $1-\delta_x-\delta_s$,
+\begin{align}
+ R_P(\hat f)\leq R_P(f^*)+\frac2n+\gamma
+ +\frac{24\{\sigma^2r+L_\phi R_P(f^*)\}}{11n\delta_s}.
+ \label{eq:outputbound}
+\end{align}
+Here $R_P(f^*)\leq\E\mu^2$. If $r=0$, all predictions vanish and aggregation excess is zero.
+\end{pathlemma}
+\begin{proof}
+By induction, $b_t=\alpha\sum_{j=0}^{t-1}(I-\alpha H)^j c$. Cayley--Hamilton implies $b_t\in\mathcal K$ for every finite $t$. Also $c\in\operatorname{range}(H)$, so $r\leq\operatorname{rank}(H)\leq\min(h,m)$. With $B_{j\cdot}=(b_{t_j}-b_{t_M})^\top U$, the representation $z=B\phi$ is exact. Apply Proposition~7 with $\Delta=0$. The sample-size condition gives $e_\lambda\leq13/48$ in Theorem~5, and its oracle-risk numerator gives \eqref{eq:outputbound}. The zero checkpoint gives the oracle comparison. If $c=0$, the recursion stays at zero.
+\end{proof}
+There is no dependence on the largest checkpoint time in these geometric bounds. A stable step size $0<\alpha\leq\|H\|_{\rm op}^{-1}$ can be used when $H\ne0$, although subspace containment holds without this restriction. Increasing width need not preserve bounded $r$ or $L_\phi$, and the lemma makes no such assertion. For a fixed dictionary, bounded features and a positive minimum nonzero eigenvalue $\kappa$ of $\E\phi\phi^\top$ give $L_\phi\leq1/\kappa$, since $\|\psi(x)\|\leq1$. In a sequence of problems, bounded $r,L_\phi,\sigma^2,\E\mu^2$, $\log M=o(n)$ and $\gamma=O(n^{-1})$ suffice for the stated fixed-confidence rate.
+
+\subsection{A closed-form nonvacuous example}
+Take one fixed hidden neuron $\psi(x)=\tanh x$, population $X\sim U[-1,1]$, and $\mu(x)=\psi(x)$. Use the deterministic training design $D_0=\{(-1,-\tanh1),(1,\tanh1)\}$, with noiseless training responses, and train only its output coefficient with $\alpha=1$. The conditional theory places no iid requirement on this candidate-training design. The aggregation sample remains iid from the specified population, with conditionally mean-zero noise of variance at most $\sigma^2=0.09$. Write
+\[
+ C=\E\psi(X)^2=1-\tanh1,\qquad H=\tanh^2 1.
+\]
+Then $c=H$, $b_t=1-(1-H)^t$, $r=1$ and $L_\phi=H/C\approx2.432934$. For checkpoints $t\in\{0,1,2,4,8,16\}$, the convex oracle is the last checkpoint and
+\[
+ R_P(f^*)=C(1-H)^{32}\approx2.0914\times10^{-13}.
+\]
+With $\delta_x=\delta_s=0.05$, the sufficient sample-size threshold is approximately $412.495$. At $n=512$ and $\gamma=0$, \eqref{eq:outputbound} gives excess risk at most $0.011577$ with conditional probability at least $0.9$. This is smaller than the deterministic hull-wide allowance
+\[
+ \max_j R_P(f_j)-R_P(f^*)=C\{1-(1-H)^{32}\}\approx0.238406.
+\]
+All constants follow analytically from the specified training mechanism and input law. These are bound calculations, not additional Monte Carlo results or a data-only uncertainty procedure. The example verifies that the path assumptions can yield a nonvacuous guarantee. Its convex oracle coincides with the best checkpoint, so the guarantee does not imply a gain over early stopping or extend to the all-layer optimizer in the main experiments.
+
+\section{Calibration and diagnostic quantities}\label{sec:calibration}
+\subsection{Computable path and leverage bounds}
+For a fixed reference and saved checkpoints, the maximum absolute output coordinate over all joining line segments is attained at an endpoint. Thus $A_\infty=\max(\|a_c\|_\infty,\max_j\|a_j\|_\infty)$ is directly computable. For gradient descent on half mean-squared training loss $\mathcal L_t$, the output-coordinate update satisfies
+\[
+ |a_{\ell,t+1}-a_{\ell,t}|
+ \leq\frac{\alpha_t}{\sqrt h}\frac1m\sum_i|f_t(X_i)-Y_i|
+ \leq\alpha_t\sqrt{2\mathcal L_t/h}.
+\]
+If the reference is a saved iterate, it follows that
+\[
+ A_\infty\leq\|a_0\|_\infty+
+ h^{-1/2}\sum_{t<T}\alpha_t\sqrt{2\mathcal L_t}.
+\]
+For $\alpha_t=\alpha$ and $\mathcal L_t\leq L$, this becomes $\|a_0\|_\infty+\alpha T\sqrt{2L/h}$. Consequently
+\[
+ H_c\leq\frac{S+2S^2\|a_0\|_\infty}{\sqrt h}
+       +\frac{2S^2\alpha T\sqrt{2L}}h.
+\]
+The loss bound is a condition, not an automatic property of arbitrary steps. The experiments initialize output coordinates in $[-0.5,0.5]$. On the 48 paths of Section S6, the saved-endpoint $A_\infty$ has median 1.5911. This finite observed magnitude does not bound a growing-width or growing-time sequence, and the Taylor remainder also contains the parameter displacement squared.
+
+For tanh, the common centering function cancels in $z$. The deterministic bound in Section 3.3 follows from $|z_j(x)|\leq(\|a_j\|_1+\|a_M\|_1)/\sqrt h$ and $(\Sigma+\lambda I)^{-1}\preceq\lambda^{-1}I$. Compact input support is therefore unnecessary for finiteness at fixed $\lambda$. More precise certification can use a known input support and moments. If $z$ is globally $L_z$-Lipschitz on a compact support and $\{x_l\}$ is an $\varepsilon$-net, then
+\[
+ \sqrt{K_\lambda}\leq
+ \max_l\|(\Sigma+\lambda I)^{-1/2}z(x_l)\|
+       +L_z\varepsilon/\sqrt\lambda.
+\]
+This follows from the triangle inequality and the inverse-square-root norm bound. Network derivative bounds supply $L_z$: if $L_j=h^{-1/2}\sum_\ell |a_{j\ell}|\|u_{j\ell,\mathrm{input}}\|$, then $L_z\leq\{\sum_{j<M}(L_j+L_M)^2\}^{1/2}$. The covering error must be included. A sample maximum without a cover and an error allowance does not certify a continuous-population essential supremum. Estimated moments likewise require a separate matrix-error bound.
+
+\subsection{Score variance and its estimation}
+Put $\ell_\lambda=\|u\|^2$ and $m_r=\E(ur)$. The oracle-risk numerator exceeds the exact score variance by the nonnegative quantity
+\begin{align*}
+ \sigma^2d_{\rm eff}+K_\lambda R_P(f^*)-V_\lambda
+ ={}&\E\{(\sigma^2-v(X))\ell_\lambda\}\\
+ &+\E\{(K_\lambda-\ell_\lambda)r^2\}+\|m_r\|^2.
+\end{align*}
+This identity separates a loose noise-variance bound, leverage heterogeneity where approximation error occurs, and a nonzero residual-score mean. The substitution is accurate when these terms are small; it is exact for a realizable oracle under homoscedastic noise. A small oracle risk also limits the absolute residual contribution. There is no distribution-free constant-factor equivalence between the two numerators.
+
+The unknown regression mean does not make variance estimation intrinsically impossible. With known $\Sigma$, a fixed independent pilot $\widetilde f$ and iid calibration pairs, let $q_i=u(X_i)\{Y_i-\widetilde f(X_i)\}$. For $m\geq2$ calibration observations,
+\[
+ \widehat V(\widetilde f)=\frac1{m-1}\sum_i\|q_i-\bar q\|^2
+\]
+is unbiased for $\tr\operatorname{Cov}\{u(Y-\widetilde f)\}$ and is consistent as $m\to\infty$ when $\E\|q_i\|^2<\infty$. The target equals $V_\lambda$ if $\widetilde f=f^*$; otherwise the pilot error must be controlled, for example through the population objective-gap allowance in Lemma S2. Such an allowance is not automatically available from training error. Reusing the weight-fitting sample to form residuals also requires a dependence analysis.
+
+Consistency is distinct from a finite-sample upper confidence bound. A1--A2 alone do not provide a uniform concentration rate for an empirical second moment. Valid practical calibration needs additional tail or moment control, a justified pilot approximation allowance and, when applicable, uncertainty in $\Sigma$. The present finite-population experiments evaluate these quantities directly and do not substitute an empirical variance into Theorem 5.
+
+\subsection{Joint diagnosis of the parameter-envelope bound}
+The following diagnostic reuses all 48 dictionaries of Section S6. For each dictionary we retain its four-segment parameter-envelope choice of $\lambda$ at $n=4096$. We then replace the dimension and leverage allowances together by their exact finite-population values, and independently replace the parameter residual envelope by $\max_{x,j}|\mu(x)-f_j(x)|$. Neither the fitted predictors nor $\lambda$ change across the four combinations in Table~\ref{tab:jointdiagnostic}.
+
+\begin{table}[htbp]\centering\small
+\caption{Fixed-$\lambda$ decomposition of the Section S6 bound, all 48 dictionaries. All bounds are finite. ``Nonvacuous'' means smaller than the dictionary-specific trivial excess allowance.}\label{tab:jointdiagnostic}
+\begin{tabular}{llrr}\toprule
+Geometry & Residual envelope & Nonvacuous & Median bound\\\midrule
+Parameter & Parameter & 0/48 & 2.47319\\
+Parameter & Finite population & 1/48 & 0.93045\\
+Exact finite population & Parameter & 0/48 & 1.00559\\
+Exact finite population & Finite population & 2/48 & 0.81603\\\bottomrule
+\end{tabular}\end{table}
+
+At these same $\lambda$ values, median dimension allowances are 4.532 versus exact 1.068; leverage allowances are 20.867 versus exact 4.020; residual envelopes are 5.868 versus 1.598. Both geometric and residual substitutions reduce the bound. However, the median $\lambda$ is 0.3981 and the additive term $2\lambda$ already exceeds the trivial allowance for 46/48 dictionaries. Its median is 0.7962, compared with a median trivial allowance of 0.4179. These paired counts, rather than a comparison of medians alone, identify the obstruction. The geometry allowance forces a large regularization cost in the optimized certificate. Separately reoptimizing $\lambda$ for the finite envelope yields the previously reported 8/48 in Section S6; the 1/48 count above deliberately holds $\lambda$ fixed.
+
+Thus low empirical spectral complexity does not by itself ensure a useful population certificate. Approximation-based leverage inflation, a conservative residual envelope and the regularization allowance all matter. The Section S7 audit uses a different set of trained dictionaries and exact population geometry, so differences between its results and Section S6 cannot be attributed to a single changed factor.
+
+\subsection{Sensitivity to the analysis parameter}
+Table~\ref{tab:lambdasensitivity} evaluates the gap-corrected variance bound on all 48 frozen dictionaries of Section S7 at $\lambda=c/n$, $c\in\{0.25,0.5,1,2,4\}$, and at $\lambda=\sigma^2$. This is a post-outcome sensitivity calculation; the original $1/n$ choice and its results remain the primary specification. No aggregation labels select among the displayed values. Network training and the weight estimator are unchanged.
+
+\begin{table}[htbp]\centering\small
+\caption{Analysis-parameter sensitivity on fixed dictionaries. Counts use denominator 48. At $n=4096$ every bound is finite; the median is over all dictionaries. At $n=128$ no displayed concentration-based bound is finite.}\label{tab:lambdasensitivity}
+\begin{tabular}{lrrrr}\toprule
+&\multicolumn{2}{c}{$n=512$}&\multicolumn{2}{c}{$n=4096$}\\
+$\lambda$&Finite&Nonvacuous&Nonvacuous&Median bound\\\midrule
+$0.25/n$&9&0&47&0.02287\\
+$0.5/n$&18&2&48&0.02114\\
+$1/n$&27&5&48&0.01953\\
+$2/n$&30&13&48&0.01822\\
+$4/n$&32&15&48&0.01746\\
+$\sigma^2$&48&16&16&0.73546\\\bottomrule
+\end{tabular}\end{table}
+
+The useful-bound finding at $n=4096$ persists across the local $c/n$ range, whereas counts at $n=512$ are sensitive to $c$. The larger $\sigma^2$ choice improves Gram control but incurs a substantial $2\lambda$ cost. These calculations do not establish uniform robustness over $[1/n,\sigma^2]$, and a bound selected after inspecting an aggregation sample would need simultaneous probability control.
+
+\subsection{Concentration of fitted weights on public data}
+The saved weight vectors from all 20 splits per data set give Table~\ref{tab:weightconcentration}. We count a near-last vertex when $w_M\geq1-10^{-6}$, and active coordinates when $w_j>10^{-6}$. These thresholds describe numerical solutions; correlated candidates can admit different weights with nearly identical predictions.
+
+\begin{table}[htbp]\centering\small
+\caption{Stored-weight diagnostics. ``Active'' is the mean number of coordinates above $10^{-6}$; near-last counts have denominator 20.}\label{tab:weightconcentration}
+\begin{tabular}{llrrr}\toprule
+Data & Estimator & Mean $w_M$ & Near-last & Active\\\midrule
+Airfoil & Independent & 0.999758 & 18/20 & 1.10\\
+Airfoil & Full-data CV & 1.000000 & 20/20 & 1.00\\
+Yacht & Independent & 0.935825 & 12/20 & 1.50\\
+Yacht & Full-data CV & 0.979643 & 16/20 & 1.25\\\bottomrule
+\end{tabular}\end{table}
+
+Airfoil's independent weights range from 0.996825 to 1 in the last coordinate. Its maximum split-level RMSE difference from the last checkpoint is 0.000520, so the equal three-decimal means do not imply exact equality. On Yacht the last weight ranges from 0.513894 to 1. These direct weight records support near-vertex concentration, especially on Airfoil, rather than an inference from rounded RMSE alone.
+
+\section{Directional approximation errors and growing checkpoint dictionaries}\label{sec:directional}
+\subsection{Relation to existing aggregation arguments}
+Proposition 7 uses spectral-tail and directional leverage calculations to connect path approximation to population geometry. Related tools appear in localized convex-hull analysis \citep{belleclocal}, random-design ridge regression \citep{hsu}, and ridge-leverage spectral approximation \citep{cohen}. Here they apply to the prediction differences of a frozen neural dictionary and the full convex-hull oracle.
+
+The directional refinement addresses the scalar certificate's treatment of correlated approximation errors. Along a nearly one-dimensional parameter path, checkpoints share a second-order curvature feature. Retaining its direction in a matrix allowance measures its cost through the diameter of simplex differences, while bounding the remaining third-order errors separately. This removes the dictionary-size factor from the leading curvature term under the stated conditions. The estimator and oracle remain unchanged.
+
+\subsection{A matrix allowance for the full convex hull}
+For $M\geq2$, let $p=M-1$, $z_j=f_j-f_M$, and $\Sigma=\E zz^\top$. Let $\Gamma\succ0$ be fixed conditional on $D_0$. Put $q_j$ equal to coordinate vector $j$ in $\R^p$ for $j\leq p$, and $q_M=0$. Define
+\[
+ D_\Gamma=\max_{i,j\leq M}(q_i-q_j)^\top\Gamma(q_i-q_j),\qquad
+ u_\Gamma=(\Sigma+\Gamma)^{-1/2}z,
+\]
+\[
+ d_\Gamma=\E\|u_\Gamma\|^2,\quad K_\Gamma=\mathop{\mathrm{ess\,sup}}\|u_\Gamma\|^2,\quad
+ V_\Gamma=\tr\operatorname{Cov}(u_\Gamma r)+\E\{v(X)\|u_\Gamma\|^2\}.
+\]
+Here $r=\mu-f^*$ and $v(X)$ is the conditional noise variance. All these quantities are analysis quantities, not penalties or inputs to Algorithm 1.
+
+\begin{pathlemma}[Directional remainder certificate]\label{lem:matrixallowance}
+Assume A1 and $z=B\phi+e$, where $\phi\in\R^k$ satisfies the tangent-leverage condition of Proposition 7 with constant $L_\phi$. If $e(x)^\top\Gamma^{-1}e(x)\leq1$ almost surely, then
+\[
+ d_\Gamma\leq k+1,\qquad K_\Gamma\leq\overline K:=L_\phi+(\sqrt{L_\phi}+1)^2.
+\]
+For $\delta_x,\delta_s>0$ with $\delta_x+\delta_s<1$, if
+$n\geq32\overline K\log\{2p/\delta_x\}$, the estimator satisfying (4) obeys, with conditional probability at least $1-\delta_x-\delta_s$,
+\begin{equation}\label{eq:matrixallowance}
+ R_P(\hat f)\leq R_P(f^*)+D_\Gamma+\gamma+
+ \frac{24\{\sigma^2(k+1)+\overline K R_P(f^*)\}}{11n\delta_s}.
+\end{equation}
+No rank or conditioning assumption on $B$ is needed.
+\end{pathlemma}
+\noindent\textit{Proof.}
+Apply Proposition 7 to $\widetilde z=\Gamma^{-1/2}z$, $\widetilde B=\Gamma^{-1/2}B$, and $\widetilde e=\Gamma^{-1/2}e$, with scalar regularization one and radius one. Congruence gives
+\[
+ \widetilde z^\top(\E\widetilde z\widetilde z^\top+I)^{-1}\widetilde z
+ =z^\top(\Sigma+\Gamma)^{-1}z.
+\]
+Taking its expectation and essential supremum proves the two bounds. Matrix Bernstein applied to $u_\Gamma$ supplies the Gram event with allowance at most $13/48$ under the displayed sample-size condition, exactly as in Lemma 3.
+
+For $a=(\hat w-w^*)_{1:p}$, the deterministic argument of Lemma 4 gives, on a Gram event with allowance $e_0<1/2$,
+\[
+ R_P(\hat f)-R_P(f^*)
+ \leq -(1-2e_0)a^\top\Sigma a+2e_0a^\top\Gamma a
+       +2\sqrt{a^\top(\Sigma+\Gamma)a}\,\|s_\Gamma\|+\gamma,
+\]
+where $s_\Gamma=P_n\{u_\Gamma(r+\epsilon)\}-\E(u_\Gamma r)$. Completing the square bounds this by
+$a^\top\Gamma a+\|s_\Gamma\|^2/(1-2e_0)+\gamma$.
+For any two simplex weights $w,v$, their coordinate difference equals
+$\sum_{i,j}w_i v_j(q_i-q_j)$. Convexity of the squared $\Gamma$-norm therefore gives $a^\top\Gamma a\leq D_\Gamma$. The maximum is attained by a pair of vertices. Finally,
+\[
+ \E\|s_\Gamma\|^2=V_\Gamma/n,
+ \qquad V_\Gamma\leq\sigma^2d_\Gamma+K_\Gamma R_P(f^*).
+\]
+Markov's inequality and the union bound finish the proof.\hfill$\square$
+
+For $\Gamma=\lambda I$, $D_\Gamma\leq2\lambda$, recovering the scalar bridge. The benefit of a directional choice depends on a certified ellipsoid for $e(X)$ and its diameter on simplex differences, not only on its eigenvalues. A covariance estimate from aggregation responses cannot be substituted without an additional argument. The next construction uses network derivatives and the saved parameters only.
+
+\subsection{Shared curvature along a finite-width parameter segment}
+Consider the network of Proposition 2 and checkpoints
+$\theta_j=\theta_c+t_jv$, where $\|v\|=1$, $|t_j|\leq T$, and $\theta_M=\theta_c$ ($t_M=0$). The direction may change both output and hidden parameters. All choices are $D_0$-measurable. This is a condition on a parameter segment, not an assertion that unrestricted gradient descent follows a straight line. Assume bounded augmented inputs $\|(x^\top,1)^\top\|\leq S$, and let $A_\infty$ bound output coordinates on the segment. Retain $H_c$ from Proposition 2 and set
+\[
+ J_c=\{6S^2+2A_\infty S^3\}/\sqrt h,\quad
+ c_j=t_j^2,\quad d_j=J_c|t_j|^3/6\quad(j\leq p).
+\]
+\begin{pathlemma}[Finite-width shared-curvature bound]\label{lem:curvature}
+Suppose A1 holds and the scalar tangent feature
+$\phi(x)=D_v g_{\theta_c}(x)$ satisfies the leverage condition with constant $L_\phi$. Under the sample-size condition of Lemma~\ref{lem:matrixallowance}, its risk bound holds with $k=1$ and
+\begin{align}
+ \Gamma&=\tfrac12H_c^2cc^\top+2p\,\operatorname{diag}(d_1^2,\ldots,d_p^2)+n^{-1}I,\label{eq:curvaturemetric}\\
+ D_\Gamma&\leq\tfrac12H_c^2T^4+\tfrac19pJ_c^2T^6+2/n.\label{eq:curvaturecost}
+\end{align}
+Consequently, with $H_c,J_c,L_\phi,\sigma^2,R_P(f^*)$ bounded, fixed confidence, $\log M=o(n)$ and $\gamma=O(n^{-1})$, the excess-risk allowance is
+$O(T^4+pT^6+n^{-1})$. In particular $T=O(n^{-1/4})$ and $p=O(n^{1/2})$ give an $O(n^{-1})$ allowance.
+\end{pathlemma}
+\noindent\textit{Proof.}
+Write the unit parameter direction in blocks as $(\dot a,\dot u)$, and let $b_\ell=\dot u_\ell^\top(x^\top,1)^\top$. Along the segment,
+\[
+ D_v^3g_\theta(x)=h^{-1/2}\sum_\ell
+ \{3\dot a_\ell\tanh''(u_\ell^\top(x^\top,1)^\top)b_\ell^2
+ +a_\ell\tanh'''(u_\ell^\top(x^\top,1)^\top)b_\ell^3\}.
+\]
+The inequalities $|\tanh''|\leq2$, $|\tanh'''|\leq2$, $\|\dot a\|^2+\|\dot u\|_F^2=1$, and $\|b\|\leq S\|\dot u\|_F$ imply $|D_v^3g_\theta(x)|\leq J_c$. Taylor expansion at the common reference gives
+\[
+ z_j(x)=t_j\phi(x)+c_j\psi(x)+r_j(x),\qquad
+ \psi=\tfrac12D_v^2g_{\theta_c},\quad |\psi|\leq H_c/2,\quad |r_j|\leq d_j.
+\]
+The remainder relative to the first-order tangent is $e=c\psi+r$. For every $a\in\R^p$,
+\[
+ |a^\top e|^2\leq \tfrac12H_c^2(a^\top c)^2+
+ 2\Big(\sum_j|a_j|d_j\Big)^2
+ \leq\tfrac12H_c^2(a^\top c)^2+2p\sum_ja_j^2d_j^2
+ \leq a^\top\Gamma a.
+\]
+Thus $e^\top\Gamma^{-1}e\leq1$, proving applicability of Lemma~\ref{lem:matrixallowance}. Extend $c_M=d_M=0$. The rank-one contribution to any vertex-pair diameter is bounded by $H_c^2T^4/2$, the diagonal contribution by $4p\max_jd_j^2=pJ_c^2T^6/9$, and the identity contribution by $2/n$. This proves \eqref{eq:curvaturecost} and the stated rate.\hfill$\square$
+
+For regularly spaced checkpoints $t_j=jT/p$, the first-order scalar certificate has
+$\Delta^2=H_c^2\sum_jt_j^4/4\asymp pH_c^2T^4$. The new certificate charges shared second-order curvature through its simplex diameter, and the factor $p$ multiplies only the third-order remainder. For fixed nonzero $H_c$, $T=n^{-1/4}$ and increasing $p\leq C\sqrt n$, the original displayed allowance scales as $p/n$, whereas \eqref{eq:matrixallowance}--\eqref{eq:curvaturecost} give $1/n$. This compares two sufficient bounds for the same estimator and dictionary; it is not a lower bound on risk or on every possible use of Proposition 7. In particular, including the curvature feature in $\phi$ gives another route if a suitable joint tangent--curvature leverage bound is available. The present route requires leverage control only for the first-order tangent and bounds curvature by its amplitude.
+
+The same argument quantifies departures from a parameter segment. If $\theta_j=\theta_c+t_jv+s_j$, $\|s_j\|\leq\eta_j$, and $\theta_M=\theta_c$, choose $A_\infty$ to cover both the central segment and the segments joining $\theta_c+t_jv$ to $\theta_j$. The gradient bound on these segments is $G=\sqrt{1+S^2A_\infty^2}$. The mean-value theorem replaces $d_j$ by $G\eta_j+J_c|t_j|^3/6$ in \eqref{eq:curvaturemetric}. Thus the additive allowance is at most
+\[
+ H_c^2T^4/2+4p(G\max_j\eta_j+J_cT^3/6)^2+2/n.
+\]
+Under bounded constants, $p\max_j\eta_j^2=O(n^{-1})$ suffices to retain the preceding fast-rate regime. This is an explicit tolerance for departure from a line; establishing it for a training algorithm remains a separate dynamical problem.
+
+\subsection{A separation between tangent and joint leverage}
+The tangent condition need not imply a bounded leverage condition after adjoining the curvature feature. Consider the width-one path
+\[
+ g_t(x)=(1+t/\sqrt2)\tanh(x+t/\sqrt2)-\tanh(x),
+ \qquad P(X=1)=q,\quad P(X=0)=1-q,
+\]
+with $0<q\leq1/2$. Both the output coefficient and hidden bias move along a unit parameter direction. Put $a=\tanh(1)$ and $s=1-a^2$. At $t=0$ the tangent and half-second-derivative features satisfy
+\[
+ (\phi(0),\psi(0))=(1/\sqrt2,1/2),\qquad
+ (\phi(1),\psi(1))=((a+s)/\sqrt2,s(1-a)/2).
+\]
+Since $1<a+s\leq5/4$, scalar tangent leverage is at most $25/16$, uniformly in $q$. The two feature rows have determinant $-a(s+1)/(2\sqrt2)\ne0$. Thus their joint feature span is all functions on the two-point support. The joint whitened squared lengths are exactly $1/(1-q)$ and $1/q$, giving joint leverage $1/q$.
+
+Taking $q_n=1/n$, the first-order leverage requirement in Corollary 9 remains uniformly bounded while the joint tangent--curvature leverage diverges. Derivative constants are uniformly bounded on any fixed compact parameter segment. Consequently the shared-curvature result with $T=n^{-1/4}$ and $M=O(\sqrt n)$ applies when the noise and oracle-risk quantities are bounded. Merely adding $\psi$ to the features and imposing bounded joint leverage would not establish that regime. This is a separation of sufficient conditions, not a minimax separation from existing aggregation theory. The input law varies with $n$, and the path is explicitly constructed rather than produced by gradient descent.
+
+\subsection{Deterministic numerical verification}
+The accompanying script \texttt{neural\_path\_directional\_check.py} checks the matrix inequalities on 120 random finite-population constructions, including rank-deficient coefficient matrices, and verifies the deterministic population bridge in 80 additional constructions with misspecification. It also evaluates a four-neuron tanh network along a designed parameter segment on 401 equally weighted inputs in $[-1,1]$. Both output and hidden coordinates move. These are certificate checks, not trained-path experiments or new prediction comparisons.
+
+For $n=10^6$ and $T=n^{-1/4}$, the computed constants are $H_c=1.50522$, $J_c=7.12870$ and $L_\phi=3.14563$. With $M=9,17,33,65,129$, respectively, the scalar additive allowances $2\max(\Delta^2,n^{-1})$, in units of $10^{-6}$, are $2.4261,4.2151,7.8284,15.0727,29.5702$. The corresponding exact diameters $D_\Gamma$ are $3.1203,3.1692,3.2210,3.3130,3.4941$. Thus the matrix choice is not uniformly better at small dictionary sizes, but avoids most of the growth in this example. The comparison concerns additive allowances; it does not imply the same ratio for total risk bounds or prediction errors. All checked ellipsoid, dimension, leverage and third-order remainder inequalities hold to numerical tolerance. General curved gradient trajectories still require a certified approximation to the parameter-segment condition.
+
+\section{Finite input populations and arbitrary finite training horizons}\label{sec:finiteclosure}
+The finite population used in Section 4.3 of the main paper permits a direct verification of the geometric conditions. Finite-dimensional least-squares geometry and matrix concentration give an independent-sample guarantee for arbitrary finite training horizons, with constants determined by the support probabilities.
+
+\begin{pathlemma}[Finite-population training-path guarantee]\label{lem:finiteclosure}
+Let $X$ have support $\{x_1,\ldots,x_L\}$ with probabilities $q_\ell>0$, and put $q_{\min}=\min_\ell q_\ell$. Suppose A1 holds. A training sample $D_0$ and training randomness independent of $D_1$ generate any finite dictionary of finite-valued predictions, including the zero function. Set $R_\mu=\sum_\ell q_\ell\mu(x_\ell)^2<\infty$. For $\delta_x,\delta_s>0$ with $\delta_x+\delta_s<1$, assume
+\[
+ n\geq \frac{32}{q_{\min}}\log\frac{2L}{\delta_x}.
+\]
+Then an aggregate satisfying the main-paper Frank--Wolfe certificate (4) obeys
+\begin{equation}\label{eq:finiteclosure}
+ R_P(\hat f)\leq\inf_{w\in\Delta_M}R_P(f_w)+\gamma+
+ \frac{24\{\sigma^2 L+R_\mu/q_{\min}\}}{11n\delta_s}
+\end{equation}
+with probability at least $1-\delta_x-\delta_s$, both conditionally on the training information and jointly over training and aggregation data. Neither the number of checkpoints nor the training horizon enters this allowance. They may grow with $n$, provided they are finite at each $n$ and candidate construction does not use $D_1$.
+\end{pathlemma}
+\noindent\textit{Proof.}
+Condition on all training information. Write $z=(f_1-f_M,\ldots,f_{M-1}-f_M)^\top$ and $\Sigma=\sum_\ell q_\ell z(x_\ell)z(x_\ell)^\top$. Let $r_\Sigma=\operatorname{rank}(\Sigma)\leq L$. If this rank is zero, all candidates agree on the population support and aggregation excess is zero. Otherwise, choose an orthonormal basis $U\in\R^{(M-1)\times r_\Sigma}$ for its range and set $C=U^\top\Sigma U\succ0$ and $u(x)=C^{-1/2}U^\top z(x)$. Since every $q_\ell$ is positive, each $z(x_\ell)$ lies in that range. Thus $\E uu^\top=I_{r_\Sigma}$. Moreover,
+\[
+ q_\ell u(x_\ell)u(x_\ell)^\top\preceq I_{r_\Sigma},
+ \qquad \|u(x_\ell)\|^2\leq q_\ell^{-1}\leq q_{\min}^{-1}.
+\]
+Matrix Bernstein in this range, exactly as in Lemma 3 of the main paper, gives
+\[
+ \|P_nuu^\top-I\|_{\op}\leq
+ e:=\sqrt{\frac{2\log(2L/\delta_x)}{nq_{\min}}}
+       +\frac{2\log(2L/\delta_x)}{3nq_{\min}}
+ \leq\frac{13}{48}
+\]
+except on an event of conditional probability at most $\delta_x$. The use of $L$ in place of $r_\Sigma$ only enlarges the allowance.
+
+Let $f^*$ be the full convex-hull oracle, $r=\mu-f^*$, and
+$s_0=P_n\{u(r+\epsilon)\}-\E(ur)$. Conditional mean-zero noise gives
+\[
+ \E\|s_0\|^2\leq\frac{\sigma^2r_\Sigma+R_P(f^*)/q_{\min}}{n}
+ \leq\frac{\sigma^2L+R_\mu/q_{\min}}{n},
+\]
+where the zero candidate proves $R_P(f^*)\leq R_\mu$.
+For $d=\hat f-f^*=a^\top z$, write $b=C^{1/2}U^\top a$, so that $d=b^\top u$ and $Pd^2=\|b\|^2$. The approximate empirical variational inequality gives
+\begin{align*}
+ R_P(\hat f)-R_P(f^*)&\leq Pd^2-2P_nd^2
+   +2\{(P_n-P)rd+P_n\epsilon d\}+\gamma\\
+ &\leq-(1-2e)\|b\|^2+2b^\top s_0+\gamma\\
+ &\leq\frac{\|s_0\|^2}{1-2e}+\gamma.
+\end{align*}
+Markov's inequality for $s_0$, followed by a union bound, proves \eqref{eq:finiteclosure}, since $(1-2e)^{-1}\leq24/11$. No independence between the score and Gram events is required. The constants and conditional failure probability do not depend on $D_0$. Integrating over the training information proves the joint statement.\hfill$\square$
+
+For fixed $L$, $q_{\min}$, $R_\mu$ and $\sigma^2$, and $\gamma=O(n^{-1})$, this is a fixed-confidence $O(n^{-1})$ excess allowance for any sequence of finite training horizons. In particular, it covers all-layer finite-width training, including projected training, whenever the resulting predictions are finite. A centered network includes the initial zero checkpoint. Neither differentiability of the training map in its labels nor a lower bound on a positive eigenvalue of $\Sigma$ is needed. The proof is conditional on candidate construction, so a checkpoint schedule determined from training data is also allowed.
+
+The finite support is substantive: if $L$ grows or $q_{\min}$ decreases, the constants and sample-size requirement change. This result does not establish a corresponding time-uniform rate for continuous input laws. On the $32\times32$ uniform grid of the main experiment, $L=1024$ and $q_{\min}=1/1024$; the sufficient sample-size condition is conservative and is not satisfied by the aggregation sizes studied there. Those experiments evaluate the sharper dictionary-specific and observed-Gram bounds instead. Equation~\eqref{eq:finiteclosure} establishes a complete regime, not a replacement numerical certificate for those experiments. It does not bound the training error in the oracle, ensure an interior weight vector, or extend to reusing $D_1$ to train the candidates.
+
+\begin{thebibliography}{99}
+\bibitem[Bellec(2019)]{belleclocal} Bellec PC (2019) Localized Gaussian width of $M$-convex hulls with applications to Lasso and convex aggregation. Bernoulli 25:3016--3040. \url{https://doi.org/10.3150/18-BEJ1078}
+\bibitem[Cohen et al.(2017)]{cohen} Cohen MB, Musco C, Musco C (2017) Input sparsity time low-rank approximation via ridge leverage score sampling. Proc SODA, pp 1758--1777. \url{https://doi.org/10.1137/1.9781611974782.115}
+\bibitem[Hsu et al.(2012)]{hsu} Hsu D, Kakade SM, Zhang T (2012) Random design analysis of ridge regression. Proc Mach Learn Res 23:9.1--9.24. \url{https://proceedings.mlr.press/v23/hsu12.html}
+\bibitem[Raskutti et al.(2014)]{raskutti} Raskutti G, Wainwright MJ, Yu B (2014) Early stopping and non-parametric regression: An optimal data-dependent stopping rule. J Mach Learn Res 15:335--366. \url{https://jmlr.org/papers/v15/raskutti14a.html}
+\bibitem[Tropp(2012)]{tropp} Tropp JA (2012) User-friendly tail bounds for sums of random matrices. Found Comput Math 12:389--434. \url{https://doi.org/10.1007/s10208-011-9099-z}
+\end{thebibliography}
+\end{document}

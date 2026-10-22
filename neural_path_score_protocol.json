@@ -1,0 +1,12 @@
+{
+ "seed":17320508,"frozen":"Locally before new outcomes; not external preregistration",
+ "banks":8,"signals":["smooth","oscillatory","mixed"],"sigmas":[0.3,0.8],"training_n":64,"grid_side":32,
+ "training":"Unchanged width32 centered tanh path; Gaussian training noise; all12 checkpoints retained",
+ "aggregation_n":[128,512,4096],"aggregation_repeats":16,"aggregation_noise":["gaussian","student_t3_unit_variance"],
+ "lambda":"1/n fixed before observing aggregation data",
+ "confidence":{"delta_total":0.1,"predicted_gram_delta_x":0.05,"predicted_gram_delta_s":0.05,"observed_gram_delta_s":0.1},
+ "bounds":["old_parameter_envelope","oracle_risk_score","zero_reference_score","numerical_oracle_variance_upper","observed_gram_variance_upper"],
+ "evaluation":"Known finite input population and true regression mean are used only to evaluate theorem quantities and the population oracle, never to estimate averaging weights. Exact Gram diagnostics are not parameter-only or data-only confidence certificates. Invalid e>=1/2 gives infinity and remains in denominators.",
+ "checks":"All 48 dictionaries and 4608 aggregation fits retained. Report finite/nonvacuous bounds and empirical violations by n and noise. Replications do not certify nominal coverage. Existing full-budget CV results unchanged.",
+ "scope":"A new theoretical refinement after the previous optimization cycle stopped; previous failures and protocols remain unchanged. No assertion that numerical success alone proves novelty or venue readiness."
+}

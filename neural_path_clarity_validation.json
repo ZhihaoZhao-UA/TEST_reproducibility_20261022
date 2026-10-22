@@ -1,0 +1,11 @@
+{
+  "input_hashes_valid": true,
+  "ablation_dictionaries": 48,
+  "sensitivity_calculations": 864,
+  "additive_floor_obstructions": 46,
+  "variance_identity_cases": 100,
+  "max_variance_identity_error": 1.0658141036401503e-14,
+  "max_endpoint_bound_violation": 0.0,
+  "jacobian_cases": 3,
+  "max_response_jacobian_difference": 2.2901898433236312e-10
+}

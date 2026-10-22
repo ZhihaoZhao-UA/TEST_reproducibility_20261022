@@ -1,0 +1,848 @@
+{
+  "scope": "Numerical checks of S11 leverage and deterministic bridge; not a proof or coverage experiment.",
+  "cases": 120,
+  "maximum_weighted_leverage": 1.0000000000000007,
+  "minimum_bridge_slack": 0.003942964782329151,
+  "records": [
+    {
+      "L": 3,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.9015810196299653,
+      "bridge_slack": 2.1020323344943286
+    },
+    {
+      "L": 4,
+      "p": 3,
+      "rank": 2,
+      "max_weighted_leverage": 0.6937398200536794,
+      "bridge_slack": 1.025525255536695
+    },
+    {
+      "L": 5,
+      "p": 4,
+      "rank": 3,
+      "max_weighted_leverage": 0.892725644673184,
+      "bridge_slack": 20.46180714511848
+    },
+    {
+      "L": 6,
+      "p": 5,
+      "rank": 4,
+      "max_weighted_leverage": 0.9840615641952999,
+      "bridge_slack": 9.359322755030396
+    },
+    {
+      "L": 7,
+      "p": 6,
+      "rank": 5,
+      "max_weighted_leverage": 0.9615345804892135,
+      "bridge_slack": 8.729674345955434
+    },
+    {
+      "L": 8,
+      "p": 7,
+      "rank": 6,
+      "max_weighted_leverage": 0.9940186574154785,
+      "bridge_slack": 26.85989556662445
+    },
+    {
+      "L": 9,
+      "p": 8,
+      "rank": 7,
+      "max_weighted_leverage": 0.9422795355900125,
+      "bridge_slack": 17.63532586472457
+    },
+    {
+      "L": 10,
+      "p": 9,
+      "rank": 8,
+      "max_weighted_leverage": 0.9963814006441469,
+      "bridge_slack": 18.809783818934765
+    },
+    {
+      "L": 3,
+      "p": 10,
+      "rank": 3,
+      "max_weighted_leverage": 0.9999999999999997,
+      "bridge_slack": 7.434848868274681
+    },
+    {
+      "L": 4,
+      "p": 11,
+      "rank": 2,
+      "max_weighted_leverage": 0.7472871420305982,
+      "bridge_slack": 20.409195016384384
+    },
+    {
+      "L": 5,
+      "p": 12,
+      "rank": 1,
+      "max_weighted_leverage": 0.7919113474770008,
+      "bridge_slack": 0.4308428896091672
+    },
+    {
+      "L": 6,
+      "p": 13,
+      "rank": 6,
+      "max_weighted_leverage": 1.0,
+      "bridge_slack": 7.230924288106085
+    },
+    {
+      "L": 7,
+      "p": 14,
+      "rank": 6,
+      "max_weighted_leverage": 0.9981741667423912,
+      "bridge_slack": 17.284613831869844
+    },
+    {
+      "L": 8,
+      "p": 15,
+      "rank": 6,
+      "max_weighted_leverage": 0.9997313602995054,
+      "bridge_slack": 19.216713160233564
+    },
+    {
+      "L": 9,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.3083790208271021,
+      "bridge_slack": 2.3599718706046735
+    },
+    {
+      "L": 10,
+      "p": 3,
+      "rank": 1,
+      "max_weighted_leverage": 0.702946923224471,
+      "bridge_slack": 0.5511653800552897
+    },
+    {
+      "L": 3,
+      "p": 4,
+      "rank": 2,
+      "max_weighted_leverage": 0.9936079975291113,
+      "bridge_slack": 2.704317880421817
+    },
+    {
+      "L": 4,
+      "p": 5,
+      "rank": 2,
+      "max_weighted_leverage": 0.8461845689332588,
+      "bridge_slack": 4.00509581276212
+    },
+    {
+      "L": 5,
+      "p": 6,
+      "rank": 4,
+      "max_weighted_leverage": 0.9284230588306125,
+      "bridge_slack": 13.781274143143733
+    },
+    {
+      "L": 6,
+      "p": 7,
+      "rank": 2,
+      "max_weighted_leverage": 0.723197849961792,
+      "bridge_slack": 1.7108549452400528
+    },
+    {
+      "L": 7,
+      "p": 8,
+      "rank": 7,
+      "max_weighted_leverage": 1.0000000000000002,
+      "bridge_slack": 22.27530409762693
+    },
+    {
+      "L": 8,
+      "p": 9,
+      "rank": 6,
+      "max_weighted_leverage": 0.9596871909939939,
+      "bridge_slack": 13.728703790124252
+    },
+    {
+      "L": 9,
+      "p": 10,
+      "rank": 5,
+      "max_weighted_leverage": 0.865765503718044,
+      "bridge_slack": 10.088460289670376
+    },
+    {
+      "L": 10,
+      "p": 11,
+      "rank": 4,
+      "max_weighted_leverage": 0.8067001650855364,
+      "bridge_slack": 8.113288346377386
+    },
+    {
+      "L": 3,
+      "p": 12,
+      "rank": 1,
+      "max_weighted_leverage": 0.5210285708680082,
+      "bridge_slack": 6.238770585765774
+    },
+    {
+      "L": 4,
+      "p": 13,
+      "rank": 2,
+      "max_weighted_leverage": 0.945941465243255,
+      "bridge_slack": 11.036442354100338
+    },
+    {
+      "L": 5,
+      "p": 14,
+      "rank": 2,
+      "max_weighted_leverage": 0.742456753025623,
+      "bridge_slack": 22.664722239108094
+    },
+    {
+      "L": 6,
+      "p": 15,
+      "rank": 4,
+      "max_weighted_leverage": 0.9870798457573894,
+      "bridge_slack": 10.469849505191155
+    },
+    {
+      "L": 7,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.8153739564537068,
+      "bridge_slack": 0.13186053823706784
+    },
+    {
+      "L": 8,
+      "p": 3,
+      "rank": 3,
+      "max_weighted_leverage": 0.7868528678598287,
+      "bridge_slack": 11.958455554614652
+    },
+    {
+      "L": 9,
+      "p": 4,
+      "rank": 3,
+      "max_weighted_leverage": 0.6711982855572692,
+      "bridge_slack": 8.515602852018404
+    },
+    {
+      "L": 10,
+      "p": 5,
+      "rank": 2,
+      "max_weighted_leverage": 0.47251383438734657,
+      "bridge_slack": 18.03738950769044
+    },
+    {
+      "L": 3,
+      "p": 6,
+      "rank": 3,
+      "max_weighted_leverage": 1.0,
+      "bridge_slack": 6.682658786237362
+    },
+    {
+      "L": 4,
+      "p": 7,
+      "rank": 2,
+      "max_weighted_leverage": 0.8544336477896137,
+      "bridge_slack": 6.631337833775071
+    },
+    {
+      "L": 5,
+      "p": 8,
+      "rank": 5,
+      "max_weighted_leverage": 1.0000000000000002,
+      "bridge_slack": 3.7246680352203674
+    },
+    {
+      "L": 6,
+      "p": 9,
+      "rank": 6,
+      "max_weighted_leverage": 1.0000000000000004,
+      "bridge_slack": 9.207871643682406
+    },
+    {
+      "L": 7,
+      "p": 10,
+      "rank": 2,
+      "max_weighted_leverage": 0.9060595172029663,
+      "bridge_slack": 9.79053995526893
+    },
+    {
+      "L": 8,
+      "p": 11,
+      "rank": 6,
+      "max_weighted_leverage": 0.9955510889463326,
+      "bridge_slack": 31.75629350805287
+    },
+    {
+      "L": 9,
+      "p": 12,
+      "rank": 3,
+      "max_weighted_leverage": 0.7697480920520603,
+      "bridge_slack": 8.920945689122775
+    },
+    {
+      "L": 10,
+      "p": 13,
+      "rank": 10,
+      "max_weighted_leverage": 1.0000000000000007,
+      "bridge_slack": 11.151659629094864
+    },
+    {
+      "L": 3,
+      "p": 14,
+      "rank": 2,
+      "max_weighted_leverage": 0.8989884886945584,
+      "bridge_slack": 8.813747155872106
+    },
+    {
+      "L": 4,
+      "p": 15,
+      "rank": 2,
+      "max_weighted_leverage": 0.896512612567033,
+      "bridge_slack": 6.288506195579721
+    },
+    {
+      "L": 5,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.5820207578380007,
+      "bridge_slack": 1.5241039680896542
+    },
+    {
+      "L": 6,
+      "p": 3,
+      "rank": 2,
+      "max_weighted_leverage": 0.830167477178554,
+      "bridge_slack": 10.655302714576337
+    },
+    {
+      "L": 7,
+      "p": 4,
+      "rank": 1,
+      "max_weighted_leverage": 0.4383278278253089,
+      "bridge_slack": 1.7069369846799556
+    },
+    {
+      "L": 8,
+      "p": 5,
+      "rank": 1,
+      "max_weighted_leverage": 0.25791768984453595,
+      "bridge_slack": 0.003942964782329151
+    },
+    {
+      "L": 9,
+      "p": 6,
+      "rank": 5,
+      "max_weighted_leverage": 0.9750406711633826,
+      "bridge_slack": 24.803426679338493
+    },
+    {
+      "L": 10,
+      "p": 7,
+      "rank": 6,
+      "max_weighted_leverage": 0.9079182832375036,
+      "bridge_slack": 5.2506079301575985
+    },
+    {
+      "L": 3,
+      "p": 8,
+      "rank": 1,
+      "max_weighted_leverage": 0.9886377520758374,
+      "bridge_slack": 0.4175189139160727
+    },
+    {
+      "L": 4,
+      "p": 9,
+      "rank": 2,
+      "max_weighted_leverage": 0.9284322157644428,
+      "bridge_slack": 2.1743738041397447
+    },
+    {
+      "L": 5,
+      "p": 10,
+      "rank": 1,
+      "max_weighted_leverage": 0.43904644542045806,
+      "bridge_slack": 0.9882272061204215
+    },
+    {
+      "L": 6,
+      "p": 11,
+      "rank": 4,
+      "max_weighted_leverage": 0.8204341333279113,
+      "bridge_slack": 21.4963341980611
+    },
+    {
+      "L": 7,
+      "p": 12,
+      "rank": 4,
+      "max_weighted_leverage": 0.8505889299473136,
+      "bridge_slack": 8.235852323539682
+    },
+    {
+      "L": 8,
+      "p": 13,
+      "rank": 6,
+      "max_weighted_leverage": 0.9664099165883282,
+      "bridge_slack": 8.234870968661706
+    },
+    {
+      "L": 9,
+      "p": 14,
+      "rank": 1,
+      "max_weighted_leverage": 0.42459272889940497,
+      "bridge_slack": 5.821953373674967
+    },
+    {
+      "L": 10,
+      "p": 15,
+      "rank": 6,
+      "max_weighted_leverage": 0.8523799781345204,
+      "bridge_slack": 24.173575686841062
+    },
+    {
+      "L": 3,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.7590803272393024,
+      "bridge_slack": 1.053787525925094
+    },
+    {
+      "L": 4,
+      "p": 3,
+      "rank": 1,
+      "max_weighted_leverage": 0.8257158247899481,
+      "bridge_slack": 2.179100653194189
+    },
+    {
+      "L": 5,
+      "p": 4,
+      "rank": 3,
+      "max_weighted_leverage": 0.9924061625089831,
+      "bridge_slack": 7.231898600556654
+    },
+    {
+      "L": 6,
+      "p": 5,
+      "rank": 5,
+      "max_weighted_leverage": 0.9896932008723269,
+      "bridge_slack": 9.331920794285438
+    },
+    {
+      "L": 7,
+      "p": 6,
+      "rank": 1,
+      "max_weighted_leverage": 0.4614159311297498,
+      "bridge_slack": 11.543521574035813
+    },
+    {
+      "L": 8,
+      "p": 7,
+      "rank": 6,
+      "max_weighted_leverage": 0.995198259936144,
+      "bridge_slack": 8.25202643348898
+    },
+    {
+      "L": 9,
+      "p": 8,
+      "rank": 7,
+      "max_weighted_leverage": 0.9603563638395407,
+      "bridge_slack": 18.54789797838913
+    },
+    {
+      "L": 10,
+      "p": 9,
+      "rank": 1,
+      "max_weighted_leverage": 0.5120724882026593,
+      "bridge_slack": 0.992458855670287
+    },
+    {
+      "L": 3,
+      "p": 10,
+      "rank": 2,
+      "max_weighted_leverage": 0.9999873399874296,
+      "bridge_slack": 2.3027941079226606
+    },
+    {
+      "L": 4,
+      "p": 11,
+      "rank": 2,
+      "max_weighted_leverage": 0.9657617484740689,
+      "bridge_slack": 1.1460696149181435
+    },
+    {
+      "L": 5,
+      "p": 12,
+      "rank": 2,
+      "max_weighted_leverage": 0.6645342319877666,
+      "bridge_slack": 5.889165816355052
+    },
+    {
+      "L": 6,
+      "p": 13,
+      "rank": 2,
+      "max_weighted_leverage": 0.7882501125505154,
+      "bridge_slack": 2.4280284582652727
+    },
+    {
+      "L": 7,
+      "p": 14,
+      "rank": 6,
+      "max_weighted_leverage": 0.9996076130241651,
+      "bridge_slack": 20.312917525175838
+    },
+    {
+      "L": 8,
+      "p": 15,
+      "rank": 6,
+      "max_weighted_leverage": 0.9636909744832997,
+      "bridge_slack": 18.470483467452198
+    },
+    {
+      "L": 9,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.30721956312465765,
+      "bridge_slack": 0.326916292665697
+    },
+    {
+      "L": 10,
+      "p": 3,
+      "rank": 3,
+      "max_weighted_leverage": 0.5447909693474213,
+      "bridge_slack": 8.759040017386301
+    },
+    {
+      "L": 3,
+      "p": 4,
+      "rank": 1,
+      "max_weighted_leverage": 0.676785643803411,
+      "bridge_slack": 2.9602441642573147
+    },
+    {
+      "L": 4,
+      "p": 5,
+      "rank": 2,
+      "max_weighted_leverage": 0.9033717293744206,
+      "bridge_slack": 1.4845271877342983
+    },
+    {
+      "L": 5,
+      "p": 6,
+      "rank": 5,
+      "max_weighted_leverage": 1.0,
+      "bridge_slack": 3.2440462855470216
+    },
+    {
+      "L": 6,
+      "p": 7,
+      "rank": 4,
+      "max_weighted_leverage": 0.8489694021697567,
+      "bridge_slack": 6.093629951058297
+    },
+    {
+      "L": 7,
+      "p": 8,
+      "rank": 7,
+      "max_weighted_leverage": 1.0000000000000007,
+      "bridge_slack": 13.708038315152097
+    },
+    {
+      "L": 8,
+      "p": 9,
+      "rank": 6,
+      "max_weighted_leverage": 0.9797426404695367,
+      "bridge_slack": 29.04328158466967
+    },
+    {
+      "L": 9,
+      "p": 10,
+      "rank": 7,
+      "max_weighted_leverage": 0.9782239968934914,
+      "bridge_slack": 17.62505645201158
+    },
+    {
+      "L": 10,
+      "p": 11,
+      "rank": 10,
+      "max_weighted_leverage": 1.0000000000000004,
+      "bridge_slack": 34.77511856736698
+    },
+    {
+      "L": 3,
+      "p": 12,
+      "rank": 3,
+      "max_weighted_leverage": 1.0000000000000004,
+      "bridge_slack": 12.01374179749378
+    },
+    {
+      "L": 4,
+      "p": 13,
+      "rank": 2,
+      "max_weighted_leverage": 0.855553553381357,
+      "bridge_slack": 0.45657513031517544
+    },
+    {
+      "L": 5,
+      "p": 14,
+      "rank": 3,
+      "max_weighted_leverage": 0.9806011006919475,
+      "bridge_slack": 2.653261478136319
+    },
+    {
+      "L": 6,
+      "p": 15,
+      "rank": 6,
+      "max_weighted_leverage": 1.0000000000000004,
+      "bridge_slack": 8.737362955621734
+    },
+    {
+      "L": 7,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.6764640251048107,
+      "bridge_slack": 0.07307620441695123
+    },
+    {
+      "L": 8,
+      "p": 3,
+      "rank": 2,
+      "max_weighted_leverage": 0.4761354897632111,
+      "bridge_slack": 8.460401634774907
+    },
+    {
+      "L": 9,
+      "p": 4,
+      "rank": 3,
+      "max_weighted_leverage": 0.7225748772295805,
+      "bridge_slack": 3.8040954142656256
+    },
+    {
+      "L": 10,
+      "p": 5,
+      "rank": 3,
+      "max_weighted_leverage": 0.6343892290690999,
+      "bridge_slack": 23.14727856404088
+    },
+    {
+      "L": 3,
+      "p": 6,
+      "rank": 2,
+      "max_weighted_leverage": 0.9989880187576663,
+      "bridge_slack": 2.0811940773781155
+    },
+    {
+      "L": 4,
+      "p": 7,
+      "rank": 2,
+      "max_weighted_leverage": 0.8582004243704457,
+      "bridge_slack": 4.032261613629625
+    },
+    {
+      "L": 5,
+      "p": 8,
+      "rank": 1,
+      "max_weighted_leverage": 0.444079446038892,
+      "bridge_slack": 0.9507886765520619
+    },
+    {
+      "L": 6,
+      "p": 9,
+      "rank": 2,
+      "max_weighted_leverage": 0.6415419745569131,
+      "bridge_slack": 3.975864175888589
+    },
+    {
+      "L": 7,
+      "p": 10,
+      "rank": 2,
+      "max_weighted_leverage": 0.6535289007496201,
+      "bridge_slack": 5.219178068291765
+    },
+    {
+      "L": 8,
+      "p": 11,
+      "rank": 6,
+      "max_weighted_leverage": 0.9592125997518536,
+      "bridge_slack": 6.49046891235138
+    },
+    {
+      "L": 9,
+      "p": 12,
+      "rank": 5,
+      "max_weighted_leverage": 0.9713443917315376,
+      "bridge_slack": 5.093274428249446
+    },
+    {
+      "L": 10,
+      "p": 13,
+      "rank": 6,
+      "max_weighted_leverage": 0.8855087955066056,
+      "bridge_slack": 17.02349154814915
+    },
+    {
+      "L": 3,
+      "p": 14,
+      "rank": 1,
+      "max_weighted_leverage": 0.6552645586583917,
+      "bridge_slack": 0.2795957281395543
+    },
+    {
+      "L": 4,
+      "p": 15,
+      "rank": 2,
+      "max_weighted_leverage": 0.7649086147216985,
+      "bridge_slack": 3.6725657540749697
+    },
+    {
+      "L": 5,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.5730053287517024,
+      "bridge_slack": 2.2339274888043494
+    },
+    {
+      "L": 6,
+      "p": 3,
+      "rank": 1,
+      "max_weighted_leverage": 0.6835581339688536,
+      "bridge_slack": 0.5509078241673497
+    },
+    {
+      "L": 7,
+      "p": 4,
+      "rank": 1,
+      "max_weighted_leverage": 0.4108521987123597,
+      "bridge_slack": 0.2655117648931772
+    },
+    {
+      "L": 8,
+      "p": 5,
+      "rank": 2,
+      "max_weighted_leverage": 0.6376152566223608,
+      "bridge_slack": 4.741373692527118
+    },
+    {
+      "L": 9,
+      "p": 6,
+      "rank": 1,
+      "max_weighted_leverage": 0.744158672175233,
+      "bridge_slack": 1.2199371715208276
+    },
+    {
+      "L": 10,
+      "p": 7,
+      "rank": 6,
+      "max_weighted_leverage": 0.8527287214931532,
+      "bridge_slack": 12.288340470641796
+    },
+    {
+      "L": 3,
+      "p": 8,
+      "rank": 3,
+      "max_weighted_leverage": 1.0000000000000002,
+      "bridge_slack": 16.653265604590977
+    },
+    {
+      "L": 4,
+      "p": 9,
+      "rank": 2,
+      "max_weighted_leverage": 0.8138455583973854,
+      "bridge_slack": 5.929270967843582
+    },
+    {
+      "L": 5,
+      "p": 10,
+      "rank": 2,
+      "max_weighted_leverage": 0.8376308225418088,
+      "bridge_slack": 1.3099166875924155
+    },
+    {
+      "L": 6,
+      "p": 11,
+      "rank": 6,
+      "max_weighted_leverage": 1.0000000000000004,
+      "bridge_slack": 14.982910519136373
+    },
+    {
+      "L": 7,
+      "p": 12,
+      "rank": 4,
+      "max_weighted_leverage": 0.9630885308856525,
+      "bridge_slack": 6.92539912577368
+    },
+    {
+      "L": 8,
+      "p": 13,
+      "rank": 6,
+      "max_weighted_leverage": 0.986824040124886,
+      "bridge_slack": 6.878567405701125
+    },
+    {
+      "L": 9,
+      "p": 14,
+      "rank": 3,
+      "max_weighted_leverage": 0.6613233270354827,
+      "bridge_slack": 7.673774888825589
+    },
+    {
+      "L": 10,
+      "p": 15,
+      "rank": 2,
+      "max_weighted_leverage": 0.5350616438675511,
+      "bridge_slack": 0.6158556670193434
+    },
+    {
+      "L": 3,
+      "p": 2,
+      "rank": 1,
+      "max_weighted_leverage": 0.581644790669134,
+      "bridge_slack": 4.099389197041198
+    },
+    {
+      "L": 4,
+      "p": 3,
+      "rank": 3,
+      "max_weighted_leverage": 0.966545382160912,
+      "bridge_slack": 1.0241895421627722
+    },
+    {
+      "L": 5,
+      "p": 4,
+      "rank": 3,
+      "max_weighted_leverage": 0.9097497841633506,
+      "bridge_slack": 2.597368680459823
+    },
+    {
+      "L": 6,
+      "p": 5,
+      "rank": 1,
+      "max_weighted_leverage": 0.46169589672143774,
+      "bridge_slack": 1.2203978311865917
+    },
+    {
+      "L": 7,
+      "p": 6,
+      "rank": 3,
+      "max_weighted_leverage": 0.8401911113673296,
+      "bridge_slack": 10.649549794358965
+    },
+    {
+      "L": 8,
+      "p": 7,
+      "rank": 6,
+      "max_weighted_leverage": 0.9830290534434488,
+      "bridge_slack": 5.729496623895328
+    },
+    {
+      "L": 9,
+      "p": 8,
+      "rank": 7,
+      "max_weighted_leverage": 0.9690502857078921,
+      "bridge_slack": 11.760456828240493
+    },
+    {
+      "L": 10,
+      "p": 9,
+      "rank": 3,
+      "max_weighted_leverage": 0.7078050931214452,
+      "bridge_slack": 13.736716946769077
+    }
+  ]
+}

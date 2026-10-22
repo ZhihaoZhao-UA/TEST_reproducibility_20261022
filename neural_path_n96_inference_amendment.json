@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-04T17:47:14.535118+00:00",
+  "timing": "Before any seed20261018 bank result or risk summary; amendment only makes inference stricter, no algorithm or simulation changes.",
+  "reason": "This turn contains two confirmation attempts. Use Bonferroni alpha0.05/2 for second overall test, rather than reporting an unadjusted second chance. Original study failed even its unadjusted threshold.",
+  "overall": "One-sided97.5% t lowerbound,df31. Success needs lower>0.001 and >=8/12 positive cellmeans.",
+  "cells": "Use alpha0.05/(2*12) for12 simultaneous cell lowerbounds, also accounting for two confirmation attempts. Overall and cellwise families remain separate; not a joint claim across all research history.",
+  "scope": "Original protocol file is retained. This stricter inference amendment supersedes its nominal95% inference for reporting second-stage success."
+}

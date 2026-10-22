@@ -1,0 +1,19 @@
+{
+  "protocol_hash_matches": true,
+  "dictionaries": 48,
+  "fits": 4608,
+  "nonvacuous_counts": {
+    "128_gaussian": 485,
+    "128_student_t3_unit_variance": 493,
+    "512_gaussian": 629,
+    "512_student_t3_unit_variance": 633,
+    "4096_gaussian": 768,
+    "4096_student_t3_unit_variance": 768
+  },
+  "random_cases": 100,
+  "finite_gram_cases": 100,
+  "max_variance_inequality_violation": -0.08519263964344992,
+  "max_oracle_variance_correction_violation": -0.4954798831656668,
+  "max_deterministic_bridge_violation": -0.004173712645615843,
+  "max_optimization_gap": 9.997157442154236e-09
+}

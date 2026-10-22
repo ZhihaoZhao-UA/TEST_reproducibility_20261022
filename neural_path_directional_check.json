@@ -1,0 +1,89 @@
+{
+  "seed": 14102026,
+  "scope": "Algebra and finite-population certification; no new prediction experiment.",
+  "random_matrix_cases": 120,
+  "max_dimension_violation": 0.0,
+  "max_leverage_violation": 0.0,
+  "n": 1000000,
+  "T": 0.03162277660168379,
+  "H": 1.5052207653526386,
+  "J": 7.128703620727313,
+  "tangent_leverage": 3.145630542733849,
+  "max_third_order_violation": 0.0,
+  "max_residual_ellipsoid": 0.03712640761350095,
+  "records": [
+    {
+      "M": 9,
+      "scalar_additive_allowance": 2.4261021428321195e-06,
+      "matrix_diameter": 3.120305998918648e-06,
+      "matrix_upper_allowance": 3.178016700946321e-06,
+      "exact_effective_dimension": 0.8419290850470591,
+      "exact_leverage": 2.6325559983455444,
+      "scalar_to_matrix_ratio": 0.7775205840942822
+    },
+    {
+      "M": 17,
+      "scalar_additive_allowance": 4.2151173857538665e-06,
+      "matrix_diameter": 3.169183639664005e-06,
+      "matrix_upper_allowance": 3.22318862566825e-06,
+      "exact_effective_dimension": 0.8748006237218917,
+      "exact_leverage": 2.737169048358709,
+      "scalar_to_matrix_ratio": 1.3300325462366551
+    },
+    {
+      "M": 33,
+      "scalar_additive_allowance": 7.828428269978006e-06,
+      "matrix_diameter": 3.2209771186637934e-06,
+      "matrix_upper_allowance": 3.313532475112109e-06,
+      "exact_effective_dimension": 0.9019247685191324,
+      "exact_leverage": 2.8244464051387546,
+      "scalar_to_matrix_ratio": 2.4304513759556263
+    },
+    {
+      "M": 65,
+      "scalar_additive_allowance": 1.5072735612945244e-05,
+      "matrix_diameter": 3.312979395774158e-06,
+      "matrix_upper_allowance": 3.4942201739998273e-06,
+      "exact_effective_dimension": 0.9266905760030101,
+      "exact_leverage": 2.905032863239815,
+      "scalar_to_matrix_ratio": 4.549601374572731
+    },
+    {
+      "M": 129,
+      "scalar_additive_allowance": 2.9570198758055282e-05,
+      "matrix_diameter": 3.494081891504237e-06,
+      "matrix_upper_allowance": 3.855595571775263e-06,
+      "exact_effective_dimension": 0.9492625235328354,
+      "exact_leverage": 2.979001295921833,
+      "scalar_to_matrix_ratio": 8.462938098261063
+    }
+  ],
+  "bridge_cases": 80,
+  "max_bridge_violation": 0.0,
+  "tangent_vs_joint_separation": [
+    {
+      "q": 0.01,
+      "tangent_leverage": 1.390595906846949,
+      "joint_leverage": 100.00000000000122,
+      "joint_exact": 100.0
+    },
+    {
+      "q": 0.001,
+      "tangent_leverage": 1.3955513308252685,
+      "joint_leverage": 999.9999999998524,
+      "joint_exact": 1000.0
+    },
+    {
+      "q": 0.0001,
+      "tangent_leverage": 1.3960488163813196,
+      "joint_leverage": 9999.999999985592,
+      "joint_exact": 10000.0
+    },
+    {
+      "q": 1e-05,
+      "tangent_leverage": 1.3960985844453988,
+      "joint_leverage": 99999.99999992155,
+      "joint_exact": 99999.99999999999
+    }
+  ]
+}

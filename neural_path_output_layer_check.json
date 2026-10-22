@@ -1,0 +1,22 @@
+{
+  "status": "Analytic example arithmetic and random algebra checks, not a new predictive experiment",
+  "seed": 1052026,
+  "random_cases": 30,
+  "max_path_representation_error": 2.3314683517128287e-15,
+  "max_effective_dimension_violation": -0.026256160842581533,
+  "max_leverage_violation": -0.015752057649997653,
+  "closed_form_example": {
+    "input_second_moment": 0.23840584404423515,
+    "training_gram": 0.5800256583859739,
+    "directional_leverage": 2.4329338935095595,
+    "oracle_risk": 2.091438752627985e-13,
+    "M": 6,
+    "n": 512,
+    "sigma_squared": 0.09,
+    "delta_x": 0.05,
+    "delta_s": 0.05,
+    "sample_size_threshold": 412.49458878864095,
+    "excess_bound": 0.011576704545497911,
+    "hull_wide_excess": 0.238405844044026
+  }
+}

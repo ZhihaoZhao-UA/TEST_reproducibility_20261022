@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "frozen_before_new_outcomes": true,
+  "seed": 31415927,
+  "width": 32,
+  "lr": 0.25,
+  "first_layer_multiplier": 4.0,
+  "times": [0,1,2,5,10,20,40,80,120,200,400,800],
+  "signals": ["smooth","oscillatory","mixed"],
+  "sigmas": [0.3,0.8],
+  "fixed_dictionary": {"banks":8,"training_n":64,"population_grid_side":32,"aggregation_n":[32,64,128,256,512],"aggregation_repeats":64,"tangent_dimensions":[2,4],"reference":"last checkpoint","oracle_gap":1e-10},
+  "fresh_budget": {"banks":32,"total_n":[48,96],"horizons":[200,800],"test_n":2048,"folds":3,"late_equal_rule":"all checkpoints at or after half the horizon","methods":["split_convex","split_select","split_last","split_equal","split_late_equal","full_cv_convex","full_cv_select","full_last","full_equal","full_late_equal"]},
+  "solver_gap":1e-8,
+  "reporting":"All conditions retained. Fixed-grid population risks are exact for the discrete input distribution. Fixed dictionaries do not change with aggregation n; nested sample prefixes couple n within a repeat. Finite-width constants are diagnosed on actual parameter paths. Fresh-budget uncertainty clusters by bank. New experiments do not change the estimator."
+}

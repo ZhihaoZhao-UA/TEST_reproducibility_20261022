@@ -1,0 +1,30 @@
+{
+  "seed": 14102064,
+  "replications": 256,
+  "n": [
+    516,
+    2064,
+    8256
+  ],
+  "amplitudes": [
+    0.2
+  ],
+  "checkpoint_pairs": [
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "noise_sd": 0.05,
+  "training_sites": 129,
+  "rho": 0.4,
+  "eta_over_A": 0.7,
+  "step": 1.4,
+  "status": "Second-stage fresh draws, added after first-stage results to check pairs with both members trained; all six conditions retained",
+  "full_budget": "Pool training and aggregation labels, rerun same updates, use training-gradient weights; no held-out weights",
+  "geometry": "Population-designed fixed invertible coordinate map, common to every comparator"
+}

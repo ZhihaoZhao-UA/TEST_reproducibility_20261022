@@ -1,0 +1,7 @@
+{
+  "status": "Numerical sanity check of deterministic finite-width Taylor bound; not a training-dynamics validation",
+  "cases": 100,
+  "points_per_case": 100,
+  "max_violation": -0.5219812142940576,
+  "max_error_bound_ratio": 0.2233883319944124
+}

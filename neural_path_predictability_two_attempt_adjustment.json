@@ -1,0 +1,6 @@
+{
+  "note": "Retain original single-attempt report; this additional calculation applies two-attempt correction consistently to first-stage hypotheses.",
+  "overall_one_sided97_5_lower": -0.00085923059624804,
+  "simultaneously_positive_cells_two_attempts": 1,
+  "cell_critical": 3.359473636072231
+}

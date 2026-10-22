@@ -1,0 +1,11 @@
+{
+  "protocol_hash_matches": true,
+  "complete_records": true,
+  "configuration_matches": true,
+  "random_piecewise_checks": 100,
+  "interval_second_derivative_max_violation": 2.220446049250313e-16,
+  "sufficient_statistic_Q_error": 6.661338147750939e-16,
+  "sufficient_statistic_score_error": 9.71445146547012e-17,
+  "compressed_solver_prediction_difference": 2.20028788864077e-16,
+  "max_optimization_gap": 9.992758147812491e-09
+}

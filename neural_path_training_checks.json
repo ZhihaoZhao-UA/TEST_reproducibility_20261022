@@ -1,0 +1,8 @@
+{
+  "records": 1536,
+  "summary_means": "verified",
+  "oracle_inequalities": "verified",
+  "quadrature_max_abs_difference": 3.2864878353466853e-19,
+  "hessian_finite_difference_max_abs_difference": 3.0012936580448013e-10,
+  "scope": "Checks numerical implementation; does not certify the local basin or establish novelty."
+}

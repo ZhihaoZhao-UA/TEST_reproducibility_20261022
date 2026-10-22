@@ -1,0 +1,17 @@
+{
+  "outputs/TEST_submission/manuscript.tex": {
+    "missing_refs": [],
+    "duplicate_labels": [],
+    "missing_cites": [],
+    "placeholders": false
+  },
+  "outputs/TEST_submission/supplement.tex": {
+    "missing_refs": [],
+    "duplicate_labels": [],
+    "missing_cites": [],
+    "placeholders": false
+  },
+  "body_sync": true,
+  "manuscript_log_issues": [],
+  "supplement_log_issues": []
+}

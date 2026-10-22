@@ -1,0 +1,31 @@
+{
+  "seed": 14102063,
+  "replications": 256,
+  "n": [
+    516,
+    2064,
+    8256
+  ],
+  "amplitudes": [
+    0.05,
+    0.2
+  ],
+  "checkpoint_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "noise_sd": 0.05,
+  "training_sites": 129,
+  "rho": 0.4,
+  "eta_over_A": 0.7,
+  "step": 1.4,
+  "status": "Fresh random draws after deterministic exploratory choice; constructed mechanism, not preregistered external validation",
+  "full_budget": "Pool training and aggregation labels, rerun same updates, use training-gradient weights; no held-out weights",
+  "geometry": "Population-designed fixed invertible coordinate map, common to every comparator"
+}

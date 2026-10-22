@@ -1,0 +1,33 @@
+{
+  "seed": 20261005,
+  "repeats": 20,
+  "test_fraction": 0.2,
+  "aggregation_fraction_of_development": 0.3333333333333333,
+  "checkpoints": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20,
+    40,
+    80,
+    120,
+    200,
+    400,
+    800
+  ],
+  "width": 32,
+  "lr": 0.25,
+  "first_layer_multiplier": 4,
+  "folds": 3,
+  "tolerance": 1e-08,
+  "selection": "minimum validation MSE; ties earliest",
+  "preprocessing": "X and y mean/std from each network training subset only",
+  "datasets": {
+    "airfoil": "https://archive.ics.uci.edu/static/public/291/airfoil+self+noise.zip",
+    "yacht": "https://archive.ics.uci.edu/static/public/243/yacht+hydrodynamics.zip"
+  },
+  "interpretation": "random-row interpolation; overlapping splits; no significance claims",
+  "frozen_before_outcomes": true
+}
